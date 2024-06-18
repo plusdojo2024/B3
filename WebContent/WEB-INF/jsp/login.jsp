@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <title>Login</title>
 <!-- スタイルシートの読み込みのサンプルです -->
-<link rel="stylesheet" href="/simpleBC/css/login.css">
-<script src="/simpleBC/js/login.js"></script>
+<link rel="stylesheet" href="/B3/css/login.css">
+<script src="/B3/js/login.js"></script>
 </head>
 <body>
 <div class="container1">
