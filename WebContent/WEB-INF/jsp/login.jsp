@@ -6,7 +6,7 @@
 <title>Login</title>
 <!-- スタイルシートの読み込みのサンプルです -->
 <link rel="stylesheet" href="/B3/css/login.css">
-<script src="/B3/js/login.js"></script>
+
 </head>
 <body>
 <div class="container1">
@@ -55,6 +55,6 @@
 
     </div>
   </div>
-
+<script src="/B3/js/login.js"></script>
 </body>
 </html>
