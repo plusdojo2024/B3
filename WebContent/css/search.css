@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*登録画面と編集画面*/
+/*検索画面と検索結果画面*/
 body {
 	background-color: #fffafa;
 }
@@ -12,19 +12,22 @@ h1 {
 
 	color: white;
 	background-color: #00438d;
-
 }
 
 /*お客様情報*/
-.customer_inf {
+.customer_search {
 	margin: 0 auto 0 auto;
+	width: 70%;
 	margin-top: 10px;
 	font-size: 30px;
 	color: #00438d;
 }
+
+/*テーブルデータを真ん中に*/
  td {
 	padding: 3px 50px;
  }
+
 /*テキストボックス*/
 input,select,textarea {
 	border: 3px solid #b8860b;
@@ -32,39 +35,28 @@ input,select,textarea {
 }
 
 .text_name {
-	width: 7em;
+	width: 50%;
 	font-size: 25px;
 }
-
-.text_tell {
-	width: 15em;
-	font-size: 25px;
-}
-
-.text_add {
-	width: 70%;
-	font-size: 25px;
-}
-
 /*式の希望日*/
 .select {
-	width: 18%;
+	width: 10%;
 	font-size: 25px;
 }
 .td_center {
 	text-align: center;
 }
 
-/*備考欄*/
+/*キーワード*/
 .text_memo {
 	vertical-align: text-top;
-	width: 70%;
+	width: 50%;
 	font-size: 25px;
 }
 textarea {
 	width: 70%;
 	resize: none;
-	min-height: 75px;
+
 }
 
 /*ボタン類*/

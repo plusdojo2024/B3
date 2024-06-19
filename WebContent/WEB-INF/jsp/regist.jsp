@@ -31,36 +31,40 @@
 		<table class="customer_inf">
 			<tr>
 				<td colspan="2">
-					　氏名　　<input type="text" name="lname1" class="text_name">　<input type="text" name="fname1" class="text_name">
+					<label>　氏名　　<input type="text" name="lname1" class="text_name"></label>
+									<input type="text" name="fname1" class="text_name">
 				</td>
 				<td colspan="2">
-					　氏名　　<input type="text" name="lname2" class="text_name">　<input type="text" name="fname2" class="text_name">
+					<label>　氏名　　<input type="text" name="lname2" class="text_name"></label>
+									<input type="text" name="fname2" class="text_name">
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					フリガナ　<input type="text" name="lfurigana1" class="text_name">　<input type="text" name="ffurigana1" class="text_name">
+					<label>フリガナ　<input type="text" name="lfurigana1" class="text_name"></label>
+									<input type="text" name="ffurigana1" class="text_name">
 				</td>
 				<td colspan="2">
-					フリガナ　<input type="text" name="lfurigana2" class="text_name">　<input type="text" name="ffurigana2" class="text_name">
+					<label>フリガナ　<input type="text" name="lfurigana2" class="text_name"></label>
+									<input type="text" name="ffurigana2" class="text_name">
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					電話番号　<input type="text" name="tell1">
+					<label>電話番号　<input type="text" name="tell1" class="text_tell"></label>
 				</td>
 				<td colspan="2">
-					電話番号　<input type="text" name="tell2">
+					<label>電話番号　<input type="text" name="tell2" class="text_tell"></label>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="4">
-					　住所　　<input type="text" name="address" class="text_add">
+				<td colspan="4" class="td_center">
+					<label>住　所　　<input type="text" name="address" class="text_add"></label>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="4">
-					式の予定日　<select name="year">
+				<td colspan="4" class="td_center">
+					<label>式の予定日　<select name="year" class="select">
 						<option value="">-</option>
 						<option value="2024">2024</option>
 						<option value="2025">2025</option>
@@ -69,8 +73,8 @@
 						<option value="2028">2028</option>
 						<option value="2029">2029</option>
 						<option value="2030">2030</option>
-					</select>年
-					<select name="month">
+					</select>年</label>
+					<label>　　<select name="month" class="select">
 						<option value="">-</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -84,8 +88,8 @@
 						<option value="10">10</option>
 						<option value="11">11</option>
 						<option value="12">12</option>
-					</select>月
-					<select name="day">
+					</select>月</label>
+					<label>　　<select name="day" class="select">
 						<option value="">-</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -118,12 +122,12 @@
 						<option value="29">29</option>
 						<option value="30">30</option>
 						<option value="31">31</option>
-					</select>日
+					</select>日</label>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="4">
-					　備考欄　<input type="text" name="memo">
+				<td colspan="4" class="td_center">
+					<label>備考欄　　<textarea name="memo" class="text_memo" oninput="resizeTextarea()"></textarea></label>
 				</td>
 			</tr>
 		</table>
@@ -136,10 +140,11 @@
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
 </footer>
 <script>
-  const hmbBtn=document.getElementById("hmb");
-  const header=document.getElementById("header");
-  hmbBtn.addEventListener("click",function(){header.classList.toggle("active");
-  });
+	const hmbBtn=document.getElementById("hmb");
+	const header=document.getElementById("header");
+	hmbBtn.addEventListener("click",function(){header.classList.toggle("active");
+	});
+
 </script>
 </body>
 </html>
