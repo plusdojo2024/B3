@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.EmployeesDao;
+import dao.EmployeesDAO;
 import model.Employees;
 
 @WebServlet("/SignupServlet")
@@ -50,10 +50,10 @@ public class SignupServlet extends HttpServlet {
         }
 
         // ユーザー登録を行う
-        EmployeesDao employeesDao = new EmployeesDao();
+        EmployeesDAO employeesDAO = new EmployeesDAO();
         Employees id = new Employees(company_id, user, pw);
         // ユーザーを追加し、結果を取得する
-        boolean registrationResult = employeesDao.insert(id);
+        boolean registrationResult = employeesDAO.insert(id);
 
         // 登録結果をJSPに送信
         response.setContentType("text/html");
