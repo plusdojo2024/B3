@@ -31,7 +31,7 @@
 		<table class="cards" id="card">
 			<tr>
 				<td class="card">
-					<img src="img/pin.png" alt="pin" class="pin">
+					<img src="img/pin.jpg" alt="pin" class="pin">
 					<input type="text" name="lname1" value="${e.lname1 }" class="card_name">様<br>
 					<input type="text" name="lname2" value="${e.lname2 }" class="card_name">様
 				</td>
