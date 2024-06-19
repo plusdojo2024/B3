@@ -14,7 +14,36 @@ h1 {
 	background-color: #00438d;
 }
 
-/*お客様情報*/
+/*夫婦カード（全体）*/
+.cards {
+	margin: 0 auto 0 auto;
+	border-spacing: 30px 10px;
+}
+/*夫婦カード（単体）*/
+.card {
+	text-align: center;
+	width: 150px;
+	height: 130px;
+	border: solid 5px #b8860b;
+	font-size: 25px;
+	color: #00438d;
+	position: relative;
+}
+.card_name {
+	border: none;
+	outline: none;
+	width: 100px;
+	font-size: 25px;
+}
+
+.pin {
+	width: 300px;
+	position: absolute;
+	right: 0px;
+	bottom: 20px;
+}
+
+/*検索項目*/
 .customer_search {
 	margin: 0 auto 0 auto;
 	width: 70%;
