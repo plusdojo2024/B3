@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import model.Employees;
 
-public class EmployeesDao {
+public class EmployeesDAO {
     // ログインできるならtrueを返す
     public boolean isLoginOK(Employees Employees) {
         Connection conn = null;
@@ -19,10 +19,10 @@ public class EmployeesDao {
             Class.forName("org.h2.Driver");
 
             // データベースに接続する
-            conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+            conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
             // SELECT文を準備する
-            String sql = "SELECT COUNT(*) FROM Idpw WHERE id = ? AND pw = ?";
+            String sql = "SELECT COUNT(*) FROM Employees WHERE user = ? AND pw = ?";
             PreparedStatement pStmt = conn.prepareStatement(sql);
             pStmt.setString(1, Employees.getUser());
             pStmt.setString(2, Employees.getPw());
@@ -65,8 +65,8 @@ public class EmployeesDao {
             // データベースに接続する処理
 
             // SQL文を準備する
-            String sql = "INSERT INTO idpw (id, email, pw) VALUES (?, ?, ?)";
-            conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+            String sql = "INSERT INTO employees (id,creat_at,updated_at,company_id, user, pw) VALUES (?, ?, ?,?,?,?)";
+            conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, user.getCompany_id());
             pstmt.setString(2, user.getUser());

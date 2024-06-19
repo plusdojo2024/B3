@@ -28,10 +28,16 @@
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
 </footer>
 <script>
-  const hmbBtn=document.getElementById("hmb");
-  const header=document.getElementById("header");
-  hmbBtn.addEventListener("click",function(){header.classList.toggle("active");
-  });
+const hmbBtn = document.getElementById("hmb");
+const header = document.getElementById("header");
+const logo = document.getElementById("logo"); // ロゴの要素を取得
+const footer = document.querySelector("footer"); // フッターの要素を取得
+
+hmbBtn.addEventListener("click", function() {
+  header.classList.toggle("active");
+  logo.classList.toggle("active"); // ロゴの表示切り替え
+  footer.classList.toggle("active"); // フッターの表示切り替え
+});
 </script>
 </body>
 </html>

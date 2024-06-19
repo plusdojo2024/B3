@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/* 全体のスタイル */
+html{
+	outline:1px solid #ff0000;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+ .column {
+    flex: 1 1 20%; /* 幅は可変ですが、各列の最大幅は20%に制限 */
+    margin: 10px; /* グリッドギャップ */
+    position: relative;
+}
+
+.photo {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* モーダルウィンドウのスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-content img {
+    width: 100%;
+    height:20%; /* 画像を親要素の高さに合わせる */
+    object-fit: cover; /* 画像を比率を保ちつつ親要素に合わせる */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+.clothes ,.cakes,.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 100px;
+}
+.dress,.suit,.cake,.invation,.nameplate{
+	height:300px;
+
+}
+.dress img,.suit img,.cake img,.invation img,.nameplate{
+	height:350px;
+}
+.clothes p,.cakes p, .cards p{
+	color: #00438d;
+}
+ input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color:#b8860b;
+    color: white;
+    cursor: pointer;
+    width: 10%;
+    text-align: center;
+    position:fixed;
+    bottom:20px;
+    z-index:1000;
+    left:45%;
+
+  }
+
