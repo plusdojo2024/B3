@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 .box {
-	margin: 10px auto;
 	background-color: #00438d;
 	padding: 10px;
+	margin: 10px;
 	width: 960px;
-	height: 610px;
+	height: 700px;
 }
 
 .img1 {

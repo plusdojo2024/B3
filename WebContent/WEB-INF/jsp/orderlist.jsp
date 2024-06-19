@@ -7,8 +7,14 @@
 <title>KyoronP</title>
 <link rel="stylesheet" href="/B3/css/common.css">
 <link rel="stylesheet" href="/B3/css/orderlist.css">
+<style>
+* {
+	outline: 1px solid #FF0000;
+}
+</style>
 </head>
 <body>
+
 	<header id="header">
 		<img src="img/logo.png" alt="logo">
 		<div id="hmb">
@@ -23,34 +29,41 @@
 			</ul>
 		</nav>
 	</header>
+	<main>
+		<!-- お客様発注リストの枠組 開始 -->
 
-	<div class="box">
-		<div class="arrange">
-			<div class="items">
+		<div class="box">
+			<div class="arrange">
+				<div class="items">
 
 
-				<!-- お客様の名前欄 -->
-				<h2 class="index">お客様の名前</h2>
+					<!-- お客様の名前欄 -->
+					<img src="img/Owaku.png">
 
-				<!-- 内装 -->
-				<img src="/B3/img/Ointerior.png">
+					<!-- 内装 -->
+					<img src="img/Ointerior.png">
 
-				<!-- 衣装 -->
-				<img src="/B3/img/Ocostume.png">
+					<!-- 衣装 -->
+					<img src="img/Ocostume.png">
 
-				<!-- ケーキ -->
-				<img src="/B3/img/Ocake.png">
+					<!-- ケーキ -->
+					<img src="img/Ocake.png">
 
-				<!-- カード -->
-				<img src="/B3/img/Ocard.png">
+					<!-- カード -->
+					<img src="img/Ocard.png">
 
-				<!-- その他 -->
-				<img src="/B3/img/Oothers.png">
+					<!-- その他 -->
+					<img src="img/Oothers.png">
 
+				</div>
 			</div>
 		</div>
-	</div>
+		<!-- お客様発注リストの枠組 終了 -->
+		<!-- モーダルウインドウ 開始 -->
 
+		<!-- モーダルウインドウ 終了 -->
+
+	</main>
 	<footer>
 		<p class="copyright">Copyright KyoronP. All rights reserved.</p>
 	</footer>
