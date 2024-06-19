@@ -26,13 +26,18 @@
   </nav>
 </header>
 
+<a class="survey">式後アンケート</a>
+
 <main>
+
+
+
   <div class="アンケートトップ">
-    <a class="アンケート">式後アンケート</a>
     <a class="記入日時"></a>
     <a href"/B3/UpdateServlet"><img src="/B3/img/mypagename.png" alt="夫婦カード" width="100" height="100"></a>
   </div>
 
+  <div class="menu">
   <div>
     <label for="assesment">満足度</label>
     <input type="text" id="guest" name="guest" placeholder="" >
@@ -44,6 +49,7 @@
   <div>
     <label for="trouble">トラブルの対処と対策</label>
     <input type="text" id="trouble" name="trouble" placeholder="" >
+  </div>
   </div>
   <p>
     <input type="submit" value="保存" class = "button">
