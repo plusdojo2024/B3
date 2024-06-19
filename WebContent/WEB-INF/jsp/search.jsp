@@ -28,10 +28,28 @@
 <main class="main">
 	<h1>お客様情報検索</h1>
 	<form id="search_form" method="post" action="/B3/SearchServlet">
+		<table class="cards" id="card">
+			<tr>
+				<td class="card">
+					<img src="img/pin.png" alt="pin" class="pin">
+					<input type="text" name="lname1" value="${e.lname1 }" class="card_name">様<br>
+					<input type="text" name="lname2" value="${e.lname2 }" class="card_name">様
+				</td>
+				<td class="card">
+					<input type="text" name="lname1" value="${e.lname1 }" class="card_name">様<br>
+					<input type="text" name="lname2" value="${e.lname2 }" class="card_name">様
+				</td>
+				<td class="card">
+					<input type="text" name="lname1" value="${e.lname1 }" class="card_name">様<br>
+					<input type="text" name="lname2" value="${e.lname2 }" class="card_name">様
+				</td>
+			</tr>
+		</table>
+
 		<table class="customer_search">
 			<tr>
 				<td colspan="3"class="td_center">
-					<label>　氏名　　<input type="text" name="lname1" class="text_name"></label>
+					<label>　氏　名　<input type="text" name="lname1" class="text_name"></label>
 				</td>
 			</tr>
 			<tr>
@@ -46,7 +64,7 @@
 						<option value="2029">2029</option>
 						<option value="2030">2030</option>
 					</select>年</label>
-					<label><select name="month" class="select">
+					<label>　<select name="month" class="select">
 						<option value="">-</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -61,7 +79,7 @@
 						<option value="11">11</option>
 						<option value="12">12</option>
 					</select>月</label>
-					<label><select name="day" class="select">
+					<label>　<select name="day" class="select">
 						<option value="">-</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -111,6 +129,7 @@
 <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
 </footer>
+<script src="/B3/JavaScript/result.js"></script>
 <script>
   const hmbBtn=document.getElementById("hmb");
   const header=document.getElementById("header");
