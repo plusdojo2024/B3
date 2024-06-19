@@ -1,8 +1,139 @@
 @charset "UTF-8";
-/*ホーム画面*/
-img {
-	max-width: 100%;
+/*共通*/
+html{
+    height: 1024;
+    width: 1440;
+}
+#logo{
+    height:200px;
+}
+#header{
+	height:200px;
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+#hmb{
+    width: 32px;
+    height: 28px;
+    cursor: pointer;
+    position: relative;
+    z-index: 30;
+}
+#hmb span{
+    width: 32px;
+    height: 3px;
+    display: block;
+    background-color: #00438d;
+    border-radius:2px ;
+    position: absolute;
+    transition: .2s;
+}
+#hmb span:first-child{top:0;}
+#hmb span:nth-child(2){top:12px;}
+#hmb span:nth-child(3){top: 24px;}
+nav{
+    position: fixed;
+    margin-top: 0;
+    right: 0;
+     width: 100%;
+    align-items: center;
+    padding: 20px;
+    background-color:#3376c0 ;
+    z-index:20;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition-property: all;
+    transition-duration: .2s;
+}
+nav ul{
+    text-align: center;
+}
+nav ul li{
+    display: block
+}
+nav ul li a{
+    margin-bottom: 16px ;
+    color: #fffafa;
+
+}
+.active #hmb span:first-child{
+    top:12px;
+    transform: rotate(45deg);
+}
+.active #hmb span:nth-child(2){
+    opacity: 0;
+}
+.active #hmb span:nth-child(3){
+    top:12px;
+    transform: rotate(-45deg);
+}
+.active nav{
+    visibility:visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+.active::before{
+    content: '';
+    position: fixed;
+    top:0 ;
+    right: 0;
+    background-color: #3376c0;
+    width: 100vw;
+    opacity: 0.4;
+    z-index: 10;
+}
+#logo.active,footer.active{
+    display: block;
+}
+footer{
+  background-color: #00438d;
+  color: #fffafa;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+  font-size: 16px;
 }
 
 
+/*ホーム画面*/
+.title{
+    justify-content: center;
+}
+.title img{
+	width:100%;
+	margin:0 0 0 0;
+}
 
+.menu{
+	align-items: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+}
+.menu img{
+/*	width:600px;
+	height:300px;*/
+	width: 80%;
+}
+
+/*マイページ画面*/
+.main img{
+	width:10%;
+	height:10%;
+}
+.mymenu1{
+	justify-content:center;
+	display:flex;
+}
+.mymenu2{
+	justify-content:center;
+	display:flex;
+
+}
+.survey{
+	margin:0 0 0 1000px;
+}
