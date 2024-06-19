@@ -122,18 +122,35 @@ footer{
 
 /*マイページ画面*/
 .main img{
-	width:10%;
-	height:10%;
+
 }
+
+/*.couple{
+	background-image:url(/B3/img/mypagename.png);
+    background-repeat:no-repeat;
+    width:90%;
+    height:400px;
+    justify-content:center;
+}
+*/
+
 .mymenu1{
 	justify-content:center;
 	display:flex;
+	gap:100px;
 }
+.survay img{
+	width:300px;
+	height:210px;
+}
+
 .mymenu2{
 	justify-content:center;
 	display:flex;
+	gap:30px;
+}
+.mymenu2 img{
+	width:380px;
+	height:220px;
+}
 
-}
-.survey{
-	margin:0 0 0 1000px;
-}
