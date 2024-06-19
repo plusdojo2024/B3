@@ -29,10 +29,10 @@
 
 <main>
   <div class="title">
-    <a href="/B3/HomeServlet"><img src="/B3/img/home.png" alt="KyoronpTitle"></a>
+    <a href="/B3/HomeServlet"><img src="/B3/img/home.png" alt="KyoronpTitle" width="1000" height="500"></a>
   </div>
 
-  <div class="menu">
+ <div class="menu">
     <a href="/B3/RegistServlet"><img src="/B3/img/regist.png" alt="登録"></a>
     <a href="/B3/SerchServlet"><img src="/B3/img/search.png" alt="検索"></a>
     <a href="/B3/LogoutServlet"><img src="/B3/img/logout.png" alt="ログアウト"></a>
@@ -52,3 +52,4 @@
 
 </body>
 </html>
+<style>* {outline: 1px solid #FF0000;}</style>
