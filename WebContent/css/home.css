@@ -1,14 +1,15 @@
 @charset "UTF-8";
 /*共通*/
+
 html{
     height: 1024;
     width: 1440;
 }
 #logo{
-    height:200px;
+    height:108px;
 }
 #header{
-	height:200px;
+	height:108px;
     width: 1440px;
     margin: 0 auto;
     display: flex;
@@ -96,8 +97,6 @@ footer{
   margin-top: 50px;
   font-size: 16px;
 }
-
-
 /*ホーム画面*/
 .title{
     justify-content: center;
@@ -121,9 +120,7 @@ footer{
 }
 
 /*マイページ画面*/
-.main img{
 
-}
 
 /*.couple{
 	background-image:url(/B3/img/mypagename.png);
