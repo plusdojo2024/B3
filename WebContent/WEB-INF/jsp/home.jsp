@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ホーム</title>
-  <link rel="stylesheet" href="/B3/css/common.css">
+  <link rel="stylesheet" href="/B3/css/home.css">
 </head>
 <body>
 
@@ -29,13 +29,13 @@
 
 <main>
   <div class="title">
-    <a href="/B3/HomeServlet"><img src="/B3/img/home.png" alt="KyoronpTitle" width="900" height="400"></a>
+    <a href="/B3/HomeServlet"><img src="/B3/img/home.png" alt="KyoronpTitle"></a>
   </div>
 
   <div class="menu">
-    <a href="/B3/RegistServlet"><img src="/B3/img/regist.png" alt="登録" width="350" height="200"></a>
-    <a href="/B3/SerchServlet"><img src="/B3/img/search.png" alt="検索" width="350" height="200"></a>
-    <a href="/B3/LogoutServlet"><img src="/B3/img/logout.png" alt="ログアウト" width="350" height="200"></a>
+    <a href="/B3/RegistServlet"><img src="/B3/img/regist.png" alt="登録"></a>
+    <a href="/B3/SerchServlet"><img src="/B3/img/search.png" alt="検索"></a>
+    <a href="/B3/LogoutServlet"><img src="/B3/img/logout.png" alt="ログアウト"></a>
   </div>
 </main>
 
