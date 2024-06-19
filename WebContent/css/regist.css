@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*登録画面と編集画面*/
+
+h1 {
+	text-align: center;
+	margin: 0 auto 0 auto;
+	width: 300px;
+	height: 50px;
+
+	color: white;
+	background-color: #00438d;
+
+}
+
+/*お客様情報*/
+.customer_inf {
+	margin: 0 auto 0 auto;
+
+	font-size: 30px;
+	color: #00438d;
+}
+
+/*テキストボックス*/
+.text_name {
+	width: 10em;
+	font-size: 25px;
+}
+.text_add {
+	width: 85%;
+	font-size: 25px;
+}
+
+/*ボタン類*/
+.button {
+	text-align: center;
+
+}
