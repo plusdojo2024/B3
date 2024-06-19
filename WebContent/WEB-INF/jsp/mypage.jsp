@@ -9,7 +9,7 @@
 <body>
 
 <header id ="header">
-  <img src="img/logo.png" alt="logo">
+  <a href="home.jsp"><img src="img/logo.png" alt="logo"></a>
 
   <div id="hmb">
     <span></span>
@@ -19,15 +19,15 @@
 
   <nav>
     <ul>
-      <li><a href="MypageServlet">マイページ</a></li>
-      <li><a href="UpdateServlet">お客様情報編集</a></li>
-      <li><a href="OrderlistServlet">発注リスト</a></li>
-      <li><a href="TodaylistServlet">当日リスト</a></li>
-      <li><a href="SimulationServlet">シミュレーション</a></li>
-      <li><a href="ReportServlet">報告書作成</a></li>
-      <li><a href="SurvayServlet">式後アンケート</a></li>
-      <li><a href="SerchSuervlet">お客様変更</a></li>
-      <li><a href="LogoutServlet">ログアウト</a></li>
+      <li><a href="mypage.jsp">マイページ</a></li>
+      <li><a href="update.jsp">お客様情報編集</a></li>
+      <li><a href="orderlist.jsp">発注リスト</a></li>
+      <li><a href="todaylist.jsp">当日リスト</a></li>
+      <li><a href="simulation,jsp">シミュレーション</a></li>
+      <li><a href="report.jsp">報告書作成</a></li>
+      <li><a href="survay.jsp">式後アンケート</a></li>
+      <li><a href="serch.jsp">お客様変更</a></li>
+      <li><a href="logout.jsp">ログアウト</a></li>
     </ul>
   </nav>
 </header>

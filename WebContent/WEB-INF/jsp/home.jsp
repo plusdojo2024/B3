@@ -5,13 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>ホーム</title>
+
   <link rel="stylesheet" href="/B3/css/home.css">
+
+
 </head>
+
 <body>
 
 <header id ="header">
-  <img src="img/logo.png" alt="logo">
-
+  <a href="home.jsp"><img src="img/logo.png" alt="logo" height="80" width="80"></a>
   <div id="hmb">
     <span></span>
     <span></span>
@@ -20,9 +23,9 @@
   <nav>
     <ul>
       <li><a href=home.jsp>ホーム</a></li>
-      <li><a href=RegistServlet>お客様情報登録</a></li>
-      <li><a href=SerchServlet>お客様検索</a></li>
-      <li><a href=LogoutServlet>ログアウト</a></li>
+      <li><a href=regist.jsp>お客様情報登録</a></li>
+      <li><a href=serch.jsp>お客様検索</a></li>
+      <li><a href=logout.jsp>ログアウト</a></li>
     </ul>
   </nav>
 </header>
