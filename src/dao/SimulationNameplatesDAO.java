@@ -24,7 +24,7 @@ public class SimulationNameplatesDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM SIMULATION_TABLES WHERE ID = ? ORDER BY ID";
+			String sql = "SELECT * FROM SIMULATION_NAMEPLATES WHERE ID = ? ORDER BY ID";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 			if ((Integer) nameplate.getId() != null) {
@@ -78,7 +78,7 @@ public class SimulationNameplatesDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM SIMULATION_TABLES ORDER BY ID";
+			String sql = "SELECT * FROM SIMULATION_NAMEPLATES ORDER BY ID";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を実行し、結果表を取得する

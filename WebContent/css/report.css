@@ -100,12 +100,9 @@ footer{
 }
 
 /*報告書*/
-.disp-img{
-	image:url(/B3/img/);
-}
-
 main{
-    background-color:#fff0f5;
+/*    background-color:#fff0f5;*/
+	background-image:url(/B3/img/Owaku_2png);
     margin:0 80px 0 80px;
     border-color:#b8860b;
 	justify-content:centser;

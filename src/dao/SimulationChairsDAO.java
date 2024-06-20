@@ -24,7 +24,7 @@ public class SimulationChairsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM SIMULATION_TABLES WHERE ID = ? ORDER BY ID";
+			String sql = "SELECT * FROM SIMULATION_CHAIRS WHERE ID = ? ORDER BY ID";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 			if ((Integer) chair.getId() != null) {
@@ -78,7 +78,7 @@ public class SimulationChairsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM SIMULATION_TABLES ORDER BY ID";
+			String sql = "SELECT * FROM SIMULATION_CHAIRS ORDER BY ID";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を実行し、結果表を取得する

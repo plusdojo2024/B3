@@ -61,9 +61,7 @@
     <label for="fix">改善点</label>
     <textarea name="fix" placeholder="" ></textarea>
   </div>
-  <p>
     <input type="submit" value="保存" class = "button">
-  </p>
   </div>
 </main>
 

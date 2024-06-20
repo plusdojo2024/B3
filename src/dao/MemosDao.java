@@ -1,3 +1,4 @@
+/*
 package dao;
 
 import java.sql.Connection;
@@ -32,8 +33,13 @@ public class MemosDao {
 			} else {
 				pStmt.setString(1, "%");
 			}
+			/*
 			if (memo.getIdupdated_at() != null) {
 				pStmt.setString(2, "%" + memo.getIdupdated_at() + "%");
+
+			if (card.getUpdated_at() != null) {
+				pStmt.setString(2, "%" + card.getUpdated_at() + "%");
+
 			} else {
 				pStmt.setString(2, "%");
 			}
@@ -100,8 +106,13 @@ public class MemosDao {
 			} else {
 				pStmt.setString(1, "（未設定）");
 			}
+<<<<<<< HEAD
 			if (memo.getIdupdated_at() != null && !memo.getIdupdated_at().equals("")) {
 				pStmt.setString(2, memo.getIdupdated_at());
+=======
+			if (card.getUpdated_at() != null && !card.getUpdated_at().equals("")) {
+				pStmt.setString(2, card.getUpdated_at());
+>>>>>>> 91a7b1d6f977e32397a3b9ebce533903f57464f4
 			} else {
 				pStmt.setString(2, "（未設定）");
 			}
@@ -156,8 +167,13 @@ public class MemosDao {
 			} else {
 				pStmt.setString(1, null);
 			}
+<<<<<<< HEAD
 			if (memo.getIdupdated_at() != null && !memo.getIdupdated_at().equals("")) {
 				pStmt.setString(2, memo.getIdupdated_at());
+=======
+			if (card.getUpdated_at() != null && !card.getUpdated_at().equals("")) {
+				pStmt.setString(2, card.getUpdated_at());
+>>>>>>> 91a7b1d6f977e32397a3b9ebce533903f57464f4
 			} else {
 				pStmt.setString(2, null);
 			}
@@ -193,3 +209,4 @@ public class MemosDao {
 
 	}
 }
+*/
