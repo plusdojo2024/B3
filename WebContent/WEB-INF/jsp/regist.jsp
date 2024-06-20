@@ -18,17 +18,17 @@
   </div>
   <nav>
     <ul>
-      <li><a href=home.html>ホーム</a></li>
-      <li><a href=regist.html>お客様情報登録</a></li>
-      <li><a href=search.html>お客様検索</a></li>
-      <li><a href=login.html>ログアウト</a></li>
+      <li><a href=/B3/HomeServlet>ホーム</a></li>
+      <li><a href=/B3/RegistServlet>お客様情報登録</a></li>
+      <li><a href=/B3/SearchServlet>お客様情報検索</a></li>
+      <li><a href=/B3/LogoutServlet>ログアウト</a></li>
     </ul>
   </nav>
 </header>
 <main class="main">
 	<h1>お客様情報登録</h1>
 	<form id="regist_form" method="post" action="/B3/RegistServlet" onSubmit="return check()">
-		<table class="customer_inf">
+		<table class="customer_regist">
 			<tr>
 				<td colspan="2">
 					<label>　氏名　　<input type="text" name="lname1" class="text_name"></label>
@@ -73,6 +73,10 @@
 						<option value="2028">2028</option>
 						<option value="2029">2029</option>
 						<option value="2030">2030</option>
+						<option value="2031">2031</option>
+						<option value="2032">2032</option>
+						<option value="2033">2033</option>
+						<option value="2034">2034</option>
 					</select>年</label>
 					<label>　　<select name="month" class="select">
 						<option value="">-</option>
@@ -149,5 +153,5 @@
 </body>
 </html>
 
-	!--<style>* {outline: 1px solid #FF0000;}</style>-->
+	<!--<style>* {outline: 1px solid #FF0000;}</style>-->
 

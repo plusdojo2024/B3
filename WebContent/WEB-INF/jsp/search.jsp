@@ -18,10 +18,10 @@
   </div>
   <nav>
     <ul>
-      <li><a href=home.html>ホーム</a></li>
-      <li><a href=regist.html>お客様情報登録</a></li>
-      <li><a href=search.html>お客様検索</a></li>
-      <li><a href=login.html>ログアウト</a></li>
+      <li><a href=/B3/HomeServlet>ホーム</a></li>
+      <li><a href=/B3/RegistServlet>お客様情報登録</a></li>
+      <li><a href=/B3/SearchServlet>お客様情報検索</a></li>
+      <li><a href=/B3/LogoutServlet>ログアウト</a></li>
     </ul>
   </nav>
 </header>
@@ -31,17 +31,19 @@
 		<table class="cards" id="card">
 			<tr>
 				<td class="card">
-					<img src="img/pin.jpg" alt="pin" class="pin">
-					<input type="text" name="lname1" value="${e.lname1 }" class="card_name">様<br>
-					<input type="text" name="lname2" value="${e.lname2 }" class="card_name">様
+					<img src="img/pin.png" alt="pin" id="pin1" class="pin">
+					<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
+					<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
 				</td>
 				<td class="card">
-					<input type="text" name="lname1" value="${e.lname1 }" class="card_name">様<br>
-					<input type="text" name="lname2" value="${e.lname2 }" class="card_name">様
+					<img src="img/pin.png" alt="pin" id="pin2" class="pin">
+					<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
+					<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
 				</td>
 				<td class="card">
-					<input type="text" name="lname1" value="${e.lname1 }" class="card_name">様<br>
-					<input type="text" name="lname2" value="${e.lname2 }" class="card_name">様
+					<img src="img/pin.png" alt="pin" id="pin3" class="pin">
+					<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
+					<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
 				</td>
 			</tr>
 		</table>
@@ -49,7 +51,7 @@
 		<table class="customer_search">
 			<tr>
 				<td colspan="3"class="td_center">
-					<label>　氏　名　<input type="text" name="lname1" class="text_name"></label>
+					<label>　氏　名　<input type="text" name="lname_1" class="text_name"></label>
 				</td>
 			</tr>
 			<tr>
@@ -63,6 +65,10 @@
 						<option value="2028">2028</option>
 						<option value="2029">2029</option>
 						<option value="2030">2030</option>
+						<option value="2031">2031</option>
+						<option value="2032">2032</option>
+						<option value="2033">2033</option>
+						<option value="2034">2034</option>
 					</select>年</label>
 					<label>　<select name="month" class="select">
 						<option value="">-</option>
@@ -129,7 +135,7 @@
 <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
 </footer>
-<script src="/B3/JavaScript/result.js"></script>
+<script src="/B3/js/result.js"></script>
 <script>
   const hmbBtn=document.getElementById("hmb");
   const header=document.getElementById("header");
@@ -139,4 +145,4 @@
 </body>
 </html>
 
-	!--<style>* {outline: 1px solid #FF0000;}</style>-->
+	<!--<style>* {outline: 1px solid #FF0000;}</style>-->

@@ -18,15 +18,15 @@
   </div>
   <nav>
     <ul>
-      <li><a href=>マイページ</a></li>
-      <li><a href=>お客様情報編集</a></li>
-      <li><a href=>発注リスト</a></li>
-      <li><a href=>当日リスト</a></li>
-      <li><a href=>シミュレーション</a></li>
-      <li><a href=>報告書作成</a></li>
-      <li><a href=>式後アンケート</a></li>
-      <li><a href=>お客様変更</a></li>
-      <li><a href=>ログアウト</a></li>
+      <li><a href=/B3/MypageServlet>マイページ</a></li>
+      <li><a href=/B3/UpdateServlet>お客様情報編集</a></li>
+      <li><a href=/B3/OrderlistServlet>発注リスト</a></li>
+      <li><a href=/B3/TodaylistServlet>当日リスト</a></li>
+      <li><a href=/B3/SimulationServlet>シミュレーション</a></li>
+      <li><a href=/B3/ReportServlet>報告書作成</a></li>
+      <li><a href=/B3/SurveyServlet>式後アンケート</a></li>
+      <li><a href=/B3/SearchServlet>お客様変更</a></li>
+      <li><a href=/B3/LogoutServlet>ログアウト</a></li>
     </ul>
   </nav>
 </header>
@@ -78,6 +78,10 @@
 						<option value="2028">2028</option>
 						<option value="2029">2029</option>
 						<option value="2030">2030</option>
+						<option value="2031">2031</option>
+						<option value="2032">2032</option>
+						<option value="2033">2033</option>
+						<option value="2034">2034</option>
 					</select>年</label>
 					<label>　　<select name="month" class="select">
 						<option value="">-</option>
