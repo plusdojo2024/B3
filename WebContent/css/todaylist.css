@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/*当日リスト画面*/
+/*共通*/
+body {
+	background-color: #fffafa;
+}
+
+.page_title {
+	text-align: center;
+	margin: 0 auto 0 auto;
+	width: 20%;
+	height: 10%;
+	font-size: 2.5vw;
+	color: white;
+	background-color: #00438d;
+}
+
+
+
+/*チケット*/
+.t_list {
+	background-color: #00ffff;
+
+	width: 50%;
+	height: 170px;
+	margin: 10px;
+	display: flex;
+	justify-content: center;	/*displayとセットで中の要素を横中央に*/
+	align-items: center;	/*displayとセットで中の要素を縦中央に*/
+}
+.t_all {
+	background-color: #80ffff;
+
+	width: 90%;
+	height:80%;
+	text-align: center;
+}
+
+.t_main {
+	width: 70%;
+	height: 100%;
+	text-align: center;
+}
+
+.t_sub {
+	height: 100%;
+	text-align: center;
+}

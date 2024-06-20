@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KyoronP</title>
+<link rel="stylesheet" href="/B3/css/todaylist.css">
 <link rel="stylesheet" href="/B3/css/common.css">
 </head>
 <body>
@@ -29,8 +30,24 @@
     </ul>
   </nav>
 </header>
+<main class="main">
+	<div class="page_title">当日リスト</div>
+	<div class="wrapper">
+		<div class="area ticket">
+			<div id="now_time" class="now_time">現在時刻</div>
 
+			<div class="t_list">
+				<div class="t_all">
+					<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
+					<img src="img/ticket-sub.png" alt="ticket_sub" class="t_sub">
+				</div>
+			</div>
+		</div>
+		<div class="area memo">
 
+		</div>
+	</div>
+</main>
 <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
 </footer>
@@ -42,3 +59,5 @@
 </script>
 </body>
 </html>
+
+	!--<style>* {outline: 1px solid #FF0000;}</style>-->
