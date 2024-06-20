@@ -29,6 +29,8 @@
     </ul>
   </nav>
 </header>
+
+
 <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
 </footer>
