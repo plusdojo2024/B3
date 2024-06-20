@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 
 				// ログイン処理を行う
 				EmployeesDAO iDAO = new EmployeesDAO();
-				if (iDAO.isLoginOK(new Employees("",user, pw))) {	// ログイン成功
+				if (iDAO.isLoginOK(new Employees(user, pw))) {	// ログイン成功
 					// セッションスコープにIDを格納する
 					HttpSession session = request.getSession();
 					session.setAttribute("user", new LoginUser(user));

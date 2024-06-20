@@ -64,20 +64,7 @@
 			</tr>
 			<tr>
 				<td colspan="4" class="td_center">
-					<label>式の予定日　<select name="year" class="select">
-						<option value="">-</option>
-						<option value="2024">2024</option>
-						<option value="2025">2025</option>
-						<option value="2026">2026</option>
-						<option value="2027">2027</option>
-						<option value="2028">2028</option>
-						<option value="2029">2029</option>
-						<option value="2030">2030</option>
-						<option value="2031">2031</option>
-						<option value="2032">2032</option>
-						<option value="2033">2033</option>
-						<option value="2034">2034</option>
-					</select>年</label>
+					<!-- ここに動的に写真の選択肢を表示 -->
 					<label>　　<select name="month" class="select">
 						<option value="">-</option>
 						<option value="1">1</option>
