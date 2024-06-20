@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KyoronP</title>
-<link rel="stylesheet" href="/simpleBC/css/common.css">
+<link rel="stylesheet" href="/B3/css/common.css">
 </head>
 <body>
 <header id ="header">
@@ -17,10 +17,15 @@
   </div>
   <nav>
     <ul>
-      <li><a href=home.html>ホーム</a></li>
-      <li><a href=regist.html>お客様情報登録</a></li>
-      <li><a href=search.html>お客様検索</a></li>
-      <li><a href=login.html>ログアウト</a></li>
+      <li><a href=/B3/MypageServlet>マイページ</a></li>
+      <li><a href=/B3/UpdateServlet>お客様情報編集</a></li>
+      <li><a href=/B3/OrderlistServlet>発注リスト</a></li>
+      <li><a href=/B3/TodaylistServlet>当日リスト</a></li>
+      <li><a href=/B3/SimulationServlet>シミュレーション</a></li>
+      <li><a href=/B3/ReportServlet>報告書作成</a></li>
+      <li><a href=/B3/SurveyServlet>式後アンケート</a></li>
+      <li><a href=/B3/SearchServlet>お客様変更</a></li>
+      <li><a href=/B3/LogoutServlet>ログアウト</a></li>
     </ul>
   </nav>
 </header>
