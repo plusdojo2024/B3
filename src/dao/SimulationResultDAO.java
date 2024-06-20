@@ -10,7 +10,7 @@ import java.util.List;
 
 import model.SimulationCommon;
 
-public class SimulationTablesDAO {
+public class SimulationResultDAO {
 	// 引数idで検索項目を指定し、検索結果を返す
 	public List<SimulationCommon> select(SimulationCommon table) {
 		Connection conn = null;
@@ -38,6 +38,8 @@ public class SimulationTablesDAO {
 			while (rs.next()) {
 				SimulationCommon record = new SimulationCommon(
 						rs.getInt("id"),
+						rs.getTimestamp(null),
+						rs.getTimestamp(null),
 						rs.getString("name"),
 						rs.getInt("price"),
 						rs.getString("image"));
@@ -88,6 +90,8 @@ public class SimulationTablesDAO {
 			while (rs.next()) {
 				SimulationCommon record = new SimulationCommon(
 						rs.getInt("id"),
+						rs.getTimestamp(null),
+						rs.getTimestamp(null),
 						rs.getString("name"),
 						rs.getInt("price"),
 						rs.getString("image"));
