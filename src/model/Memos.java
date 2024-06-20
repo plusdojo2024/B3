@@ -6,14 +6,14 @@ public class Memos implements Serializable{
 
 	private int id ; /* ID */
 	private String created_at; /* CREATED_AT */
-	private String idupdated_at; /* UPDATED_AT */
+	private String updated_at; /* UPDATED_AT */
 	private String memo; /* メモ */
 
-	public Memos(int id, String created_at, String idupdated_at, String memo) {
+	public Memos(int id, String created_at, String updated_at, String memo) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
-		this.idupdated_at = idupdated_at;
+		this.updated_at = updated_at;
 		this.memo = memo;
 	}
 
@@ -33,12 +33,12 @@ public class Memos implements Serializable{
 		this.created_at = created_at;
 	}
 
-	public String getIdupdated_at() {
-		return idupdated_at;
+	public String getUpdated_at() {
+		return updated_at;
 	}
 
-	public void setIdupdated_at(String idupdated_at) {
-		this.idupdated_at = idupdated_at;
+	public void setUpdated_at(String updated_at) {
+		this.updated_at = updated_at;
 	}
 
 	public String getMemo() {

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*検索画面と検索結果画面*/
+/*共通*/
 body {
 	background-color: #fffafa;
 }
@@ -17,7 +18,7 @@ h1 {
 /*夫婦カード（全体）*/
 .cards {
 	margin: 0 auto 0 auto;
-	border-spacing: 30px 10px;
+	border-spacing: 30px 20px;
 }
 /*夫婦カード（単体）*/
 .card {
@@ -37,12 +38,14 @@ h1 {
 }
 
 .pin {
-	width: 300px;
+	width: 60px;
+	height: 60px;
 	position: absolute;
-	right: 0px;
-	bottom: 20px;
+	left: 230px;
+	bottom: 110px;
 }
 
+/*検索画面専用*/
 /*検索項目*/
 .customer_search {
 	margin: 0 auto 0 auto;
@@ -63,10 +66,12 @@ input,select,textarea {
 	border-radius: 6px;
 }
 
+/*氏名*/
 .text_name {
 	width: 50%;
 	font-size: 25px;
 }
+
 /*式の希望日*/
 .select {
 	width: 10%;
@@ -85,24 +90,72 @@ input,select,textarea {
 textarea {
 	width: 70%;
 	resize: none;
-
 }
 
 /*ボタン類*/
 .button {
 	text-align: center;
 }
-
 input[type="submit"] {
-    padding: 10px 20px;
-    margin-top: 30px;
-    border: none;
-    border-radius: 30px;
-    background-color:#b8860b;
-    color: white;
-    font-size: 25px;
-    cursor: pointer;
-    width: 10%;
-    text-align: center;
+	padding: 10px 20px;
+	margin-top: 30px;
+	border: none;
+	border-radius: 30px;
+	background-color:#b8860b;
+	color: white;
+	font-size: 25px;
+	cursor: pointer;
+	width: 10%;
+	text-align: center;
+}
 
-  }
+
+/*検索結果画面専用*/
+.customer_info {
+	width: 400px;
+	height: 200px;
+	border: 3px solid #b8860b;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 25px;
+	color: #00438d;
+}
+
+.thedate_info {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom:10px;
+	outline: none;
+	border: none;
+	width: 280px;
+	font-size: 25px;
+	color: #00438d;
+
+
+}
+
+.lname_info {
+	text-align: right;
+	border: none;
+	outline: none;
+	width: 100px;
+	margin: 20px 10px;
+	font-size: 25px;
+	color: #00438d;
+
+
+}
+.fname_info {
+	text-align: left;
+	border: none;
+	outline: none;
+	width: 100px;
+	margin: 20px 10px;
+	font-size: 25px;
+	color: #00438d;
+
+
+}
+
+
+
