@@ -12,9 +12,9 @@ import model.SimulationCommon;
 
 public class SimulationFlowersDAO {
 	// 引数idで検索項目を指定し、検索結果を返す
-	public List<SimulationCommon> select(SimulationCommon table) {
+	public List<SimulationCommon> select(SimulationCommon flower) {
 		Connection conn = null;
-		List<SimulationCommon> tableList = new ArrayList<SimulationCommon>();
+		List<SimulationCommon> flowerList = new ArrayList<SimulationCommon>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -24,11 +24,11 @@ public class SimulationFlowersDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM SIMULATION_TABLES WHERE ID = ? ORDER BY ID";
+			String sql = "SELECT * FROM SIMULATION_FLOWERS WHERE ID = ? ORDER BY ID";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
-			if ((Integer) table.getId() != null) {
-				pStmt.setString(1, Integer.toString(table.getId()));
+			if ((Integer) flower.getId() != null) {
+				pStmt.setString(1, Integer.toString(flower.getId()));
 			}
 
 			// SQL文を実行し、結果表を取得する
@@ -38,19 +38,17 @@ public class SimulationFlowersDAO {
 			while (rs.next()) {
 				SimulationCommon record = new SimulationCommon(
 						rs.getInt("id"),
-						rs.getTimestamp(null),
-						rs.getTimestamp(null),
 						rs.getString("name"),
 						rs.getInt("price"),
 						rs.getString("image"));
-				tableList.add(record);
+				flowerList.add(record);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			tableList = null;
+			flowerList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			tableList = null;
+			flowerList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -58,19 +56,19 @@ public class SimulationFlowersDAO {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					tableList = null;
+					flowerList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return tableList;
+		return flowerList;
 	}
 
 	// 全件検索をして、検索結果を返す
-	public List<SimulationCommon> allselect(SimulationCommon table) {
+	public List<SimulationCommon> allselect(SimulationCommon flower) {
 		Connection conn = null;
-		List<SimulationCommon> tableList = new ArrayList<SimulationCommon>();
+		List<SimulationCommon> flowerList = new ArrayList<SimulationCommon>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -80,7 +78,7 @@ public class SimulationFlowersDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM SIMULATION_TABLES ORDER BY ID";
+			String sql = "SELECT * FROM SIMULATION_FLOWERS ORDER BY ID";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を実行し、結果表を取得する
@@ -90,19 +88,17 @@ public class SimulationFlowersDAO {
 			while (rs.next()) {
 				SimulationCommon record = new SimulationCommon(
 						rs.getInt("id"),
-						rs.getTimestamp(null),
-						rs.getTimestamp(null),
 						rs.getString("name"),
 						rs.getInt("price"),
 						rs.getString("image"));
-				tableList.add(record);
+				flowerList.add(record);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			tableList = null;
+			flowerList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			tableList = null;
+			flowerList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -110,12 +106,12 @@ public class SimulationFlowersDAO {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					tableList = null;
+					flowerList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return tableList;
+		return flowerList;
 	}
 }

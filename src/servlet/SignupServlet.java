@@ -51,9 +51,9 @@ public class SignupServlet extends HttpServlet {
 
         // ユーザー登録を行う
         EmployeesDAO employeesDAO = new EmployeesDAO();
-        Employees id = new Employees(company_id, user, pw);
+        Employees employee= new Employees(Integer.parseInt(company_id), user, pw);
         // ユーザーを追加し、結果を取得する
-        boolean registrationResult = employeesDAO.insert(id);
+        boolean registrationResult = employeesDAO.insert(employee);
 
         // 登録結果をJSPに送信
         response.setContentType("text/html");

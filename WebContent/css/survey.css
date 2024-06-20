@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*共通*/
 html{
+	background-color:fffafa;
     height: 1024;
     width: 1440;
 }
@@ -98,16 +99,70 @@ footer{
 }
 
 /*式後アンケート*/
+
+main{
+/*    background-color:#fff0f5;*/
+	background-image:url("/B3/img/Owaku_2.png");
+    margin:0 80px 0 80px;
+	justify-content:centser;
+}
 .menu{
+	text-align:center;
 	color:#000080;
 }
+
+.time{
+	color:#b8860b;
+	text-align:right;
+}
 .survey{
-	display:flex;
-	align-items: center;
-	justify-content: center;
-	width:100px;
-	height:20px;
+	text-align:center;
+	margin:0 auto;
 	color:#FFFFFF;
 	background-color:#00438d;
-
+	width:150px;
+	height:30px;
 }
+.couple{
+	text-align:center;
+	margin:10px;
+}
+label{
+	text-align:left;
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-top:60px;
+	margin-left:20%
+}
+select{
+	border-color:#b8860b;
+	border-width:2px;
+	width:60%;
+	height:30px;
+}
+textarea{
+	position:center;
+	justify-content:center;
+	margin:0 auto;
+	height:150px;
+	width:60%;
+	padding:5px;
+	border-color:#b8860b;
+	border-width:2px;
+}
+ input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color:#b8860b;
+    color: white;
+    cursor: pointer;
+    width: 10%;
+    text-align: center;
+    position:fixed;
+    bottom:20px;
+    z-index:1000;
+    left:45%;
+ }

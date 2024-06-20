@@ -18,37 +18,50 @@
   </div>
   <nav>
     <ul>
-      <li><a href=home.html>ホーム</a></li>
-      <li><a href=regist.html>お客様情報登録</a></li>
-      <li><a href=search.html>お客様検索</a></li>
-      <li><a href=login.html>ログアウト</a></li>
+      <li><a href="mypage.jsp">マイページ</a></li>
+      <li><a href="update.jsp">お客様情報編集</a></li>
+      <li><a href="orderlist.jsp">発注リスト</a></li>
+      <li><a href="todaylist.jsp">当日リスト</a></li>
+      <li><a href="simulation,jsp">シミュレーション</a></li>
+      <li><a href="report.jsp">報告書作成</a></li>
+      <li><a href="survay.jsp">式後アンケート</a></li>
+      <li><a href="serch.jsp">お客様変更</a></li>
+      <li><a href="logout.jsp">ログアウト</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <div class="報告書トップ">
-    <a class="報告書">報告書</a>
-    <a class="記入日時"></a>
-    <a href"/B3/UpdateServlet"><img src="/B3/img/mypagename.png" alt="夫婦カード" width="100" height="100"></a>
+
+  <div class="disp-img"></div>
+
+  <div class="top">
+    <p class="report">報告書</p>
+	<p class="time">記入日時：<span id="time"></span></p>
   </div>
 
+    <div class="couple"><img src="/B3/img/mypagename.png" width="400" height="200"></div>
+
+  <div class="menu">
   <div>
-    <label for="guest">当日参加者数</label>
-    <input type="text" id="guest" name="guest" placeholder="" >
+    <label for="guest">参加者数</label>
+    <input name="guest" placeholder="" ></input>　  人
   </div>
   <div>
     <label for="change">当日の変更点</label>
-    <input type="text" id="change" name="change" placeholder="" >
+    <textarea name="change" placeholder="" ></textarea>
   </div>
   <div>
-    <label for="trouble">トラブルの対処と対策</label>
-    <input type="text" id="trouble" name="trouble" placeholder="" >
+    <label for="trouble">トラブルの内容</label>
+    <textarea name="trouble" placeholder="" ></textarea>
   </div>
   <p>
     <input type="submit" value="保存" class = "button">
   </p>
+  </div>
 </main>
+
+
 
  <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
@@ -58,6 +71,15 @@
   const header=document.getElementById("header");
   hmbBtn.addEventListener("click",function(){header.classList.toggle("active");
   });
+</script>
+<script>
+'use strict';
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth()+1;
+  const date = now.getDate();
+  const output = year+"/"+month + "/"+date;
+  document.getElementById('time').textContent = output;
 </script>
 
 </body>

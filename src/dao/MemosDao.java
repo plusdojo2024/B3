@@ -1,3 +1,4 @@
+/*
 package dao;
 
 import java.sql.Connection;
@@ -12,9 +13,9 @@ import model.Memos;
 
 public class MemosDao {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Memos> select(Memos card) {
+	public List<Memos> select(Memos memo) {
 		Connection conn = null;
-		List<Memos> cardList = new ArrayList<Memos>();
+		List<Memos> memoList = new ArrayList<Memos>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -27,18 +28,23 @@ public class MemosDao {
 			String sql = "SELECT * FROM Memos WHERE  created_at LIKE ? AND idupdated_at LIKE ? AND memo LIKE ? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
-			if (card.getCreated_at() != null) {
-				pStmt.setString(1, "%" + card.getCreated_at() + "%");
+			if (memo.getCreated_at() != null) {
+				pStmt.setString(1, "%" + memo.getCreated_at() + "%");
 			} else {
 				pStmt.setString(1, "%");
 			}
-			if (card.getIdupdated_at() != null) {
-				pStmt.setString(2, "%" + card.getIdupdated_at() + "%");
+			/*
+			if (memo.getIdupdated_at() != null) {
+				pStmt.setString(2, "%" + memo.getIdupdated_at() + "%");
+
+			if (card.getUpdated_at() != null) {
+				pStmt.setString(2, "%" + card.getUpdated_at() + "%");
+
 			} else {
 				pStmt.setString(2, "%");
 			}
-			if (card.getMemo() != null) {
-				pStmt.setString(3, "%" + card.getMemo() + "%");
+			if (memo.getMemo() != null) {
+				pStmt.setString(3, "%" + memo.getMemo() + "%");
 			} else {
 				pStmt.setString(3, "%");
 			}
@@ -54,14 +60,14 @@ public class MemosDao {
 						rs.getString("idupdated_at"),
 						rs.getString("memo"));
 
-				cardList.add(record);
+				memoList.add(record);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			cardList = null;
+			memoList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			cardList = null;
+			memoList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -69,17 +75,17 @@ public class MemosDao {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					cardList = null;
+					memoList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return cardList;
+		return memoList;
 	}
 
-	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Memos card) {
+	// 引数memoで指定されたレコードを登録し、成功したらtrueを返す
+	public boolean insert(Memos memo) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -95,18 +101,23 @@ public class MemosDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getCreated_at() != null && !card.getCreated_at().equals("")) {
-				pStmt.setString(1, card.getCreated_at());
+			if (memo.getCreated_at() != null && !memo.getCreated_at().equals("")) {
+				pStmt.setString(1, memo.getCreated_at());
 			} else {
 				pStmt.setString(1, "（未設定）");
 			}
-			if (card.getIdupdated_at() != null && !card.getIdupdated_at().equals("")) {
-				pStmt.setString(2, card.getIdupdated_at());
+<<<<<<< HEAD
+			if (memo.getIdupdated_at() != null && !memo.getIdupdated_at().equals("")) {
+				pStmt.setString(2, memo.getIdupdated_at());
+=======
+			if (card.getUpdated_at() != null && !card.getUpdated_at().equals("")) {
+				pStmt.setString(2, card.getUpdated_at());
+>>>>>>> 91a7b1d6f977e32397a3b9ebce533903f57464f4
 			} else {
 				pStmt.setString(2, "（未設定）");
 			}
-			if (card.getMemo() != null && !card.getMemo().equals("")) {
-				pStmt.setString(3, card.getMemo());
+			if (memo.getMemo() != null && !memo.getMemo().equals("")) {
+				pStmt.setString(3, memo.getMemo());
 			} else {
 				pStmt.setString(3, "（未設定）");
 			}
@@ -134,8 +145,8 @@ public class MemosDao {
 		return result;
 	}
 
-	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Memos card) {
+	// 引数memoで指定されたレコードを更新し、成功したらtrueを返す
+	public boolean update(Memos memo) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -151,23 +162,28 @@ public class MemosDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getCreated_at() != null && !card.getCreated_at().equals("")) {
-				pStmt.setString(1, card.getCreated_at());
+			if (memo.getCreated_at() != null && !memo.getCreated_at().equals("")) {
+				pStmt.setString(1, memo.getCreated_at());
 			} else {
 				pStmt.setString(1, null);
 			}
-			if (card.getIdupdated_at() != null && !card.getIdupdated_at().equals("")) {
-				pStmt.setString(2, card.getIdupdated_at());
+<<<<<<< HEAD
+			if (memo.getIdupdated_at() != null && !memo.getIdupdated_at().equals("")) {
+				pStmt.setString(2, memo.getIdupdated_at());
+=======
+			if (card.getUpdated_at() != null && !card.getUpdated_at().equals("")) {
+				pStmt.setString(2, card.getUpdated_at());
+>>>>>>> 91a7b1d6f977e32397a3b9ebce533903f57464f4
 			} else {
 				pStmt.setString(2, null);
 			}
-			if (card.getMemo() != null && !card.getMemo().equals("")) {
-				pStmt.setString(3, card.getMemo());
+			if (memo.getMemo() != null && !memo.getMemo().equals("")) {
+				pStmt.setString(3, memo.getMemo());
 			} else {
 				pStmt.setString(3, null);
 			}
 
-			pStmt.setInt(4, card.getId());
+			pStmt.setInt(4, memo.getId());
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -193,3 +209,4 @@ public class MemosDao {
 
 	}
 }
+*/
