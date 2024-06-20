@@ -12,9 +12,9 @@ import model.SimulationCommon;
 
 public class SimulationTablecoversDAO {
 	// 引数idで検索項目を指定し、検索結果を返す
-	public List<SimulationCommon> select(SimulationCommon table) {
+	public List<SimulationCommon> select(SimulationCommon tablecover) {
 		Connection conn = null;
-		List<SimulationCommon> tableList = new ArrayList<SimulationCommon>();
+		List<SimulationCommon> tablecoverList = new ArrayList<SimulationCommon>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -27,8 +27,8 @@ public class SimulationTablecoversDAO {
 			String sql = "SELECT * FROM SIMULATION_TABLES WHERE ID = ? ORDER BY ID";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
-			if ((Integer) table.getId() != null) {
-				pStmt.setString(1, Integer.toString(table.getId()));
+			if ((Integer) tablecover.getId() != null) {
+				pStmt.setString(1, Integer.toString(tablecover.getId()));
 			}
 
 			// SQL文を実行し、結果表を取得する
@@ -38,19 +38,17 @@ public class SimulationTablecoversDAO {
 			while (rs.next()) {
 				SimulationCommon record = new SimulationCommon(
 						rs.getInt("id"),
-						rs.getTimestamp(null),
-						rs.getTimestamp(null),
 						rs.getString("name"),
 						rs.getInt("price"),
 						rs.getString("image"));
-				tableList.add(record);
+				tablecoverList.add(record);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			tableList = null;
+			tablecoverList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			tableList = null;
+			tablecoverList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -58,19 +56,19 @@ public class SimulationTablecoversDAO {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					tableList = null;
+					tablecoverList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return tableList;
+		return tablecoverList;
 	}
 
 	// 全件検索をして、検索結果を返す
-	public List<SimulationCommon> allselect(SimulationCommon table) {
+	public List<SimulationCommon> allselect(SimulationCommon tablecover) {
 		Connection conn = null;
-		List<SimulationCommon> tableList = new ArrayList<SimulationCommon>();
+		List<SimulationCommon> tablecoverList = new ArrayList<SimulationCommon>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -90,19 +88,17 @@ public class SimulationTablecoversDAO {
 			while (rs.next()) {
 				SimulationCommon record = new SimulationCommon(
 						rs.getInt("id"),
-						rs.getTimestamp(null),
-						rs.getTimestamp(null),
 						rs.getString("name"),
 						rs.getInt("price"),
 						rs.getString("image"));
-				tableList.add(record);
+				tablecoverList.add(record);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			tableList = null;
+			tablecoverList = null;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			tableList = null;
+			tablecoverList = null;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -110,12 +106,12 @@ public class SimulationTablecoversDAO {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					tableList = null;
+					tablecoverList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return tableList;
+		return tablecoverList;
 	}
 }
