@@ -32,8 +32,8 @@ public class MemosDao {
 			} else {
 				pStmt.setString(1, "%");
 			}
-			if (card.getIdupdated_at() != null) {
-				pStmt.setString(2, "%" + card.getIdupdated_at() + "%");
+			if (card.getUpdated_at() != null) {
+				pStmt.setString(2, "%" + card.getUpdated_at() + "%");
 			} else {
 				pStmt.setString(2, "%");
 			}
@@ -100,8 +100,8 @@ public class MemosDao {
 			} else {
 				pStmt.setString(1, "（未設定）");
 			}
-			if (card.getIdupdated_at() != null && !card.getIdupdated_at().equals("")) {
-				pStmt.setString(2, card.getIdupdated_at());
+			if (card.getUpdated_at() != null && !card.getUpdated_at().equals("")) {
+				pStmt.setString(2, card.getUpdated_at());
 			} else {
 				pStmt.setString(2, "（未設定）");
 			}
@@ -156,8 +156,8 @@ public class MemosDao {
 			} else {
 				pStmt.setString(1, null);
 			}
-			if (card.getIdupdated_at() != null && !card.getIdupdated_at().equals("")) {
-				pStmt.setString(2, card.getIdupdated_at());
+			if (card.getUpdated_at() != null && !card.getUpdated_at().equals("")) {
+				pStmt.setString(2, card.getUpdated_at());
 			} else {
 				pStmt.setString(2, null);
 			}
