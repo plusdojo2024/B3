@@ -94,7 +94,7 @@
             <img class="button3" src="img/cloth_red.png" alt="トップクロス8">
             <img class="button3" src="img/cloth_white.png" alt="トップクロス9">
             <img class="button3" src="img/cloth_whiteblue.png" alt="トップクロス10">
-            <img class="button3" src="img/cloth_yellow" alt="トップクロス11">
+            <img class="button3" src="img/cloth_yellow.png" alt="トップクロス11">
 
             <img class="button4" src="img/napkin_blue.png" alt="ナフキン1">
             <img class="button4" src="img/napkin_green.png" alt="ナフキン2">
@@ -102,7 +102,7 @@
             <img class="button4" src="img/napkin_red.png" alt="ナフキン4">
             <img class="button4" src="img/napkin_white.png" alt="ナフキン5">
             <img class="button4" src="img/napkin_whiteblue.png" alt="ナフキン6">
-            <img class="button4" src="img/napkin_yellow" alt="ナフキン7">
+            <img class="button4" src="img/napkin_yellow.png" alt="ナフキン7">
 
             <img class="button5" src="img/chair_beige.png" alt="チェア1">
             <img class="button5" src="img/chair_brown.png" alt="チェア2">
@@ -122,15 +122,7 @@
         </div>
 
 
-        <input type="submit" name="save" value="保存"style="padding: 10px 20px,
-    margin-top: 20px,
-    border: none,
-    border-radius: 30px,
-    background-color: #b8860b,
-    color: white,
-    cursor: pointer,
-    width: 20%,
-    text-align: center">
+        <input type="submit" name="save" value="保存">
     </div>
 </div>
 <div id="modal2" class="modal">
