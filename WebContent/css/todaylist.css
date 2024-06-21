@@ -14,22 +14,39 @@ body {
 	color: white;
 	background-color: #00438d;
 }
+/*画面分割*/
+#wrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+#area_ticket {
+		background-color: #00ff00;
+	width: 55%;
+	float: left;
 
 
+
+}
+#area_memo {
+		background-color: #008000;
+
+	width: 45%;
+	float: right;
+}
 
 /*チケット*/
 .t_list {
-	background-color: #00ffff;
+		background-color: #0080ff;
 
-	width: 50%;
 	height: 170px;
-	margin: 10px;
+	margin: 10px 0px;
 	display: flex;
 	justify-content: center;	/*displayとセットで中の要素を横中央に*/
 	align-items: center;	/*displayとセットで中の要素を縦中央に*/
 }
 .t_all {
-	background-color: #80ffff;
+		background-color: #80ffff;
 
 	width: 90%;
 	height:80%;
@@ -45,4 +62,14 @@ body {
 .t_sub {
 	height: 100%;
 	text-align: center;
+}
+
+/*メモ*/
+.m_today {
+		background-color: #80ffff;
+
+	width: 70%;
+	padding: 0 auto 0 auto;
+	resize: none;
+	min-height: 300px;
 }

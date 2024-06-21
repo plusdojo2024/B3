@@ -32,21 +32,21 @@
 </header>
 <main class="main">
 	<div class="page_title">当日リスト</div>
-	<div class="wrapper">
-		<div class="area ticket">
-			<div id="now_time" class="now_time">現在時刻</div>
+<div id="wrapper">
+	<div id="area_ticket">
+		<div id="now_time" class="now_time">現在時刻</div>
 
-			<div class="t_list">
-				<div class="t_all">
-					<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
-					<img src="img/ticket-sub.png" alt="ticket_sub" class="t_sub">
-				</div>
+		<div class="t_list">
+			<div class="t_all">
+				<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
+				<img src="img/ticket-sub.png" alt="ticket_sub" class="t_sub">
 			</div>
 		</div>
-		<div class="area memo">
-
-		</div>
 	</div>
+	<div id="area_memo">
+		<textarea name="memo" class="m_today"></textarea>
+	</div>
+</div>
 </main>
 <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
