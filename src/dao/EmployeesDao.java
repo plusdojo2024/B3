@@ -22,7 +22,7 @@ public class EmployeesDAO {
             conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
             // SELECT文を準備する
-            String sql = "SELECT COUNT(*) FROM Employees WHERE user = ? AND pw = ?";
+            String sql = "SELECT COUNT(*) AS count From  Employees WHERE user = ? AND pw = ?";
             PreparedStatement pStmt = conn.prepareStatement(sql);
             pStmt.setString(1, Employees.getUser());
             pStmt.setString(2, Employees.getPw());
@@ -32,7 +32,7 @@ public class EmployeesDAO {
 
             // ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
             rs.next();
-            if (rs.getInt("COUNT(*)") == 1) {
+            if (rs.next()&&rs.getInt("COUNT(*)") == 1) {
                 loginResult = true;
             }
         } catch (SQLException e) {
@@ -57,20 +57,20 @@ public class EmployeesDAO {
         return loginResult;
     }
 
-    public boolean insert(Employees user) {
+    public boolean insert(Employees employee) {
         Connection conn = null;
         boolean result = false;
 
         try {
             // データベースに接続する処理
-
+        	Class.forName("org.h2.Driver");
             // SQL文を準備する
-            String sql = "INSERT INTO employees (id,creat_at,updated_at,company_id, user, pw) VALUES (?, ?, ?,?,?,?)";
+            String sql = "INSERT INTO employees (creat_at,updated_at,company_id, user, pw) VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,?,?,?)";
             conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, user.getCompany_id());
-            pstmt.setString(2, user.getUser());
-            pstmt.setString(3, user.getPw());
+            pstmt.setInt(1, employee.getCompany_id());
+            pstmt.setString(2, employee.getUser());
+            pstmt.setString(3, employee.getPw());
 
             // SQL文を実行し、結果を取得する
             int count = pstmt.executeUpdate();
@@ -80,6 +80,8 @@ public class EmployeesDAO {
                 result = true; // 成功
             }
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             // データベース接続をクローズする処理

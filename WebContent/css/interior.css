@@ -1,0 +1,127 @@
+/* css/interior.css */
+
+/* css/interior.css */
+
+/* モーダルウィンドウのスタイル */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* 内装シミュレーションの選択ボタン */
+.selection-button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.selection-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 内装シミュレーションの画像表示エリア */
+.display-area {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.display-area img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+
+/* ギャラリー表示用 */
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.image-gallery img {
+  width: 30%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
+}
+
+
+/* 内装シミュレーションの選択ボタン */
+.selection-button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.selection-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 内装シミュレーションの画像表示エリア */
+.display-area {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.display-area img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+
+/* ギャラリー表示用 */
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.image-gallery img {
+  width: 30%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
+}
