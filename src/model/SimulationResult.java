@@ -1,12 +1,11 @@
 package model;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 public class SimulationResult implements Serializable {
     private int id;					// シミュレーション総合結果ID
-    private Timestamp created_at;	// データ作成日時
-    private Timestamp updated_at;	// データ更新日時
+    private String created_at;	// データ作成日時
+    private String updated_at;	// データ更新日時
     private int customer_id;		// お客様ID
     private int table_id;			// シミュレーション素材（テーブルクロス）のID
     private int tablecover_id;		// シミュレーション素材（トップクロス）のID
@@ -24,7 +23,26 @@ public class SimulationResult implements Serializable {
 
     }
 
-	public SimulationResult(int id, Timestamp created_at, Timestamp updated_at, int customer_id, int table_id,
+	public SimulationResult(int id, int customer_id, int table_id, int tablecover_id, int chair_id, int napkin_id,
+			int flower_id, int clothes_id, int cake_id, int caketop_id, int invitation_id, int nameplate_id,
+			int tablemember_id) {
+		super();
+		this.id = id;
+		this.customer_id = customer_id;
+		this.table_id = table_id;
+		this.tablecover_id = tablecover_id;
+		this.chair_id = chair_id;
+		this.napkin_id = napkin_id;
+		this.flower_id = flower_id;
+		this.clothes_id = clothes_id;
+		this.cake_id = cake_id;
+		this.caketop_id = caketop_id;
+		this.invitation_id = invitation_id;
+		this.nameplate_id = nameplate_id;
+		this.tablemember_id = tablemember_id;
+	}
+
+	public SimulationResult(int id, String created_at, String updated_at, int customer_id, int table_id,
 			int tablecover_id, int chair_id, int napkin_id, int flower_id, int clothes_id, int cake_id, int caketop_id,
 			int invitation_id, int nameplate_id, int tablemember_id) {
 		super();
@@ -53,19 +71,19 @@ public class SimulationResult implements Serializable {
 		this.id = id;
 	}
 
-	public Timestamp getCreated_at() {
+	public String getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(Timestamp created_at) {
+	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
 	}
 
-	public Timestamp getUpdated_at() {
+	public String getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(Timestamp updated_at) {
+	public void setUpdated_at(String updated_at) {
 		this.updated_at = updated_at;
 	}
 
