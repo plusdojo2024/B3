@@ -8,27 +8,26 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Report;
-
-public class ReportDao{
+import model.Survey;
+public class SurveyDAO {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Report> select(Report report) {
+	public List<Survey> select(Survey survey) {
 		Connection conn = null;
-		List<Report> reportList = new ArrayList<Report>();
+		List<Survey> surveyList = new ArrayList<Survey>();
 
 		try {
-			// JDReportドライバを読み込む
+			// JDSurveyドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdReport:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
+			conn = DriverManager.getConnection("jdSurvey:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM Report WHERE customer_id=?";
+			String sql = "SELECT * FROM Survey WHERE customer_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
-			if (report.getCustomer_id() != null) {
-				pStmt.setString(1, "%" + report.getCustomer_id() + "%");
+			if (survey.getCustomer_id() != null) {
+				pStmt.setString(1, "%" + survey.getCustomer_id() + "%");
 			}
 			else {
 				pStmt.setString(1, "%");
@@ -39,25 +38,25 @@ public class ReportDao{
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				Report record = new Report(
+				Survey record = new Survey(
 				rs.getInt("id"),
 				rs.getString("created_at"),
 				rs.getString("updated_at"),
 				rs.getString("customer_id"),
-				rs.getInt("headcount"),
-				rs.getString("change"),
+				rs.getString("evaluation"),
+				rs.getString("good_point"),
 				rs.getString("improvement")
 				);
-				reportList.add(record);
+				surveyList.add(record);
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			reportList = null;
+			surveyList = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			reportList = null;
+			surveyList = null;
 		}
 		finally {
 			// データベースを切断
@@ -67,56 +66,59 @@ public class ReportDao{
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					reportList = null;
+					surveyList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return reportList;
+		return surveyList;
 	}
 
-	// 引数reportで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Report report) {
+	// 引数Surveyで指定されたレコードを登録し、成功したらtrueを返す
+	public boolean insert(Survey Survey) {
 		Connection conn = null;
 		boolean result = false;
 
 		try {
-			// JDReportドライバを読み込む
+			// JDSurveyドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdReport:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
+			conn = DriverManager.getConnection("jdSurvey:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
-			String sql = "INSERT INTO Report VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?, ?)";
+			String sql = "INSERT INTO Survey VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (report.getCustomer_id() != null && !report.getCustomer_id().equals("")) {
-				pStmt.setString(1, report.getCustomer_id());
+			if (Survey.getCustomer_id() != null && !Survey.getCustomer_id().equals("")) {
+				pStmt.setString(1, Survey.getCustomer_id());
 			}
 			else {
 				pStmt.setString(1, "（未設定）");
 			}
-			if (report.getHeadcount() != 0 ) {
-				pStmt.setInt(2, report.getHeadcount());
+			if (Survey.getEvaluation() != null && !Survey.getEvaluation().equals("")) {
+				pStmt.setString(2, Survey.getEvaluation());
 			}
 			else {
 				pStmt.setString(2, "0");
 			}
-			if (report.getChange() != null && !report.getChange().equals("")) {
-				pStmt.setString(3, report.getChange());
+
+/*
+			if (Survey.getGood_point() != null && !Survey.getGood_point().equals("")) {
+				pStmt.setString(3, Survey.getGood_point());
 			}
 			else {
 				pStmt.setString(3, "（未設定）");
 			}
-			if (report.getImprovement() != null && !report.getImprovement().equals("")) {
-				pStmt.setString(4, report.getImprovement());
+			if (Survey.getImprovement() != null && !Survey.getImprovement().equals("")) {
+				pStmt.setString(4, Survey.getImprovement());
 			}
 			else {
 				pStmt.setString(4, "（未設定）");
 			}
+*/
 
 
 			// SQL文を実行する
@@ -146,43 +148,46 @@ public class ReportDao{
 		return result;
 	}
 
-	// 引数reportで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Report report) {
+	// 引数Surveyで指定されたレコードを更新し、成功したらtrueを返す
+	public boolean update(Survey Survey) {
 		Connection conn = null;
 		boolean result = false;
 
 		try {
-			// JDReportドライバを読み込む
+			// JDSurveyドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdReport:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
+			conn = DriverManager.getConnection("jdSurvey:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "UPDATE Report SET updated_at=CURRENT_TIMESTAMP, headcount=?, change=?, improvement=? WHERE customer_id=?";
+			String sql = "UPDATE Survey SET updated_at=CURRENT_TIMESTAMP, evaluation=?, good_point=?, improvement=? WHERE customer_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (report.getHeadcount() != 0) {
-				pStmt.setInt(1, report.getHeadcount());
+			if (Survey.getEvaluation() != null && !Survey.getEvaluation().equals("")) {
+				pStmt.setString(1, Survey.getEvaluation());
 			}
 			else {
 				pStmt.setInt(1, 0);
 			}
-			if (report.getChange() != null && !report.getChange().equals("")) {
-				pStmt.setString(2, report.getChange());
+/*
+			if (Survey.getGood_point() != null && !Survey.getGood_point().equals("")) {
+				pStmt.setString(2, Survey.getGood_point());
 			}
 			else {
 				pStmt.setString(2, null);
 			}
-			if (report.getImprovement() != null && !report.getImprovement().equals("")) {
-				pStmt.setString(3, report.getImprovement());
+			if (Survey.getImprovement() != null && !Survey.getImprovement().equals("")) {
+				pStmt.setString(3, Survey.getImprovement());
 			}
+
 			else {
 				pStmt.setString(3, null);
 			}
-			if (report.getCustomer_id() != null && !report.getCustomer_id().equals("")) {
-				pStmt.setString(4, report.getCustomer_id());
+*/
+			if (Survey.getCustomer_id() != null && !Survey.getCustomer_id().equals("")) {
+				pStmt.setString(4, Survey.getCustomer_id());
 			}
 			else {
 				pStmt.setString(4, null);
@@ -215,4 +220,3 @@ public class ReportDao{
 		return result;
 	}
 }
-
