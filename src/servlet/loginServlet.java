@@ -49,8 +49,8 @@ public class LoginServlet extends HttpServlet {
 				String pw = request.getParameter("pw");
 
 				// ログイン処理を行う
-				EmployeesDAO iDAO = new EmployeesDAO();
-				if (iDAO.isLoginOK(new Employees(user, pw))) {	// ログイン成功
+				EmployeesDAO iDao = new EmployeesDAO();
+				if (iDao.isLoginOK(new Employees(0,0,user, pw,null,null))) {	// ログイン成功
 					// セッションスコープにIDを格納する
 					HttpSession session = request.getSession();
 					session.setAttribute("user", new LoginUser(user));
@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
 					new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/B3/LoginServlet"));
 
 					// 結果ページにフォワードする
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 					dispatcher.forward(request, response);
 				}
 
