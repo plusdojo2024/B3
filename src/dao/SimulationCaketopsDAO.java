@@ -67,6 +67,7 @@ public class SimulationCaketopsDAO {
 		public boolean insert(SimulationCaketops caketop) {
 			Connection conn = null;
 			boolean result = false;
+			int id = 0;
 
 			try {
 				// JDBCドライバを読み込む
@@ -80,8 +81,8 @@ public class SimulationCaketopsDAO {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (caketop.getMemo_id() != null && !caketop.getMemo_id().equals("")) {
-					pStmt.setString(1, caketop.getMemo_id());
+				if (caketop.getMemo() != null && !caketop.getMemo().equals("")) {
+					pStmt.setString(1, caketop.getMemo());
 				}
 				else {
 					pStmt.setString(1, "（未設定）");
@@ -90,6 +91,8 @@ public class SimulationCaketopsDAO {
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
 					result = true;
+					ResultSet rs = pStmt.getGeneratedKeys();
+					id = rs.getInt(1);
 				}
 
 				// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
@@ -97,8 +100,8 @@ public class SimulationCaketopsDAO {
 				pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (caketop.getMemo_id() != null && !caketop.getMemo_id().equals("")) {
-					pStmt.setString(1, caketop.getMemo_id());
+				if (id != 0) {
+					pStmt.setInt(1, id);
 				}
 				else {
 					pStmt.setString(1, "（未設定）");
