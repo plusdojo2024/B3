@@ -24,11 +24,11 @@ public class SimulationCaketopsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "SELECT CT.id, M.memo FROM SIMULATION_CAKETOPS AS CT Left OUTER JOIN MEMOS AS M ON M.id = CT.memo_id WHERE M.id = ?";
+			String sql = "SELECT CT.id, M.memo FROM SIMULATION_CAKETOPS AS CT Left OUTER JOIN MEMOS AS M ON M.id = CT.memo_id WHERE CT.id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
-			if ((Integer) caketop.getId() != null) {
-				pStmt.setString(1, Integer.toString(caketop.getId()));
+			if (caketop.getId() != 0) {
+				pStmt.setInt(1, caketop.getId());
 			}
 
 			// SQL文を実行し、結果表を取得する
@@ -74,7 +74,7 @@ public class SimulationCaketopsDAO {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 				// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
 				String sql = "INSERT INTO MEMOS VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?)";
@@ -105,6 +105,63 @@ public class SimulationCaketopsDAO {
 				}
 				else {
 					pStmt.setString(1, "（未設定）");
+				}
+
+				// SQL文を実行する
+				if (pStmt.executeUpdate() == 1) {
+					result = true;
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+			return result;
+		}
+
+		// お客様IDで指定されたレコードを更新し、成功したらtrueを返す
+		public boolean update(SimulationCaketops caketop) {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
+
+				// SQL文を準備する
+				String sql = "UPDATE SIMULATION_CAKETOPS AS CT Left OUTER JOIN MEMOS AS M ON M.id = CT.memo_id SET CT.upadated_at = CURRENT_TIMESTAMP, M.memo = ? WHERE CT.id = ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を完成させる
+				if (caketop.getMemo() != null && !caketop.getMemo().equals("")) {
+					pStmt.setString(1, caketop.getMemo());
+				}
+				else {
+					pStmt.setString(1, null);
+				}
+				if (caketop.getId() != 0) {
+					pStmt.setInt(2, caketop.getId());
+				}
+				else {
+					pStmt.setInt(2, 0);
 				}
 
 				// SQL文を実行する
