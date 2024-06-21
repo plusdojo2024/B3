@@ -14,7 +14,7 @@
 <body>
 
 <header id ="header">
-  <a href="home.jsp"><img src="img/logo.png" alt="logo" height="80" width="80"></a>
+  <a href="HomeServlet"><img src="img/logo.png" alt="logo" height="100" width="150"></a>
   <div id="hmb">
     <span></span>
     <span></span>
@@ -22,10 +22,10 @@
   </div>
   <nav>
     <ul>
-      <li><a href=home.jsp>ホーム</a></li>
-      <li><a href=regist.jsp>お客様情報登録</a></li>
-      <li><a href=serch.jsp>お客様検索</a></li>
-      <li><a href=logout.jsp>ログアウト</a></li>
+      <li><a href=HomeServlet>ホーム</a></li>
+      <li><a href=RegistServlet>お客様情報登録</a></li>
+      <li><a href=SerchServlet>お客様検索</a></li>
+      <li><a href=LoroutServlet>ログアウト</a></li>
     </ul>
   </nav>
 </header>
