@@ -164,6 +164,7 @@ input[type="checkbox"]:checked:before {
 	top: -45px;
 	left: 20px;
 }
+
 form{
  position: absolute;
 	top: 170px;
