@@ -102,9 +102,12 @@ footer{
 
 main{
 /*    background-color:#fff0f5;*/
-	background-image:url("/B3/img/Owaku_2.png");
+	background-image:url("/B3/img/A.png");
     margin:0 80px 0 80px;
 	justify-content:centser;
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position:center bottom rigth left;
 }
 .menu{
 	text-align:center;
@@ -158,11 +161,8 @@ textarea{
     border-radius: 30px;
     background-color:#b8860b;
     color: white;
-    cursor: pointer;
     width: 10%;
     text-align: center;
-    position:fixed;
     bottom:20px;
-    z-index:1000;
     left:45%;
  }
