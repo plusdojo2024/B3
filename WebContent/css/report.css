@@ -162,18 +162,15 @@ textarea{
 	border-color:#b8860b;
 	border-width:2px;
 }
-input[type="submit"]{
-	text-align: center;
-	color:#fff;
-	letter-spacing:15px;
-	background-color:#b8860b;
-	width: 150px;
-	height: 50px;
-	font-size: 15px;
-	border: none;
-	border-radius: 100px;
-	cursor: pointer;
-	display: block;
-	margin-bottom: 5px;
-	padding: 0 0 0 15px;
-}
+ input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color:#b8860b;
+    color: white;
+    width: 10%;
+    text-align: center;
+    bottom:20px;
+    left:45%;
+ }
