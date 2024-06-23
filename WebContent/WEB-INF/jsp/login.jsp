@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>Login</title>
 <!-- スタイルシートの読み込みのサンプルです -->
 <link rel="stylesheet" href="/B3/css/login.css">
@@ -14,8 +15,8 @@
       <div class="bluebox">
         <div class="signup nodisplay">
           <h2 class="title">SIGNUP</h2>
-           <form class="more-padding" autocomplete="off" method="post" action="/simpleBC/SignupServlet">
-            <input type="text" name="company_id" placeholder="企業ID">
+         <form id="signupForm" class="more-padding" autocomplete="off" method="post" action="/B3/SignupServlet">
+            <input type="text" name="companyId" placeholder="企業ID">
             <input type="text" name="user"placeholder="ユーザーID">
             <input type="password" name="pw" placeholder="パスワード">
             <input type="password" name="confirmPw"placeholder="パスワードの確認">
@@ -26,12 +27,12 @@
 
         <div class="signin">
           <h2 class="title">LOGIN</h2>
-         <form class="more-padding" autocomplete="off" method="post" action="/simpleBC/LoginServlet">
+         <form class="more-padding" autocomplete="off" method="post" action="/B3/LoginServlet">
            <input type="text" name="id" placeholder="ユーザー名"><br>
             <input type="password" name="pw" placeholder="パスワード"><br>
             <div class="checkbox">
-              <input type="checkbox" id="remember" /><label for="remember">パスワード表示する </label><br>
-              <input type="checkbox" id="remember" /><label for="remember">ログイン状態保存する</label>
+              <input type="checkbox" id="showPassword" /><label for="showPassword">パスワード表示する </label><br>
+              <input type="checkbox" id="saveLoginState" /><label for="showPassword">ログイン状態保存する</label>
             </div>
               <div class="error-message" >※IDとパスワードを入力してください</div>
               <input type="submit" name="login" value="ログイン">
@@ -72,21 +73,35 @@
         $('.signin').removeClass('nodisplay');
       });
 
-      // ログインフォームが送信された時の処理
-      $('.signin form').submit(function(event) {
-        // ユーザー名とパスワードの値を取得
-        var username = $(this).find('input[type="text"]').val();
-        var password = $(this).find('input[type="password"]').val();
-        // ユーザー名またはパスワードが空の場合はエラーメッセージを表示
-        if (!username || !password) {
-          $('.error-message').show();
-          event.preventDefault(); // フォームの送信をキャンセル
-        } else {
-          $('.error-message').hide(); // エラーメッセージを非表示
-        }
+
+      // サインアップフォームが送信された時の処理
+      $('#signupForm').submit(function(event) {
+          // パスワードとパスワードの確認が一致しているかを確認
+          var pw = $('#signupForm input[name="pw"]').val();
+          var confirmPw = $('#signupForm input[name="confirmPw"]').val();
+          if (pw !== confirmPw) {
+              alert('パスワードが一致しません');
+              event.preventDefault(); // フォームの送信をキャンセル
+          }
       });
-    });
+
+      // ログインフォームが送信された時の処理
+      $('#loginForm').submit(function(event) {
+          // ユーザー名とパスワードの値を取得
+          var username = $('#loginForm input[name="id"]').val();
+          var password = $('#loginForm input[name="pw"]').val();
+          // ユーザー名またはパスワードが空の場合はエラーメッセージを表示
+          if (!username || !password) {
+              $('.error-message').show();
+              event.preventDefault(); // フォームの送信をキャンセル
+          } else {
+              $('.error-message').hide(); // エラーメッセージを非表示
+          }
+      });
+  });
+
   </script>
+
 
 </body>
 </html>

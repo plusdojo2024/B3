@@ -46,6 +46,8 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     overflow: auto;
+    padding:100px;
+
 }
 
 .modal-content {
@@ -58,7 +60,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    overflow-y:auto
+    overflow-y:auto;
+    right:8%;
 }
 
 .modal-content img {
@@ -81,6 +84,36 @@ body {
 
 .close:hover {
     color: black;
+}
+/*内装シミュレーション*/
+.button-container {
+     width: 100%;
+}
+
+.button-container button {
+    width: 150px;
+    color: white;
+    background-color: #e4c2b9;
+    border: 3px solid #b8860b;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+
+}
+.image-container {
+    display: flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+
+}
+
+.image-container img {
+    width: 300px;
+    height: 125px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 .clothes ,.cakes,.cards{
     display: grid;
@@ -106,12 +139,27 @@ body {
 }
 
 /* 席配置のcssここから*/
-#photoDisplay img {
-   max-width: 50px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.phototable-container {
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.phototable-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    width: 100%;
+
+}
+
+.phototable {
+    max-width: 100px;
+    height: auto;
+    margin: 5px;
+    padding: 10px;
+}
+
+
 
  input[type="submit"] {
     padding: 10px 20px;

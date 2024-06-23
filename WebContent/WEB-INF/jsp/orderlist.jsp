@@ -73,11 +73,12 @@
 						<p>衣装</p>
 					</div>
 					<!-- 項目 -->
-
+					<input type="checkbox" id="check" value="clothing"  checked><label
+						for="check"></label>
 					<form>
-					<label>
-					<input type="checkbox" id="check">
-					</label>
+
+
+
 						<div class="box4">
 							<img src="" alt="シミュレーションの画像を取得">
 						</div>
@@ -99,7 +100,7 @@
 						</div>
 						<div class="container">
 							<div class="left box5">
-								<label> 期限（手入力） <input type="date" name="name">
+								<label> 期限（手入力） <input type="date" name="ded">
 								</label>
 							</div>
 						</div>
@@ -118,10 +119,13 @@
 		<p class="copyright">Copyright KyoronP. All rights reserved.</p>
 	</footer>
 	<script>
+
 	 const hmbBtn=document.getElementById("hmb");
 	  const header=document.getElementById("header");
 	  hmbBtn.addEventListener("click",function(){header.classList.toggle("active");
 	  });
+
+
 
 	document.addEventListener("DOMContentLoaded", function() {
 	    const photos = document.querySelectorAll(".photo");
@@ -141,6 +145,8 @@
 	        });
 	    });
 	});
+
+
 	</script>
 </body>
 </html>

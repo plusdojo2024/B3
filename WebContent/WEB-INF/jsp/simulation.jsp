@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+
 <title>KyoronP</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/simulation.css">
@@ -34,7 +36,7 @@
     <div class="container">
         <div class="row">
             <div class="column">
-                <img src="img/Sinterior.png" alt="内装" class="photo" data-modal-target="modal1">
+                <img src="img/Sinterior.png" alt="内装"class="photo" data-modal-target="modal1"style="width: 500px; height: 300px;">
             </div>
             <div class="column">
                 <img src="img/Scostume.png" alt="衣装" class="photo" data-modal-target="modal2">
@@ -61,28 +63,68 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <p>内装シミュレーション</p>
-         <div class="selection-area">
-            <button class="selection-button" data-image="img/back_church.jpeg,img/back_shrine.jpeg,img/back_venue.jpeg">会場イメージ</button>
-            <button class="selection-button" data-image="table_image1.jpg">テーブル</button>
-            <button class="selection-button" data-image="tablecloth_image1.jpg">テーブルクロス</button>
-            <button class="selection-button" data-image="topcloth_image1.jpg">トップクロス</button>
-            <button class="selection-button" data-image="napkin_image1.jpg">ナフキン</button>
-            <button class="selection-button" data-image="chair_image1.jpg">チェア</button>
-            <button class="selection-button" data-image="flower_image1.jpg">フラワー</button>
+        <div class="button-container">
+        <button onclick="showImages('button1')">会場イメージ</button>
+        <button onclick="showImages('button2')">テーブルクロス</button>
+        <button onclick="showImages('button3')">トップクロス</button>
+        <button onclick="showImages('button4')">ナフキン</button>
+        <button onclick="showImages('button5')">チェア</button>
+        <button onclick="showImages('button6')">フラワー</button>
         </div>
-        <div class="image-gallery">
-            <img src="img/back_church.jpeg" alt="会場イメージ1">
-            <img src="img/back_shrine.jpeg" alt="会場イメージ2">
-            <img src="img/back_venue.jpeg" alt="会場イメージ3">
-           </div>
-        <div class="display-area">
-            <img id="selectedImage" src="#" alt="選択した画像">
-        </div>
-        <input type="submit" name="save" value="保存">
+        <div class="image-container">
+            <img class="button1" src="img/back_church.jpeg" alt="会場イメージ1">
+            <img class="button1" src="img/back_shrine.png" alt="会場イメージ2">
+            <img class="button1" src="img/back_venue.png" alt="会場イメージ3">
 
+            <img class="button2" src="img/table_blue.png" alt="テーブルクロス1">
+            <img class="button2" src="img/table_green.png" alt="テーブルクロス2">
+            <img class="button2" src="img/table_pink.png" alt="テーブルクロス3">
+            <img class="button2" src="img/table_purple.png" alt="テーブルクロス4">
+            <img class="button2" src="img/table_red.png" alt="テーブルクロス5">
+            <img class="button2" src="img/table_white.png" alt="テーブルクロス6">
+            <img class="button2" src="img/table_yellow.png" alt="テーブルクロス7">
+
+            <img class="button3" src="img/cloth_black.png" alt="トップクロス1">
+            <img class="button3" src="img/cloth_blue.png" alt="トップクロス2">
+            <img class="button3" src="img/cloth_gray.png" alt="トップクロス3">
+            <img class="button3" src="img/cloth_brown.png" alt="トップクロス4">
+            <img class="button3" src="img/cloth_green.png" alt="トップクロス5">
+            <img class="button3" src="img/cloth_pink.png" alt="トップクロス6">
+            <img class="button3" src="img/cloth_purple.png" alt="トップクロス7">
+            <img class="button3" src="img/cloth_red.png" alt="トップクロス8">
+            <img class="button3" src="img/cloth_white.png" alt="トップクロス9">
+            <img class="button3" src="img/cloth_whiteblue.png" alt="トップクロス10">
+            <img class="button3" src="img/cloth_yellow.png" alt="トップクロス11">
+
+            <img class="button4" src="img/napkin_blue.png" alt="ナフキン1">
+            <img class="button4" src="img/napkin_green.png" alt="ナフキン2">
+            <img class="button4" src="img/napkin_pink.png" alt="ナフキン3">
+            <img class="button4" src="img/napkin_red.png" alt="ナフキン4">
+            <img class="button4" src="img/napkin_white.png" alt="ナフキン5">
+            <img class="button4" src="img/napkin_whiteblue.png" alt="ナフキン6">
+            <img class="button4" src="img/napkin_yellow.png" alt="ナフキン7">
+
+            <img class="button5" src="img/chair_beige.png" alt="チェア1">
+            <img class="button5" src="img/chair_brown.png" alt="チェア2">
+            <img class="button5" src="img/chair_green.png" alt="チェア3">
+            <img class="button5" src="img/chair_pink.png" alt="チェア4">
+            <img class="button5" src="img/chair_red.png" alt="チェア5">
+            <img class="button5" src="img/chair_white.png" alt="チェア6">
+            <img class="button5" src="img/chair_whiteblue.png" alt="チェア7">
+
+            <img class="button6" src="img/flower_blue.png" alt="フラワー1">
+            <img class="button6" src="img/flower_brown.png" alt="フラワー2">
+            <img class="button6" src="img/flower_pink.png" alt="フラワー3">
+            <img class="button6" src="img/flower_purple.png" alt="フラワー4">
+            <img class="button6" src="img/flower_red.png" alt="フラワー5">
+            <img class="button6" src="img/flower_whiteblue.png" alt="フラワー6">
+            <img class="button6" src="img/flower_yellow.png" alt="フラワー7">
+        </div>
+
+
+        <input type="submit" name="save" value="保存">
     </div>
 </div>
-
 <div id="modal2" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -238,12 +280,12 @@
             </div>
             <div class="cake">
             </div>
-
-
         </div>
+
          <input type="submit" name="save" value="保存">
     </div>
 </div>
+
 
 <div id="modal4" class="modal">
     <div class="modal-content">
@@ -312,7 +354,7 @@
 			<option value="4">7</option>
 			<option value="5">8</option>
 		</select>人</label>
-	    <label>　　<select name="table" class="select">
+	    <label>　　<select name="table" class="select" onchange="showPhoto(document.getElementsByName('people')[0].value, this.value)">
 	        <option value="">-</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -321,14 +363,7 @@
 			<option value="5">5</option>
 			<option value="6">6</option>
 			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-			<option value="11">11</option>
-			<option value="12">12</option>
-			<option value="13">13</option>
-			<option value="14">14</option>
-			<option value="15">15</option>
+
 		</select>卓</label>
 		<div id="photoDisplay">
        <!-- ここに選択された写真が表示されます -->
@@ -342,6 +377,7 @@
 <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
 </footer>
+<!-- ハンバーガメニュの Javascript-->
 <script>
 const hmbBtn = document.getElementById("hmb");
 const header = document.getElementById("header");
@@ -354,6 +390,7 @@ hmbBtn.addEventListener("click", function() {
   footer.classList.toggle("active"); // フッターの表示切り替え
 });
 </script>
+<!-- modelの Javascript-->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const photos = document.querySelectorAll(".photo");
@@ -374,6 +411,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+<!-- model1の Javascript-->
+<script>
+    function showImages(buttonId) {
+        // 一旦すべての画像を非表示にする
+        var allImages = document.querySelectorAll('.image-container > img');
+        allImages.forEach(function(img) {
+            img.style.display = 'none';
+        });
+
+        // 選択されたボタンに対応する画像を表示する
+        var selectedImages = document.querySelectorAll('.image-container > img.' + buttonId);
+        selectedImages.forEach(function(img) {
+            img.style.display = 'block';
+        });
+    }
+</script>
+
+<!-- model4の Javascript-->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("modal4");
@@ -405,26 +460,74 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 </script>
+<!-- model6の Javascript-->
 <script>
-    function showPhoto(peopleValue) {
+    function showPhoto(peopleValue, tableValue) {
         var photoDisplay = document.getElementById('photoDisplay');
         photoDisplay.innerHTML = '';
 
-        // Define photo URLs corresponding to people options
         var photoURLs = {
-            '1': 'img/table_4.png',
-            '2': 'img/table_5.png',
-            '3': 'img/table_6.png',
-            '4': 'img/table_7.png',
-            '5': 'img/table_8.png'
+            '1': {
+
+                '1': ['img/table_4.png'],
+                '2': ['img/table_4.png', 'img/table_4.png'],
+                '3': ['img/table_4.png', 'img/table_4.png', 'img/table_4.png'],
+                '4':['img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png'],
+                '5':['img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png'],
+                '6':['img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png'],
+                '7':['img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png','img/table_4.png']
+
+            },
+            '2': {
+                '1': ['img/table_5.png'],
+                '2': ['img/table_5.png', 'img/table_5.png'],
+                '3': ['img/table_5.png', 'img/table_5.png', 'img/table_5.png'],
+                '4':['img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png'],
+                '5':['img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png'],
+                '6':['img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png'],
+                '7':['img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png','img/table_5.png']
+
+            },
+            '3': {
+                '1': ['img/table_6.png'],
+                '2': ['img/table_6.png', 'img/table_6.png'],
+                '3': ['img/table_6.png', 'img/table_6.png', 'img/table_6.png'],
+                '4':['img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png'],
+                '5':['img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png'],
+                '6':['img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png'],
+                '7':['img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png','img/table_6.png']
+
+            },
+            '4': {
+                '1': ['img/table_7.png'],
+                '2': ['img/table_7.png', 'img/table_7_.png'],
+                '3': ['img/table_7.png', 'img/table_7.png', 'img/table_7.png'],
+                '4':['img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png'],
+                '5':['img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png'],
+                '6':['img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png'],
+                '7':['img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png','img/table_7.png']
+
+            },
+            '5': {
+                '1': ['img/table_8.png'],
+                '2': ['img/table_8.png', 'img/table_8.png'],
+                '3': ['img/table_8.png', 'img/table_8.png', 'img/table_8.png'],
+                '4':['img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png'],
+                '5':['img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png'],
+                '6':['img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png'],
+                '7':['img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png','img/table_8.png']
+
+            }
         };
 
-        // Display photo if a valid people option is selected
-        if (peopleValue in photoURLs) {
-            var img = document.createElement('img');
-            img.src = photoURLs[peopleValue];
-            img.style.maxWidth = '100%'; // Adjust styling as needed
-            photoDisplay.appendChild(img);
+        if (peopleValue in photoURLs && tableValue in photoURLs[peopleValue]) {
+            var photos = photoURLs[peopleValue][tableValue];
+            photos.forEach(function(url) {
+                var img = document.createElement('img');
+                img.src = url;
+                img.classList.add('phototable');
+                photoDisplay.appendChild(img);
+            });
         }
     }
 </script>

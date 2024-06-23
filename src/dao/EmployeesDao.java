@@ -31,9 +31,11 @@ public class EmployeesDAO {
             ResultSet rs = pStmt.executeQuery();
 
             // ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
-            rs.next();
-            if (rs.next()&&rs.getInt("COUNT(*)") == 1) {
-                loginResult = true;
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                if (count == 1) {
+                    loginResult = true;
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -48,7 +50,6 @@ public class EmployeesDAO {
                     conn.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
-                    loginResult = false;
                 }
             }
         }
@@ -65,10 +66,10 @@ public class EmployeesDAO {
             // データベースに接続する処理
         	Class.forName("org.h2.Driver");
             // SQL文を準備する
-            String sql = "INSERT INTO employees (creat_at,updated_at,company_id, user, pw) VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,?,?,?)";
+            String sql = "INSERT INTO employees (company_id, user, pw, created_at, updated_at) VALUES (?,?,?,CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)";
             conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, employee.getCompany_id());
+            pstmt.setInt(1, employee.getCompanyId());
             pstmt.setString(2, employee.getUser());
             pstmt.setString(3, employee.getPw());
 

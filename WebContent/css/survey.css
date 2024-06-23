@@ -101,36 +101,46 @@ footer{
 /*式後アンケート*/
 
 main{
-/*    background-color:#fff0f5;*/
 	background-image:url("/B3/img/A.png");
-    margin:0 80px 0 80px;
-	justify-content:centser;
-	background-size:cover;
+    margin:0 80px 0px 40px;
+    height:1100px;
+    width:1440px;
+	justify-content:center;
+	text-align:center;
+	background-position:center;
+	background-size:100% 100%;
 	background-repeat: no-repeat;
-	background-position:center bottom rigth left;
 }
 .menu{
+	margin:0 auto;
 	text-align:center;
 	color:#000080;
 }
 
 .time{
+	margin:30px 0 0 0;
 	color:#b8860b;
 	text-align:right;
 }
 .survey{
+	margin:0 auto;
+	justify-content:center;
 	text-align:center;
 	margin:0 auto;
 	color:#FFFFFF;
 	background-color:#00438d;
-	width:150px;
-	height:30px;
+	width:600px;
+	height:80px;
+	font-size:50px;
 }
 .couple{
+	margin:0 auto;
+	justify-content:center;
 	text-align:center;
 	margin:10px;
 }
 label{
+	margin:0 auto;
 	text-align:left;
 	display: block;
 	font-weight: bold;
@@ -139,12 +149,16 @@ label{
 	margin-left:20%
 }
 select{
+	margin:0 auto;
+	justify-content:center;
 	border-color:#b8860b;
 	border-width:2px;
 	width:60%;
 	height:30px;
 }
 textarea{
+	margin:0 0 0 -800px;
+	justify-content:center;
 	position:center;
 	justify-content:center;
 	margin:0 auto;
@@ -155,6 +169,8 @@ textarea{
 	border-width:2px;
 }
  input[type="submit"] {
+	margin:0 auto;
+	justify-content:center;
     padding: 10px 20px;
     margin-top: 40px;
     border: none;
