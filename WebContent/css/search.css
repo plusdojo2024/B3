@@ -20,6 +20,7 @@ h1 {
 	margin: 0 auto 0 auto;
 	border-spacing: 30px 20px;
 }
+
 /*夫婦カード（単体）*/
 .card {
 	text-align: center;
@@ -36,13 +37,40 @@ h1 {
 	width: 100px;
 	font-size: 25px;
 }
-
 .pin {
 	width: 60px;
 	height: 60px;
 	position: absolute;
 	left: 230px;
 	bottom: 110px;
+}
+
+/*夫婦カードのリンク*/
+.card a:link {
+	color: #00438d;
+	text-decoration: none;
+}
+.card a:visited {
+	color: #00438d;
+	text-decoration: none;
+}
+.card a:hover {
+	color: #b8860b;
+	text-decoration: none;
+}
+
+/*お客様データのリンク*/
+.customer_info a:link {
+	color: #00438d;
+	text-decoration: none;
+}
+.customer_info a:visited {
+	color: #00438d;
+	text-decoration: none;
+}
+.customer_info a:hover {
+	color: #b8860b;
+	text-decoration: none;
 }
 
 /*検索画面専用*/
@@ -111,6 +139,7 @@ input[type="submit"] {
 
 
 /*検索結果画面専用*/
+/*お客様データの枠*/
 .customer_info {
 	width: 400px;
 	height: 200px;
@@ -121,6 +150,7 @@ input[type="submit"] {
 	color: #00438d;
 }
 
+/*式希望日*/
 .thedate_info {
 	text-align: center;
 	margin-top: 10px;
@@ -130,10 +160,9 @@ input[type="submit"] {
 	width: 280px;
 	font-size: 25px;
 	color: #00438d;
-
-
 }
 
+/*氏名*/
 .lname_info {
 	text-align: right;
 	border: none;
@@ -142,8 +171,6 @@ input[type="submit"] {
 	margin: 20px 10px;
 	font-size: 25px;
 	color: #00438d;
-
-
 }
 .fname_info {
 	text-align: left;
@@ -153,8 +180,6 @@ input[type="submit"] {
 	margin: 20px 10px;
 	font-size: 25px;
 	color: #00438d;
-
-
 }
 
 

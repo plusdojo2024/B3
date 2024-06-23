@@ -37,7 +37,7 @@
 
  <div class="menu">
     <a href="/B3/RegistServlet"><img src="/B3/img/regist.png" alt="登録"></a>
-    <a href="/B3/SerchServlet"><img src="/B3/img/search.png" alt="検索"></a>
+    <a href="/B3/SearchServlet"><img src="/B3/img/search.png" alt="検索"></a>
     <a href="/B3/LogoutServlet"><img src="/B3/img/logout.png" alt="ログアウト"></a>
   </div>
 </main>

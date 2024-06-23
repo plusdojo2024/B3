@@ -37,27 +37,36 @@ public class SearchServlet extends HttpServlet {
 			return;
 		}
 		*/
-
-		/*
-		// リクエストパラメータを取得する
+/*
 		request.setCharacterEncoding("UTF-8");
-		String company = request.getParameter("company");		//追加項目
-		String name = request.getParameter("name");
+		String created_at = request.getParameter("created_at");
+		String updated_at = request.getParameter("update_at");
+		String lname_1 = request.getParameter("lname_1");
+		String fname_1 = request.getParameter("fname_1");
+		String lfurigana_1 = request.getParameter("lfurigana_1");
+		String ffurigana_1 = request.getParameter("ffurigana_1");
+		String tel_1 = request.getParameter("tel_1");
+		String lname_2 = request.getParameter("lname_2");
+		String fname_2 = request.getParameter("fname_2");
+		String lfurigana_2 = request.getParameter("lfurigana_2");
+		String ffurigana_2 = request.getParameter("ffurigana_2");
+		String tel_2 = request.getParameter("tel_2");
 		String address = request.getParameter("address");
-		String remarks = request.getParameter("remarks");		//追加項目
+		String thedate = request.getParameter("thedate");
+		String memo_id = request.getParameter("memo_id");
 
-		// 検索処理を行う
-		BcDAO bDao = new BcDAO();
-		//改造済み（company、remarks追加）
-		List<Bc> cardList = bDao.select(new Bc(0, company, "", "", name, "",
-												address, "", "", "", "", remarks));
+		CustomerDAO cDao = new CustomerDAO();
+		//下の文でエラーが出る
+		List<Customer> customerList = cDao.select(new Customer(0, created_at, updated_at, lname_1, fname_1,
+				lfurigana_1, ffurigana_1, tel_1, lname_2, fname_2, lfurigana_2, ffurigana_2, tel_2,
+				address, thedate, memo_id));
 
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);
-		*/
+		request.setAttribute("customerList", customerList);
 
-		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 		dispatcher.forward(request, response);
+*/
 	}
+
+
 }
