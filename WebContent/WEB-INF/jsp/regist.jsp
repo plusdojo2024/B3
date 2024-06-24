@@ -31,40 +31,54 @@
 		<table class="customer_regist">
 			<tr>
 				<td colspan="2">
-					<label>　氏名　　<input type="text" name="lname1" class="text_name"></label>
-									<input type="text" name="fname1" class="text_name">
+					<label>　氏名　　<input type="text" name="lname_1" class="text_name" placeholder="山田"></label>
+									<input type="text" name="fname_1" class="text_name" placeholder="太郎">
 				</td>
 				<td colspan="2">
-					<label>　氏名　　<input type="text" name="lname2" class="text_name"></label>
-									<input type="text" name="fname2" class="text_name">
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<label>フリガナ　<input type="text" name="lfurigana1" class="text_name"></label>
-									<input type="text" name="ffurigana1" class="text_name">
-				</td>
-				<td colspan="2">
-					<label>フリガナ　<input type="text" name="lfurigana2" class="text_name"></label>
-									<input type="text" name="ffurigana2" class="text_name">
+					<label>　氏名　　<input type="text" name="lname_2" class="text_name" placeholder="田中"></label>
+									<input type="text" name="fname_2" class="text_name" placeholder="花子">
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<label>電話番号　<input type="text" name="tell1" class="text_tell"></label>
+					<label>フリガナ　<input type="text" name="lfurigana_1" class="text_name" placeholder="ヤマダ"></label>
+									<input type="text" name="ffurigana_1" class="text_name" placeholder="タロウ">
 				</td>
 				<td colspan="2">
-					<label>電話番号　<input type="text" name="tell2" class="text_tell"></label>
+					<label>フリガナ　<input type="text" name="lfurigana_2" class="text_name" placeholder="タナカ"></label>
+									<input type="text" name="ffurigana_2" class="text_name" placeholder="ハナコ">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<label>電話番号　<input type="text" name="tel_1" class="text_tell" placeholder="0011112222"></label>
+				</td>
+				<td colspan="2">
+					<label>電話番号　<input type="text" name="tel_2" class="text_tell" placeholder="0011113333"></label>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="4" class="td_center">
-					<label>住　所　　<input type="text" name="address" class="text_add"></label>
+					<label>住　所　　<input type="text" name="address" class="text_add" placeholder="東京都○○区"></label>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="4" class="td_center">
 					<!-- ここに動的に写真の選択肢を表示 -->
+					<label>式の予定日　<select name="year" class="select">
+						<option value="">-</option>
+						<option value="2024">2024</option>
+						<option value="2025">2025</option>
+						<option value="2026">2026</option>
+						<option value="2027">2027</option>
+						<option value="2028">2028</option>
+						<option value="2029">2029</option>
+						<option value="2030">2030</option>
+						<option value="2031">2031</option>
+						<option value="2032">2032</option>
+						<option value="2033">2033</option>
+						<option value="2034">2034</option>
+					</select>年</label>
 					<label>　　<select name="month" class="select">
 						<option value="">-</option>
 						<option value="1">1</option>
@@ -118,7 +132,7 @@
 			</tr>
 			<tr>
 				<td colspan="4" class="td_center">
-					<label>備考欄　　<textarea name="memo" class="text_memo"></textarea></label>
+					<label>備考欄　　<textarea name="memo_id" class="text_memo" placeholder="要望等"></textarea></label>
 				</td>
 			</tr>
 		</table>

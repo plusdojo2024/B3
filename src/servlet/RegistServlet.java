@@ -43,8 +43,8 @@ public class RegistServlet extends HttpServlet {
 
 		//リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String created_at = request.getParameter("created_at");
-		String updated_at = request.getParameter("update_at");
+//		String created_at = request.getParameter("created_at");
+//		String updated_at = request.getParameter("update_at");
 		String lname_1 = request.getParameter("lname_1");
 		String fname_1 = request.getParameter("fname_1");
 		String lfurigana_1 = request.getParameter("lfurigana_1");
@@ -56,13 +56,17 @@ public class RegistServlet extends HttpServlet {
 		String ffurigana_2 = request.getParameter("ffurigana_2");
 		String tel_2 = request.getParameter("tel_2");
 		String address = request.getParameter("address");
-		String thedate = request.getParameter("thedate");
+		String year = request.getParameter("year");
+		String month = request.getParameter("month");
+		String day = request.getParameter("day");
+		String thedate = year+"-"+month+"-"+day;
 		String memo_id = request.getParameter("memo_id");
+		boolean pin = true;
 
 		//登録処理を行う
 		CustomerDAO cDAO = new CustomerDAO();
-		if (cDAO.insert(new Customer(0, created_at, updated_at, lname_1, fname_1, lfurigana_1, ffurigana_1, tel_1,
-				lname_2, fname_2, lfurigana_2, ffurigana_2, tel_2, address, thedate, memo_id)));
+		if (cDAO.insert(new Customer(0, "", "", lname_1, fname_1, lfurigana_1, ffurigana_1, tel_1,
+				lname_2, fname_2, lfurigana_2, ffurigana_2, tel_2, address, thedate, memo_id, pin)));
 
 		//マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");

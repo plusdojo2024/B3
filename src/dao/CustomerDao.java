@@ -24,9 +24,9 @@ public class CustomerDAO {
 			//データベースに接続
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
-			//SQL文を準備する　current_timestampのとこあってる？
+			//SQL文を準備する
 			String sql = "INSERT INTO CUSTOMERS VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,"
-					+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)";
+					+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//SQL文を完成させる
@@ -88,14 +88,16 @@ public class CustomerDAO {
 			if (info.getThedate() != null && !info.getThedate().equals("")) {
 				pStmt.setString(12, info.getThedate());
 			} else {
-				pStmt.setString(12, "未記入");
+				pStmt.setString(12, "");
 			}
 			if (info.getMemo_id() != null && !info.getMemo_id().equals("")) {
-				pStmt.setString(13, info.getMemo_id());
+				pStmt.setInt(13, Integer.parseInt(info.getMemo_id()));
 			} else {
-				pStmt.setString(13, "未記入");
+				pStmt.setInt(13, 0);
 			}
-
+			if (info.getPin() != false) {	//追加した　あってる？
+				pStmt.setBoolean(14, true);
+			}
 			//SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
@@ -125,16 +127,16 @@ public class CustomerDAO {
 
 
 	//お客様情報検索
-	public List<Customer> select(Customer info) throws ClassNotFoundException{
+	public List<Customer> select(Customer info) {
 		Connection conn = null;
 		List<Customer> customerList = new ArrayList<Customer>();
 
 		try {
-			Class.forName("org.h2.Driver");	//Classにthrowsを入れないとエラーが出る
+			Class.forName("org.h2.Driver");
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
-			String sql = "SELECT * FROM Customers WHERE lname_1 LIKE ? AND fname_1 LIKE ? AND lfurigana_1 LIKE ? AND"
+			String sql = "SELECT * FROM Customers WHERE lname_1 LIKE ? AND fname_1 LIKE ? AND lfurigana_1 LIKE ? AND "
 					+ "ffurigana_1 LIKE ? AND lname_2 LIKE ? AND fname_2 LIKE ? AND lfurigana_2 LIKE ? AND "
-					+ "ffurigana_2 LIKE ? AND thedate LIKE ? AND memo_id LIKE ? ORDER BY id";
+					+ "ffurigana_2 LIKE ? AND thedate LIKE ? AND memo_id LIKE ? AND pin LiKE ? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (info.getLname_1() != null) {
@@ -187,6 +189,11 @@ public class CustomerDAO {
 			} else {
 				pStmt.setString(10, "%");
 			}
+			if (info.getPin()) {
+				pStmt.setString(11, "%" + info.getPin() + "%");
+			} else {
+				pStmt.setString(11, "%");
+			}
 			ResultSet rs = pStmt.executeQuery();
 			while (rs.next()) {
 				Customer record = new Customer(
@@ -205,12 +212,17 @@ public class CustomerDAO {
 				rs.getString("tel_2"),
 				rs.getString("address"),
 				rs.getString("thedate"),
-				rs.getString("memo_id")
+				rs.getString("memo_id"),
+				rs.getBoolean("pin")
 				);
 				customerList.add(record);
 			}
 		}
 		catch (SQLException e) {
+			e.printStackTrace();
+			customerList = null;
+		}
+		catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			customerList = null;
 		}

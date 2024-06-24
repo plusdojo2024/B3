@@ -27,34 +27,32 @@
 </header>
 <main class="main">
 	<h1>お客様情報検索</h1>
-	<form id="search_form" method="post" action="/B3/SearchServlet">
 		<table class="cards" id="card">
 			<tr>
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin1" class="pin">
 					<a href=/B3/MypageServlet>
-						<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
-						<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+						<input type="text" name="fname_1" value="${e.fname_1 }" class="card_name">様<br>
+						<input type="text" name="fname_2" value="${e.fname_2 }" class="card_name">様
 					</a>
 				</td>
-
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin2" class="pin">
 					<a href=/B3/MypageServlet>
-						<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
-						<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+						<input type="text" name="fname_1" value="${e.fname_1 }" class="card_name">様<br>
+						<input type="text" name="fname_2" value="${e.fname_2 }" class="card_name">様
 					</a>
 				</td>
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin3" class="pin">
 					<a href=/B3/MypageServlet>
-						<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
-						<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+						<input type="text" name="fname_1" value="${e.fname_1 }" class="card_name">様<br>
+						<input type="text" name="fname_2" value="${e.fname_2 }" class="card_name">様
 					</a>
 				</td>
 			</tr>
 		</table>
-
+	<form id="search_form" method="post" action="/B3/SearchServlet">
 		<table class="customer_search">
 			<tr>
 				<td colspan="3"class="td_center">
@@ -130,12 +128,12 @@
 			</tr>
 			<tr>
 				<td colspan="3" class="td_center">
-					<label>キーワード<textarea name="memo" class="text_memo" oninput="resizeTextarea()"></textarea></label>
+					<label>キーワード<textarea name="memo_id" class="text_memo" oninput="resizeTextarea()"></textarea></label>
 				</td>
 			</tr>
 		</table>
 		<div class="button">
-			<input type="submit" name="submit" value="検索">
+			<input type="submit" name="search" value="検索">
 		</div>
 	</form>
 </main>

@@ -36,30 +36,30 @@
 		<table class="customer_regist">
 			<tr>
 				<td colspan="2">
-					<label>　氏名　　<input type="text" name="lname1" class="text_name"></label>
-									<input type="text" name="fname1" class="text_name">
+					<label>　氏名　　<input type="text" name="lname_1" class="text_name"></label>
+									<input type="text" name="fname_1" class="text_name">
 				</td>
 				<td colspan="2">
-					<label>　氏名　　<input type="text" name="lname2" class="text_name"></label>
-									<input type="text" name="fname2" class="text_name">
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<label>フリガナ　<input type="text" name="lfurigana1" class="text_name"></label>
-									<input type="text" name="ffurigana1" class="text_name">
-				</td>
-				<td colspan="2">
-					<label>フリガナ　<input type="text" name="lfurigana2" class="text_name"></label>
-									<input type="text" name="ffurigana2" class="text_name">
+					<label>　氏名　　<input type="text" name="lname_2" class="text_name"></label>
+									<input type="text" name="fname_2" class="text_name">
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<label>電話番号　<input type="text" name="tell1" class="text_tell"></label>
+					<label>フリガナ　<input type="text" name="lfurigana_1" class="text_name"></label>
+									<input type="text" name="ffurigana_1" class="text_name">
 				</td>
 				<td colspan="2">
-					<label>電話番号　<input type="text" name="tell2" class="text_tell"></label>
+					<label>フリガナ　<input type="text" name="lfurigana_2" class="text_name"></label>
+									<input type="text" name="ffurigana_2" class="text_name">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<label>電話番号　<input type="text" name="tel_1" class="text_tell"></label>
+				</td>
+				<td colspan="2">
+					<label>電話番号　<input type="text" name="tel_2" class="text_tell"></label>
 				</td>
 			</tr>
 			<tr>
@@ -136,7 +136,7 @@
 			</tr>
 			<tr>
 				<td colspan="4" class="td_center">
-					<label>備考欄　　<textarea name="memo" class="text_memo"></textarea></label>
+					<label>備考欄　　<textarea name="memo_id" class="text_memo"></textarea></label>
 				</td>
 			</tr>
 		</table>

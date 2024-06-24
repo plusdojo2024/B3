@@ -19,6 +19,7 @@ public class Customer implements Serializable {
 	private String address;			/*住所*/
 	private String thedate;			/*式希望日*/
 	private String memo_id;			/*備考*/
+	private boolean pin;			/*ピン*/
 
 	//引数なしのコンストラクタ
 	public Customer() {
@@ -27,7 +28,7 @@ public class Customer implements Serializable {
 	//引数ありのコンストラクタ
 	public Customer(int id, String created_at, String updated_at, String lname_1, String fname_1, String lfurigana_1,
 			String ffurigana_1, String tel_1, String lname_2, String fname_2, String lfurigana_2, String ffurigana_2,
-			String tel_2, String address, String thedate, String memo_id) {
+			String tel_2, String address, String thedate, String memo_id, boolean pin) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
@@ -45,6 +46,7 @@ public class Customer implements Serializable {
 		this.address = address;
 		this.thedate = thedate;
 		this.memo_id = memo_id;
+		this.pin = pin;
 	}
 
 	//ゲッタ・セッタ
@@ -143,6 +145,12 @@ public class Customer implements Serializable {
 	}
 	public void setMemo_id(String memo_id) {
 		this.memo_id = memo_id;
+	}
+	public boolean getPin() {
+		return pin;
+	}
+	public void setPin(boolean pin) {
+		this.pin = pin;
 	}
 
 
