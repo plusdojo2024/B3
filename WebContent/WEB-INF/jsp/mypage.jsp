@@ -37,7 +37,10 @@
 
   <div class="mymenu1">
     <p class="survay"><a href="/B3/OrderlistServlet"><img src="/B3/img/orderlist.png" alt="発注リスト"></a>
-    <div class="couple"><img src="/B3/img/mypagename.png" width="500" height="250"></div>
+
+    <div class="couple"><a href=""><img src="/B3/img/mypagename.png" width="500" height="250"></a></div>
+    <p class="displaycouple"></p>
+
     <p class="survay"><a href="/B3/SurveyServlet"><img src="/B3/img/survey.png" alt="アンケート"></a></p>
   </div>
   <div class="mymenu2">
@@ -56,6 +59,12 @@
   const header=document.getElementById("header");
   hmbBtn.addEventListener("click",function(){header.classList.toggle("active");
   });
+
+
+  function getLoggedInUsername() {
+      return "";
+  }
+  document.getElementById('displaycouple').innerText = getLoggedInUsername();
 </script>
 
 </body>
