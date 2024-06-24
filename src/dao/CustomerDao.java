@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import model.Customer;
 
-public class CustomerDAO {
+public class CustomerDao {
 	//登録
 	public boolean insert(Customer info) {
 		Connection conn = null;
