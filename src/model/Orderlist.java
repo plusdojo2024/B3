@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Orderlist implements Serializable {
@@ -21,7 +20,7 @@ public class Orderlist implements Serializable {
 	private int invitation_id; /* 招待状 */
 	private int nameplate_id; /* ネームプレート */
 	private int tablemember_id; /* 人数配置 */
-	private Date deadlines; /* 発注期限日 */
+	private String deadlines; /* 発注期限日 */
 	private int memo_id; /* メモID */
 	private int number; /* 人数 */
 
@@ -32,7 +31,7 @@ public class Orderlist implements Serializable {
 
 	public Orderlist(int id, Timestamp created_at, Timestamp idupdated_at, int customer_id, int table_id,
 			int tablecover_id, int chair_id, int napkin_id, int flower_id, int clothes_id, int cake_id, int caketop_id,
-			int invitation_id, int nameplate_id, int tablemember_id, Date deadlines, int memo_id, int number) {
+			int invitation_id, int nameplate_id, int tablemember_id, String deadlines, int memo_id, int number) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
@@ -52,6 +51,10 @@ public class Orderlist implements Serializable {
 		this.deadlines = deadlines;
 		this.memo_id = memo_id;
 		this.number = number;
+	}
+
+	public Orderlist(String data0, int parseInt, int parseInt2) {
+		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	public int getId() {
@@ -174,11 +177,11 @@ public class Orderlist implements Serializable {
 		this.tablemember_id = tablemember_id;
 	}
 
-	public Date getDeadlines() {
+	public String getDeadlines() {
 		return deadlines;
 	}
 
-	public void setDeadlines(Date deadlines) {
+	public void setDeadlines(String deadlines) {
 		this.deadlines = deadlines;
 	}
 

@@ -1,4 +1,4 @@
-/*
+
 package dao;
 
 import java.sql.Connection;
@@ -24,29 +24,18 @@ public class MemosDao {
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
-			// SQL文を準備する
-			String sql = "SELECT * FROM Memos WHERE  created_at LIKE ? AND idupdated_at LIKE ? AND memo LIKE ? ORDER BY id";
+
+			//SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
+			//項目を増やす場合は(NULL,
+			String sql = "INSERT INTO MEMOS (created_at,updated_at,memo) VALUES (CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+
 			// SQL文を完成させる
-			if (memo.getCreated_at() != null) {
-				pStmt.setString(1, "%" + memo.getCreated_at() + "%");
+
+			if (memo.getMemo() != null) {
+				pStmt.setString(1, "%" + memo.getMemo() + "%");
 			} else {
 				pStmt.setString(1, "%");
-			}
-			/*
-			if (memo.getIdupdated_at() != null) {
-				pStmt.setString(2, "%" + memo.getIdupdated_at() + "%");
-
-			if (card.getUpdated_at() != null) {
-				pStmt.setString(2, "%" + card.getUpdated_at() + "%");
-
-			} else {
-				pStmt.setString(2, "%");
-			}
-			if (memo.getMemo() != null) {
-				pStmt.setString(3, "%" + memo.getMemo() + "%");
-			} else {
-				pStmt.setString(3, "%");
 			}
 
 			// SQL文を実行し、結果表を取得する
@@ -97,30 +86,16 @@ public class MemosDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
-			String sql = "INSERT INTO Memos VALUES (NULL, ?, ?, ? )";
+			String sql = "INSERT INTO Memos VALUES (NULL, CURRENT_TIMESTAMP,CURRENT_TIMESTAMP, ? )";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (memo.getCreated_at() != null && !memo.getCreated_at().equals("")) {
-				pStmt.setString(1, memo.getCreated_at());
+			if (memo.getMemo() != null && !memo.getMemo().equals("")) {
+				pStmt.setString(1, memo.getMemo());
 			} else {
 				pStmt.setString(1, "（未設定）");
 			}
-<<<<<<< HEAD
-			if (memo.getIdupdated_at() != null && !memo.getIdupdated_at().equals("")) {
-				pStmt.setString(2, memo.getIdupdated_at());
-=======
-			if (card.getUpdated_at() != null && !card.getUpdated_at().equals("")) {
-				pStmt.setString(2, card.getUpdated_at());
->>>>>>> 91a7b1d6f977e32397a3b9ebce533903f57464f4
-			} else {
-				pStmt.setString(2, "（未設定）");
-			}
-			if (memo.getMemo() != null && !memo.getMemo().equals("")) {
-				pStmt.setString(3, memo.getMemo());
-			} else {
-				pStmt.setString(3, "（未設定）");
-			}
+
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -158,30 +133,16 @@ public class MemosDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "UPDATE  SET created_at=?, idupdated_at=?, memo=?,  WHERE id=?";
+			String sql = "UPDATE  SET updated_at=CURRENT_TIMESTAMP, memo=?,  WHERE id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (memo.getCreated_at() != null && !memo.getCreated_at().equals("")) {
-				pStmt.setString(1, memo.getCreated_at());
+			if (memo.getMemo() != null && !memo.getMemo().equals("")) {
+				pStmt.setString(1, memo.getMemo());
 			} else {
 				pStmt.setString(1, null);
 			}
-<<<<<<< HEAD
-			if (memo.getIdupdated_at() != null && !memo.getIdupdated_at().equals("")) {
-				pStmt.setString(2, memo.getIdupdated_at());
-=======
-			if (card.getUpdated_at() != null && !card.getUpdated_at().equals("")) {
-				pStmt.setString(2, card.getUpdated_at());
->>>>>>> 91a7b1d6f977e32397a3b9ebce533903f57464f4
-			} else {
-				pStmt.setString(2, null);
-			}
-			if (memo.getMemo() != null && !memo.getMemo().equals("")) {
-				pStmt.setString(3, memo.getMemo());
-			} else {
-				pStmt.setString(3, null);
-			}
+
 
 			pStmt.setInt(4, memo.getId());
 
@@ -209,4 +170,4 @@ public class MemosDao {
 
 	}
 }
-*/
+

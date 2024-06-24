@@ -11,9 +11,9 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
 }
 
 .row {
@@ -23,7 +23,7 @@ body {
 }
 
  .column {
-    flex: 1 1 20%; /* 幅は可変ですが、各列の最大幅は20%に制限 */
+    flex: 1 1  20%; /* 幅は可変ですが、各列の最大幅は20%に制限 */
     margin: 10px; /* グリッドギャップ */
     position: relative;
 }
@@ -55,7 +55,7 @@ body {
     margin: 10px auto;
     width: 80%;
     max-width: 600px;
-    max-height:450px;
+    max-height:470px;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -104,32 +104,65 @@ body {
 }
 .image-container {
     display: flex;
-    flex-wrap:nowrap;
+    flex-wrap: nowrap;
+    gap: 10px;
     overflow-x:auto;
-
 }
 
 .image-container img {
-    width: 300px;
-    height: 125px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    max-width: 100px;
+    max-height: 100px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    flex-shrink:0;
 }
+
+
+#largeImage {
+        display: none;
+        position: fixed;
+        top: 170px;
+        right: 500px;
+        width: 400px;
+        height:230px;
+        z-index: 1000;
+        border: 2px solid #ccc;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
 .clothes ,.cakes,.cards{
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    gap: 100px;
+    gap: 150px;
+
 }
 .dress,.suit,.cake,.card{
 	height:300px;
+    width: auto;
 
 }
 .dress img,.suit img,.cake img,.card img{
 	height:350px;
+
 }
 .clothes p,.cakes p, .cards p{
 	color: #00438d;
 }
+input[type="checkbox"] {
+    /* ここに適用したいスタイルを記述 */
+    width: 20px;
+    height: 20px;
+    margin-right: 120px;
+
+}
+
+
+
+
+
 /* model4*/
 #memoTextarea {
     width: 500px;
@@ -172,7 +205,7 @@ body {
     width: 20%;
     text-align: center;
     position: sticky;
-    bottom:20px;
+    bottom:0;
     z-index:1;
     left:40%;
 

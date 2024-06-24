@@ -7,27 +7,15 @@ public class Survey {
 	private String customer_id;	/* お客様ID */
 	private String evaluation;		/* 満足度 */
 	private String good_point;		/* 良かった点 */
-	private String impovement;		/* 改善してほしい点 */
+	private String improvement;		/* 改善してほしい点 */
 
 	// 引数がないコンストラクタ
 	public Survey() {
 
 	}
 
-	public Survey(int id, String created_at, String updated_at, String customer_id, String evaluation, String good_point,
-			String improvement) {
-		super();
-		this.id = id;
-		this.created_at = created_at;
-		this.updated_at = updated_at;
-		this.customer_id = customer_id;
-		this.evaluation = evaluation;
-		this.good_point = good_point;
-//		this.improvement = improvement;
-	}
-
 	public Survey(int id, String created_at, String updated_at, String customer_id, String evaluation,
-			String good_point/*, String impovement*/) {
+			String good_point, String improvement) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
@@ -35,7 +23,7 @@ public class Survey {
 		this.customer_id = customer_id;
 		this.evaluation = evaluation;
 		this.good_point = good_point;
-		this.impovement = impovement;
+		this.improvement = improvement;
 	}
 
 	public int getId() {
@@ -78,20 +66,21 @@ public class Survey {
 		this.evaluation = evaluation;
 	}
 
-	public String good_point() {
+	public String getGood_point() {
 		return good_point;
 	}
 
-	public void setChange(String good_point) {
+	public void setGood_point(String good_point) {
 		this.good_point = good_point;
 	}
 
-/*	public String getImprovement() {
+	public String getImprovement() {
 		return improvement;
 	}
 
 	public void setImprovement(String improvement) {
 		this.improvement = improvement;
 	}
-*/
+
+
 }
