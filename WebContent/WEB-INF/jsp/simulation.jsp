@@ -38,10 +38,10 @@
                  <img id="mainImage" img src="img/Sinterior.png" alt="内装"class="photo" data-modal-target="modal1"style="width: 500px; height: 300px;">
              </div>
              <div class="column">
-                 <img src="img/Scostume.png" alt="衣装" class="photo" id="costumePhoto1" data-modal-target="modal2"style="width: 230px; height: 300px;">
+                 <img src="img/Scostume.png" alt="衣装" class="photo" id="costumePhoto1" data-modal-target="modal2"style="width: 300px; height: 300px;">
              </div>
              <div class="column">
-                <img src="img/Scostume.png" alt="衣装" class="photo" id="costumePhoto2" data-modal-target="modal2"style="width: 230px; height: 300px;">
+                <img src="img/Scostume.png" alt="衣装" class="photo" id="costumePhoto2" data-modal-target="modal2"style="width: 300px; height: 300px;">
             </div>
            </div>
          <div class="row">
