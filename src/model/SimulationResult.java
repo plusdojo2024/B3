@@ -3,26 +3,26 @@ package model;
 import java.io.Serializable;
 
 public class SimulationResult implements Serializable {
-    private int id;					// シミュレーション総合結果ID
-    private String created_at;	// データ作成日時
-    private String updated_at;	// データ更新日時
-    private int customer_id;		// お客様ID
-    private int table_id;			// シミュレーション素材（テーブルクロス）のID
-    private int tablecover_id;		// シミュレーション素材（トップクロス）のID
-    private int chair_id;			// シミュレーション素材（チェアカバー）のID
-    private int napkin_id;			// シミュレーション素材（ナプキン）のID
-    private int flower_id;			// シミュレーション素材（花）のID
-    private int clothes_id1;		// シミュレーション素材（衣装）のID1
-    private int clothes_id2;		// シミュレーション素材（衣装）のID2
-    private int cake_id;			// シミュレーション素材（ケーキ全体像）のID
-    private int caketop_id;			// シミュレーション素材（ケーキ上部）のID
-    private int invitation_id;		// シミュレーション素材（招待状）のID
-    private int nameplate_id;		// シミュレーション素材（ネームプレート）のID
-    private int tablemember_id;		// シミュレーション素材（席配置）のID
+	private int id; 			// シミュレーション総合結果ID
+	private String created_at; 	// データ作成日時
+	private String updated_at; 	// データ更新日時
+	private int customer_id; 	// お客様ID
+	private int table_id; 		// シミュレーション素材（テーブルクロス）のID
+	private int tablecover_id; 	// シミュレーション素材（トップクロス）のID
+	private int chair_id; 		// シミュレーション素材（チェアカバー）のID
+	private int napkin_id; 		// シミュレーション素材（ナプキン）のID
+	private int flower_id; 		// シミュレーション素材（花）のID
+	private int clothes_id1; 	// シミュレーション素材（衣装）のID1
+	private int clothes_id2; 	// シミュレーション素材（衣装）のID2
+	private int cake_id; 		// シミュレーション素材（ケーキ全体像）のID
+	private int caketop_id; 	// シミュレーション素材（ケーキ上部）のID
+	private int invitation_id; 	// シミュレーション素材（招待状）のID
+	private int nameplate_id; 	// シミュレーション素材（ネームプレート）のID
+	private int tablemember_id; // シミュレーション素材（席配置）のID
 
-    public SimulationResult() {
+	public SimulationResult() {
 
-    }
+	}
 
 	public SimulationResult(int customer_id) {
 		super();
