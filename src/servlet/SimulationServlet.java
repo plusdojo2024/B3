@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -57,32 +58,34 @@ public class SimulationServlet extends HttpServlet {
 
 		// 検索処理を行う
 		SimulationResultDAO srDao = new SimulationResultDAO();
-		SimulationResult result = srDao.select(new SimulationResult(customer_id)).get(1);
+		List<SimulationResult> resultList = srDao.select(new SimulationResult(customer_id));
+		if (resultList == null || resultList.size() == 0) {
+		SimulationResult result = resultList.get(0);
 
 		// 各シミュレーションの要素の取り出しを行う
 		SimulationTablesDAO stDao = new SimulationTablesDAO();
-		SimulationCommon st = stDao.select(new SimulationCommon(result.getTable_id())).get(1);
+		SimulationCommon st = stDao.select(new SimulationCommon(result.getTable_id())).get(0);
 		SimulationTablecoversDAO stcDao = new SimulationTablecoversDAO();
-		SimulationCommon stc = stcDao.select(new SimulationCommon(result.getTablecover_id())).get(1);
+		SimulationCommon stc = stcDao.select(new SimulationCommon(result.getTablecover_id())).get(0);
 		SimulationNapkinsDAO snDao = new SimulationNapkinsDAO();
-		SimulationCommon sn = snDao.select(new SimulationCommon(result.getNapkin_id())).get(1);
+		SimulationCommon sn = snDao.select(new SimulationCommon(result.getNapkin_id())).get(0);
 		SimulationChairsDAO scDao = new SimulationChairsDAO();
-		SimulationCommon sc = scDao.select(new SimulationCommon(result.getChair_id())).get(1);
+		SimulationCommon sc = scDao.select(new SimulationCommon(result.getChair_id())).get(0);
 		SimulationFlowersDAO sfDao = new SimulationFlowersDAO();
-		SimulationCommon sf = sfDao.select(new SimulationCommon(result.getFlower_id())).get(1);
+		SimulationCommon sf = sfDao.select(new SimulationCommon(result.getFlower_id())).get(0);
 		SimulationClothesDAO sclDao = new SimulationClothesDAO();
-		SimulationCommon scl1 = sclDao.select(new SimulationCommon(result.getClothes_id1())).get(1);
-		SimulationCommon scl2 = sclDao.select(new SimulationCommon(result.getClothes_id2())).get(1);
+		SimulationCommon scl1 = sclDao.select(new SimulationCommon(result.getClothes_id1())).get(0);
+		SimulationCommon scl2 = sclDao.select(new SimulationCommon(result.getClothes_id2())).get(0);
 		SimulationCakesDAO sckDao = new SimulationCakesDAO();
-		SimulationCommon sck = sckDao.select(new SimulationCommon(result.getCake_id())).get(1);
+		SimulationCommon sck = sckDao.select(new SimulationCommon(result.getCake_id())).get(0);
 		SimulationCaketopsDAO sctDao = new SimulationCaketopsDAO();
-		SimulationCaketops sct = sctDao.select(new SimulationCaketops(result.getCaketop_id(), "")).get(1);
+		SimulationCaketops sct = sctDao.select(new SimulationCaketops(result.getCaketop_id(), "")).get(0);
 		SimulationInvitationsDAO siDao = new SimulationInvitationsDAO();
-		SimulationCommon si = siDao.select(new SimulationCommon(result.getInvitation_id())).get(1);
+		SimulationCommon si = siDao.select(new SimulationCommon(result.getInvitation_id())).get(0);
 		SimulationNameplatesDAO snpDao = new SimulationNameplatesDAO();
-		SimulationCommon snp = snpDao.select(new SimulationCommon(result.getNameplate_id())).get(1);
+		SimulationCommon snp = snpDao.select(new SimulationCommon(result.getNameplate_id())).get(0);
 		SimulationTablemembersDAO stmDao = new SimulationTablemembersDAO();
-		SimulationTablemembers stm = stmDao.select(new SimulationTablemembers(result.getTablemember_id(), 0, "")).get(1);
+		SimulationTablemembers stm = stmDao.select(new SimulationTablemembers(result.getTablemember_id(), 0, "")).get(0);
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("st", st);
@@ -97,6 +100,7 @@ public class SimulationServlet extends HttpServlet {
 		request.setAttribute("si", si);
 		request.setAttribute("snp", snp);
 		request.setAttribute("stm", stm);
+		}
 
 		// シミュレーションページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/simulation.jsp");
@@ -139,32 +143,32 @@ public class SimulationServlet extends HttpServlet {
 
 		// 検索処理を行う
 		SimulationResultDAO srDao = new SimulationResultDAO();
-		SimulationResult result = srDao.select(new SimulationResult(customer_id)).get(1);
+		SimulationResult result = srDao.select(new SimulationResult(customer_id)).get(0);
 
 		// 各シミュレーションの要素の取り出しを行う
 		SimulationTablesDAO stDao = new SimulationTablesDAO();
-		SimulationCommon st = stDao.select(new SimulationCommon(result.getTable_id())).get(1);
+		SimulationCommon st = stDao.select(new SimulationCommon(result.getTable_id())).get(0);
 		SimulationTablecoversDAO stcDao = new SimulationTablecoversDAO();
-		SimulationCommon stc = stcDao.select(new SimulationCommon(result.getTablecover_id())).get(1);
+		SimulationCommon stc = stcDao.select(new SimulationCommon(result.getTablecover_id())).get(0);
 		SimulationNapkinsDAO snDao = new SimulationNapkinsDAO();
-		SimulationCommon sn = snDao.select(new SimulationCommon(result.getNapkin_id())).get(1);
+		SimulationCommon sn = snDao.select(new SimulationCommon(result.getNapkin_id())).get(0);
 		SimulationChairsDAO scDao = new SimulationChairsDAO();
-		SimulationCommon sc = scDao.select(new SimulationCommon(result.getChair_id())).get(1);
+		SimulationCommon sc = scDao.select(new SimulationCommon(result.getChair_id())).get(0);
 		SimulationFlowersDAO sfDao = new SimulationFlowersDAO();
-		SimulationCommon sf = sfDao.select(new SimulationCommon(result.getFlower_id())).get(1);
+		SimulationCommon sf = sfDao.select(new SimulationCommon(result.getFlower_id())).get(0);
 		SimulationClothesDAO sclDao = new SimulationClothesDAO();
-		SimulationCommon scl1 = sclDao.select(new SimulationCommon(result.getClothes_id1())).get(1);
-		SimulationCommon scl2 = sclDao.select(new SimulationCommon(result.getClothes_id2())).get(1);
+		SimulationCommon scl1 = sclDao.select(new SimulationCommon(result.getClothes_id1())).get(0);
+		SimulationCommon scl2 = sclDao.select(new SimulationCommon(result.getClothes_id2())).get(0);
 		SimulationCakesDAO sckDao = new SimulationCakesDAO();
-		SimulationCommon sck = sckDao.select(new SimulationCommon(result.getCake_id())).get(1);
+		SimulationCommon sck = sckDao.select(new SimulationCommon(result.getCake_id())).get(0);
 		SimulationCaketopsDAO sctDao = new SimulationCaketopsDAO();
-		SimulationCaketops sct = sctDao.select(new SimulationCaketops(result.getCaketop_id(), "")).get(1);
+		SimulationCaketops sct = sctDao.select(new SimulationCaketops(result.getCaketop_id(), "")).get(0);
 		SimulationInvitationsDAO siDao = new SimulationInvitationsDAO();
-		SimulationCommon si = siDao.select(new SimulationCommon(result.getInvitation_id())).get(1);
+		SimulationCommon si = siDao.select(new SimulationCommon(result.getInvitation_id())).get(0);
 		SimulationNameplatesDAO snpDao = new SimulationNameplatesDAO();
-		SimulationCommon snp = snpDao.select(new SimulationCommon(result.getNameplate_id())).get(1);
+		SimulationCommon snp = snpDao.select(new SimulationCommon(result.getNameplate_id())).get(0);
 		SimulationTablemembersDAO stmDao = new SimulationTablemembersDAO();
-		SimulationTablemembers stm = stmDao.select(new SimulationTablemembers(result.getTablemember_id(), 0, "")).get(1);
+		SimulationTablemembers stm = stmDao.select(new SimulationTablemembers(result.getTablemember_id(), 0, "")).get(0);
 
 		// 検索結果をリクエストスコープに格納する
 		// もしすべての項目が空欄の場合、リクエストパラメータをDBに登録する
@@ -207,19 +211,19 @@ public class SimulationServlet extends HttpServlet {
 
 			// 検索結果の更新を行う
 			// 検索処理を行う
-			result = srDao.select(new SimulationResult(customer_id)).get(1);
-			st = stDao.select(new SimulationCommon(result.getTable_id())).get(1);
-			stc = stcDao.select(new SimulationCommon(result.getTablecover_id())).get(1);
-			sn = snDao.select(new SimulationCommon(result.getNapkin_id())).get(1);
-			sc = scDao.select(new SimulationCommon(result.getChair_id())).get(1);
-			sf = sfDao.select(new SimulationCommon(result.getFlower_id())).get(1);
-			scl1 = sclDao.select(new SimulationCommon(result.getClothes_id1())).get(1);
-			scl2 = sclDao.select(new SimulationCommon(result.getClothes_id2())).get(1);
-			sck = sckDao.select(new SimulationCommon(result.getCake_id())).get(1);
-			sct = sctDao.select(new SimulationCaketops(result.getCaketop_id(), "")).get(1);
-			si = siDao.select(new SimulationCommon(result.getInvitation_id())).get(1);
-			snp = snpDao.select(new SimulationCommon(result.getNameplate_id())).get(1);
-			stm = stmDao.select(new SimulationTablemembers(result.getTablemember_id(), 0, "")).get(1);
+			result = srDao.select(new SimulationResult(customer_id)).get(0);
+			st = stDao.select(new SimulationCommon(result.getTable_id())).get(0);
+			stc = stcDao.select(new SimulationCommon(result.getTablecover_id())).get(0);
+			sn = snDao.select(new SimulationCommon(result.getNapkin_id())).get(0);
+			sc = scDao.select(new SimulationCommon(result.getChair_id())).get(0);
+			sf = sfDao.select(new SimulationCommon(result.getFlower_id())).get(0);
+			scl1 = sclDao.select(new SimulationCommon(result.getClothes_id1())).get(0);
+			scl2 = sclDao.select(new SimulationCommon(result.getClothes_id2())).get(0);
+			sck = sckDao.select(new SimulationCommon(result.getCake_id())).get(0);
+			sct = sctDao.select(new SimulationCaketops(result.getCaketop_id(), "")).get(0);
+			si = siDao.select(new SimulationCommon(result.getInvitation_id())).get(0);
+			snp = snpDao.select(new SimulationCommon(result.getNameplate_id())).get(0);
+			stm = stmDao.select(new SimulationTablemembers(result.getTablemember_id(), 0, "")).get(0);
 
 			// 検索結果をリクエストスコープに格納する
 			request.setAttribute("st", st);
