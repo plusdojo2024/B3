@@ -10,7 +10,7 @@
 </head>
 <body>
 <header id ="header">
-  <img src="img/logo.png" alt="logo">
+  <a href=/B3/HomeServlet><img src="img/logo.png" alt="logo" height="100" width="150"></a>
   <div id="hmb">
     <span></span>
     <span></span>
@@ -32,25 +32,33 @@
 			<tr>
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin1" class="pin">
-					<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
-					<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+					<a href=/B3/MypageServlet>
+						<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
+						<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+					</a>
 				</td>
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin2" class="pin">
-					<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
-					<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+					<a href=/B3/MypageServlet>
+						<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
+						<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+					</a>
 				</td>
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin3" class="pin">
-					<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
-					<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+					<a href=/B3/MypageServlet>
+						<input type="text" name="lname1" value="${e.lname_1 }" class="card_name">様<br>
+						<input type="text" name="lname2" value="${e.lname_2 }" class="card_name">様
+					</a>
 				</td>
 			</tr>
 		</table>
 		<div class="customer_info">
-			<input type="text" name="thedate" value="${e.thedate}" class="thedate_info"><br>
-			<input type="text" name="lname1" value="${e.lanme_1 }" class="lname_info"><input type="text" name="fname1" value="${e.fanme_1 }" class="fname_info">様<br>
-			<input type="text" name="lname2" value="${e.lanme_2 }" class="lname_info"><input type="text" name="fname2" value="${e.fanme_2 }" class="fname_info">様
+			<a href=/B3/MypageServlet>
+				<input type="text" name="thedate" value="${e.thedate}" class="thedate_info"><br>
+				<input type="text" name="lname1" value="${e.lanme_1 }" class="lname_info"><input type="text" name="fname1" value="${e.fanme_1 }" class="fname_info">様<br>
+				<input type="text" name="lname2" value="${e.lanme_2 }" class="lname_info"><input type="text" name="fname2" value="${e.fanme_2 }" class="fname_info">様
+			</a>
 		</div>
 
 

@@ -4,59 +4,74 @@
 body {
 	background-color: #fffafa;
 }
-
-.page_title {
+h1 {
 	text-align: center;
 	margin: 0 auto 0 auto;
-	width: 20%;
-	height: 10%;
-	font-size: 2.5vw;
+	width: 300px;
+	height: 50px;
+
 	color: white;
 	background-color: #00438d;
 }
+
+/*ボタン類*/
+.button {
+	text-align: center;
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    margin: 10px 50px 0 50px;
+    border: none;
+    border-radius: 30px;
+    background-color:#b8860b;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    width: 15%;
+    text-align: center;
+  }
+
 /*画面分割*/
 #wrapper {
 	width: 100%;
 	overflow: hidden;
 }
-
 #area_ticket {
-		background-color: #00ff00;
-	width: 55%;
+	width: 50%;
 	float: left;
-
-
-
 }
 #area_memo {
-		background-color: #008000;
-
-	width: 45%;
+	width: 50%;
 	float: right;
 }
 
+/*左側*/
+/*現在時刻*/
+.now_time {
+	text-align: center;
+
+}
 /*チケット*/
 .t_list {
-		background-color: #0080ff;
-
 	height: 170px;
 	margin: 10px 0px;
 	display: flex;
 	justify-content: center;	/*displayとセットで中の要素を横中央に*/
 	align-items: center;	/*displayとセットで中の要素を縦中央に*/
+	flex-flow: column;	/*displayとセットで要素を縦に並べる*/
 }
-.t_all {
-		background-color: #80ffff;
-
+.t_full {
 	width: 90%;
 	height:80%;
 	text-align: center;
+	position: relative;
 }
 
 .t_main {
-	width: 70%;
+	width: 80%;
 	height: 100%;
 	text-align: center;
+
 }
 
 .t_sub {
@@ -64,12 +79,48 @@ body {
 	text-align: center;
 }
 
+.text_s {
+	width: 65%;
+	height: 30px;
+	resize: none;
+	position: absolute;
+	top: 30px;
+	left: 10%;
+	font-size: 30px;
+	background-color: #fffafa;
+}
+.text_st {
+	width: 20%;
+	height: 20px;
+	resize: none;
+	position: absolute;
+	bottom: 15px;
+	left: 17%;
+	font-size: 20px;
+	background-color: #fffafa;
+}
+.text_at {
+	width: 20%;
+	height: 20px;
+	resize: none;
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	font-size: 20px;
+	background-color: #fffafa;
+}
+
+/*右側*/
 /*メモ*/
 .m_today {
-		background-color: #80ffff;
-
-	width: 70%;
-	padding: 0 auto 0 auto;
-	resize: none;
-	min-height: 300px;
+	text-align: center;
+	margin-top: 30px;
 }
+
+.memo {
+	width: 80%;
+	resize: vertical;
+	min-height: 300px;
+	font-size: 30px;
+}
+

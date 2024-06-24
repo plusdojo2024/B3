@@ -10,7 +10,7 @@
 </head>
 <body>
 <header id ="header">
-  <img src="img/logo.png" alt="logo">
+  <a href=/B3/HomeServlet><img src="img/logo.png" alt="logo" height="100" width="150"></a>
   <div id="hmb">
     <span></span>
     <span></span>
@@ -118,7 +118,7 @@
 			</tr>
 			<tr>
 				<td colspan="4" class="td_center">
-					<label>備考欄　　<textarea name="memo" class="text_memo" oninput="resizeTextarea()"></textarea></label>
+					<label>備考欄　　<textarea name="memo" class="text_memo"></textarea></label>
 				</td>
 			</tr>
 		</table>

@@ -10,7 +10,7 @@
 </head>
 <body>
 <header id ="header">
-  <img src="img/logo.png" alt="logo">
+  <a href=/B3/MypageServlet><img src="img/logo.png" alt="logo" height="100" width="150"></a>
   <div id="hmb">
     <span></span>
     <span></span>
@@ -33,7 +33,7 @@
 <main class="main">
 	<h1>お客様情報編集</h1>
 	<form id="edit_form" method="post" action="/B3/UpdateServlet" onSubmit="return check()">
-		<table class="customer_inf">
+		<table class="customer_regist">
 			<tr>
 				<td colspan="2">
 					<label>　氏名　　<input type="text" name="lname1" class="text_name"></label>
@@ -136,7 +136,7 @@
 			</tr>
 			<tr>
 				<td colspan="4" class="td_center">
-					<label>備考欄　　<textarea name="memo" class="text_memo" oninput="resizeTextarea()"></textarea></label>
+					<label>備考欄　　<textarea name="memo" class="text_memo"></textarea></label>
 				</td>
 			</tr>
 		</table>
@@ -156,3 +156,5 @@
 </script>
 </body>
 </html>
+
+	<!--<style>* {outline: 1px solid #FF0000;}</style>-->

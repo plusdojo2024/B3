@@ -10,7 +10,7 @@
 </head>
 <body>
 <header id ="header">
-  <img src="img/logo.png" alt="logo">
+  <a href=/B3/MypageServlet><img src="img/logo.png" alt="logo" height="100" width="150"></a>
   <div id="hmb">
     <span></span>
     <span></span>
@@ -31,22 +31,49 @@
   </nav>
 </header>
 <main class="main">
-	<div class="page_title">当日リスト</div>
-<div id="wrapper">
-	<div id="area_ticket">
-		<div id="now_time" class="now_time">現在時刻</div>
+	<h1>当日リスト</h1>
+	<form action="post">
+		<div id="wrapper">
+			<div id="area_ticket">
+				<div id="now_time" class="now_time">現在時刻 0:00</div>
 
-		<div class="t_list">
-			<div class="t_all">
-				<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
-				<img src="img/ticket-sub.png" alt="ticket_sub" class="t_sub">
+				<div class="t_list">
+					<div class="t_full">
+						<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
+						<textarea name="suhedule" class="text_s" placeholder="式目"></textarea>
+						<textarea name="schedule_time" class="text_st" placeholder="予定時刻"></textarea>
+						<textarea name="actual_time" class="text_at" placeholder="実際の時刻"></textarea>
+						<img src="img/ticket-sub.png" alt="ticket_sub" id="t_sub" class="t_sub" onclick="t_sub()">
+					</div>
+				</div>
+				<div class="t_list">
+					<div class="t_full">
+						<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
+						<textarea name="suhedule" class="text_s" placeholder="式目"></textarea>
+						<textarea name="schedule_time" class="text_st" placeholder="予定時刻"></textarea>
+						<textarea name="actual_time" class="text_at" placeholder="実際の時刻"></textarea>
+						<img src="img/ticket-sub.png" alt="ticket_sub" id="t_sub" class="t_sub">
+					</div>
+				</div>
+				<div class="button">
+					<input type="submit" name="submit" value="追加">
+					<input type="submit" name="submit" value="削除">
+				</div>
+
+			</div>
+			<div id="area_memo">
+				<div class="m_today">
+					<textarea name="memo" class="memo" placeholder="メモ欄"></textarea>
+				</div>
+				<div class="button">
+					<input type="submit" name="submit" value="保存">
+				</div>
+
 			</div>
 		</div>
-	</div>
-	<div id="area_memo">
-		<textarea name="memo" class="m_today"></textarea>
-	</div>
-</div>
+	</form>
+
+
 </main>
 <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>
@@ -56,8 +83,14 @@
   const header=document.getElementById("header");
   hmbBtn.addEventListener("click",function(){header.classList.toggle("active");
   });
+
+  const ticketlick=document.getElementById('t_sub')
+  ticketlick.addEventListener("click", function() {
+  	alert("チケット！");
+  });
+
 </script>
 </body>
 </html>
 
-	!--<style>* {outline: 1px solid #FF0000;}</style>-->
+	<!--<style>* {outline: 1px solid #FF0000;}</style>-->

@@ -6,7 +6,7 @@ import dao.CustomerDAO;
 import model.Customer;
 
 public class CustomerDAOtest {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException {
 		CustomerDAO dao = new CustomerDAO();
 		List<Customer> cardList;
 
@@ -16,7 +16,7 @@ public class CustomerDAOtest {
 		//引数のあるコンストラクタ
 		Customer insRec = new Customer(0, "テスト", "テスト", "テスト", "テスト", "テスト", "テスト",
 				"テスト", "テスト", "テスト", "テスト", "テスト", "テスト", "テスト", "テスト", "テスト");
-		/*
+
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功");
 			cardList = dao.select(insRec);
@@ -27,7 +27,7 @@ public class CustomerDAOtest {
 			System.out.println("登録失敗！");
 		}
 		System.out.println();
-		*/
+
 
 	}
 }
