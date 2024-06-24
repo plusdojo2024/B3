@@ -12,6 +12,12 @@ public class SimulationCommon implements Serializable {
 
     }
 
+
+	public SimulationCommon(int id) {
+		super();
+		this.id = id;
+	}
+
 	public SimulationCommon(int id, String name, int price, String image) {
 		super();
 		this.id = id;
