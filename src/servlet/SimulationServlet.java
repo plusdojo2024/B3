@@ -130,9 +130,39 @@ public class SimulationServlet extends HttpServlet {
 			srDao.insert(new SimulationResult(0,customer_id,table_id,tablecover_id,chair_id,napkin_id,flower_id,clothes_id1,clothes_id2,cake_id,caketop_id,invitation_id,nameplate_id,tablemember_id));
 		}
 
-		//
+		// 総合結果テーブルに入っている各シミュレーションIDとリクエストパラメータのIDに違いがある場合、更新する
 		if(st.getId() != table_id || stc.getId() != tablecover_id || sn.getId() != napkin_id || sc.getId() != chair_id || sf.getId() != flower_id || scl1.getId() != clothes_id1 || scl2.getId() != clothes_id2 || sck.getId() != cake_id || sct.getId() != caketop_id || si.getId() != invitation_id || snp.getId() != nameplate_id || stm.getId() != tablemember_id) {
 			srDao.update(new SimulationResult(0,customer_id,table_id,tablecover_id,chair_id,napkin_id,flower_id,clothes_id1,clothes_id2,cake_id,caketop_id,invitation_id,nameplate_id,tablemember_id));
+
+			// 検索結果の更新を行う
+			// 検索処理を行う
+			result = srDao.select(new SimulationResult(customer_id)).get(1);
+			st = stDao.select(new SimulationCommon(result.getTable_id())).get(1);
+			stc = stcDao.select(new SimulationCommon(result.getTablecover_id())).get(1);
+			sn = snDao.select(new SimulationCommon(result.getNapkin_id())).get(1);
+			sc = scDao.select(new SimulationCommon(result.getChair_id())).get(1);
+			sf = sfDao.select(new SimulationCommon(result.getFlower_id())).get(1);
+			scl1 = sclDao.select(new SimulationCommon(result.getClothes_id1())).get(1);
+			scl2 = sclDao.select(new SimulationCommon(result.getClothes_id2())).get(1);
+			sck = sckDao.select(new SimulationCommon(result.getCake_id())).get(1);
+			sct = sctDao.select(new SimulationCaketops(result.getCaketop_id(),"")).get(1);
+			si = siDao.select(new SimulationCommon(result.getInvitation_id())).get(1);
+			snp = snpDao.select(new SimulationCommon(result.getNameplate_id())).get(1);
+			stm = stmDao.select(new SimulationTablemembers(result.getTablemember_id(),0,"")).get(1);
+
+			// 検索結果をリクエストスコープに格納する
+			request.setAttribute("st", st);
+			request.setAttribute("stc", stc);
+			request.setAttribute("sn", sn);
+			request.setAttribute("sc", sc);
+			request.setAttribute("sf", sf);
+			request.setAttribute("scl1", scl1);
+			request.setAttribute("scl2", scl2);
+			request.setAttribute("sck", sck);
+			request.setAttribute("sck", sct);
+			request.setAttribute("si", si);
+			request.setAttribute("snp", snp);
+			request.setAttribute("stm", stm);
 		}
 
 
