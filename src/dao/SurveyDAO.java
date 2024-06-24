@@ -102,10 +102,10 @@ public class SurveyDAO {
 				pStmt.setString(2, Survey.getEvaluation());
 			}
 			else {
-				pStmt.setString(2, "0");
+				pStmt.setString(2, "（未設定）");
 			}
 
-/*
+
 			if (Survey.getGood_point() != null && !Survey.getGood_point().equals("")) {
 				pStmt.setString(3, Survey.getGood_point());
 			}
@@ -118,7 +118,7 @@ public class SurveyDAO {
 			else {
 				pStmt.setString(4, "（未設定）");
 			}
-*/
+
 
 
 			// SQL文を実行する
@@ -169,9 +169,9 @@ public class SurveyDAO {
 				pStmt.setString(1, Survey.getEvaluation());
 			}
 			else {
-				pStmt.setInt(1, 0);
+				pStmt.setString(1, null);
 			}
-/*
+
 			if (Survey.getGood_point() != null && !Survey.getGood_point().equals("")) {
 				pStmt.setString(2, Survey.getGood_point());
 			}
@@ -185,7 +185,7 @@ public class SurveyDAO {
 			else {
 				pStmt.setString(3, null);
 			}
-*/
+
 			if (Survey.getCustomer_id() != null && !Survey.getCustomer_id().equals("")) {
 				pStmt.setString(4, Survey.getCustomer_id());
 			}

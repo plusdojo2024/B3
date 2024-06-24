@@ -41,6 +41,7 @@
   </div>
 
     <div class="couple"><img src="/B3/img/mypagename.png" width="400" height="200"></div>
+	<p class="displaycouple"></p>
 
   <div class="menu">
   <div>
@@ -80,6 +81,11 @@
   const date = now.getDate();
   const output = year+"/"+month + "/"+date;
   document.getElementById('time').textContent = output;
+
+  function getLoggedInUsername() {
+      return "";
+  }
+  document.getElementById('displaycouple').innerText = getLoggedInUsername();
 </script>
 
 </body>
