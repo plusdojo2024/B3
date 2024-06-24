@@ -44,7 +44,8 @@ public class SimulationResultDAO {
 						rs.getInt("chair_id"),
 						rs.getInt("napkin_id"),
 						rs.getInt("flower_id"),
-						rs.getInt("clothes_id"),
+						rs.getInt("clothes_id1"),
+						rs.getInt("clothes_id2"),
 						rs.getInt("cake_id"),
 						rs.getInt("caketop_id"),
 						rs.getInt("invitation_id"),
@@ -87,7 +88,7 @@ public class SimulationResultDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
-			String sql = "INSERT INTO SIMULATION_RESULTS VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO SIMULATION_RESULTS VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -121,35 +122,40 @@ public class SimulationResultDAO {
 			} else {
 				pStmt.setInt(6, 0);
 			}
-			if (simresult.getClothes_id() != 0) {
-				pStmt.setInt(7, simresult.getClothes_id());
+			if (simresult.getClothes_id1() != 0) {
+				pStmt.setInt(7, simresult.getClothes_id1());
 			} else {
 				pStmt.setInt(7, 0);
 			}
-			if (simresult.getCake_id() != 0) {
-				pStmt.setInt(8, simresult.getCake_id());
+			if (simresult.getClothes_id2() != 0) {
+				pStmt.setInt(8, simresult.getClothes_id2());
 			} else {
 				pStmt.setInt(8, 0);
 			}
-			if (simresult.getCaketop_id() != 0) {
-				pStmt.setInt(9, simresult.getCaketop_id());
+			if (simresult.getCake_id() != 0) {
+				pStmt.setInt(9, simresult.getCake_id());
 			} else {
 				pStmt.setInt(9, 0);
 			}
-			if (simresult.getInvitation_id() != 0) {
-				pStmt.setInt(10, simresult.getInvitation_id());
+			if (simresult.getCaketop_id() != 0) {
+				pStmt.setInt(10, simresult.getCaketop_id());
 			} else {
 				pStmt.setInt(10, 0);
 			}
-			if (simresult.getNameplate_id() != 0) {
-				pStmt.setInt(11, simresult.getNameplate_id());
+			if (simresult.getInvitation_id() != 0) {
+				pStmt.setInt(11, simresult.getInvitation_id());
 			} else {
 				pStmt.setInt(11, 0);
 			}
-			if (simresult.getTablemember_id() != 0) {
-				pStmt.setInt(12, simresult.getTablemember_id());
+			if (simresult.getNameplate_id() != 0) {
+				pStmt.setInt(12, simresult.getNameplate_id());
 			} else {
 				pStmt.setInt(12, 0);
+			}
+			if (simresult.getTablemember_id() != 0) {
+				pStmt.setInt(13, simresult.getTablemember_id());
+			} else {
+				pStmt.setInt(13, 0);
 			}
 
 			// SQL文を実行する
@@ -188,7 +194,7 @@ public class SimulationResultDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
 			// SQL文を準備する
-			String sql = "UPDATE SIMULATION_RESULTS SET upadated_at = CURRENT_TIMESTAMP, table_id=?, tablecover_id=?, chair_id=?, napkin_id=?, flower_id=?, clothes_id=?, cake_id=?, caketop_id=?, invitation_id=?, nameplate_id=?, tablemember_id=? WHERE customer_id = ?";
+			String sql = "UPDATE SIMULATION_RESULTS SET upadated_at = CURRENT_TIMESTAMP, table_id=?, tablecover_id=?, chair_id=?, napkin_id=?, flower_id=?, clothes_id1=?, clothes_id2=?, cake_id=?, caketop_id=?, invitation_id=?, nameplate_id=?, tablemember_id=? WHERE customer_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -222,35 +228,40 @@ public class SimulationResultDAO {
 			} else {
 				pStmt.setInt(5, 0);
 			}
-			if (simresult.getClothes_id() != 0) {
-				pStmt.setInt(6, simresult.getClothes_id());
+			if (simresult.getClothes_id1() != 0) {
+				pStmt.setInt(6, simresult.getClothes_id1());
 			} else {
 				pStmt.setInt(6, 0);
 			}
-			if (simresult.getCake_id() != 0) {
-				pStmt.setInt(7, simresult.getCake_id());
+			if (simresult.getClothes_id2() != 0) {
+				pStmt.setInt(7, simresult.getClothes_id2());
 			} else {
 				pStmt.setInt(7, 0);
 			}
-			if (simresult.getCaketop_id() != 0) {
-				pStmt.setInt(8, simresult.getCaketop_id());
+			if (simresult.getCake_id() != 0) {
+				pStmt.setInt(8, simresult.getCake_id());
 			} else {
 				pStmt.setInt(8, 0);
 			}
-			if (simresult.getInvitation_id() != 0) {
-				pStmt.setInt(9, simresult.getInvitation_id());
+			if (simresult.getCaketop_id() != 0) {
+				pStmt.setInt(9, simresult.getCaketop_id());
 			} else {
 				pStmt.setInt(9, 0);
 			}
-			if (simresult.getNameplate_id() != 0) {
-				pStmt.setInt(10, simresult.getNameplate_id());
+			if (simresult.getInvitation_id() != 0) {
+				pStmt.setInt(10, simresult.getInvitation_id());
 			} else {
 				pStmt.setInt(10, 0);
 			}
-			if (simresult.getTablemember_id() != 0) {
-				pStmt.setInt(11, simresult.getTablemember_id());
+			if (simresult.getNameplate_id() != 0) {
+				pStmt.setInt(11, simresult.getNameplate_id());
 			} else {
 				pStmt.setInt(11, 0);
+			}
+			if (simresult.getTablemember_id() != 0) {
+				pStmt.setInt(12, simresult.getTablemember_id());
+			} else {
+				pStmt.setInt(12, 0);
 			}
 
 			// SQL文を実行する
