@@ -50,7 +50,7 @@ public class SimulationResultDAO {
 						rs.getInt("caketop_id"),
 						rs.getInt("invitation_id"),
 						rs.getInt("nameplate_id"),
-						rs.getInt("table_memberid"));
+						rs.getInt("tablemember_id"));
 				simresultList.add(record);
 			}
 		} catch (SQLException e) {
