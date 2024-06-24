@@ -22,7 +22,7 @@ public class OrderlistDao {
 
 			 //SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
 			//項目を増やす場合は(NULL,
-			String sql = "INSERT INTO USERS (name,age,hobby,created_at,updated_at) VALUES (NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO USERS (deadlines,memo_id,number,created_at,updated_at) VALUES (NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			 //SQL文を完成させる
@@ -100,9 +100,10 @@ public class OrderlistDao {
 			}
 			if (card.getDeadlines() != null) {
 			    // java.util.Date を java.sql.Date に変換
-			    java.sql.Date sqlDate = new java.sql.Date(card.getDeadlines().getTime());
-			    pStmt.setDate(13, sqlDate);
+//			    java.sql.Date sqlDate = new java.sql.Date(card.getDeadlines().getTime());
+			    pStmt.setString(13, card.getDeadlines());
 			} else {
+
 			    pStmt.setNull(13, java.sql.Types.DATE);
 			}
 			if (card.getMemo_id() != 0) {

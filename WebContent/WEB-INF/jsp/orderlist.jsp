@@ -12,6 +12,7 @@
 	outline: 1px solid #FF0000;
 }
 </style>
+<script src="/B3/js/oredlist.js"></script>
 </head>
 <body>
 
@@ -41,26 +42,85 @@
 					<img src="img/Owaku.png">
 
 					<!-- 内装 -->
-					<img src="img/Ointerior.png">
+					<img src="img/Ointerior.png" class="photo"
+						data-modal-target="modal1">
 
 					<!-- 衣装 -->
 					<img src="img/Ocostume.png" alt="衣装" class="photo"
 						data-modal-target="modal2">
 
 					<!-- ケーキ -->
-					<img src="img/Ocake.png">
+					<img src="img/Ocake.png" class="photo" data-modal-target="modal3">
 
 					<!-- カード -->
-					<img src="img/Ocard.png">
+					<img src="img/Ocard.png" class="photo" data-modal-target="modal4">
 
 					<!-- その他 -->
-					<img src="img/Oothers.png">
+					<img src="img/Oothers.png" class="photo" data-modal-target="modal5">
 
 				</div>
 			</div>
 		</div>
 		<!-- お客様発注リストの枠組 終了 -->
-		<!-- モーダルウインドウ 開始 -->
+		<!-- モーダルウインドウ 内装 開始 -->
+
+
+		<div id="modal1" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<!-- 大枠 -->
+				<div class="box2">
+					<!-- タイトル -->
+					<div class="box3">
+						<p>内装</p>
+					</div>
+					<!-- 項目 -->
+					<input type="checkbox" id="check" value="clothing" checked><label
+						for="check"></label>
+
+					<div class="box1-4">
+						<img src="" alt="シミュレーションの画像を取得">
+					</div>
+
+					<form>
+
+
+
+
+						<div class="container">
+
+							<label> 商品名 <input type="text" name="name">
+							</label>
+
+						</div>
+						<div class="container"></div>
+						<div class="container">
+
+							<label> 値段 <input type="text" name="price">
+							</label> <label> 個数 <input type="text" name="number">
+							</label>
+
+						</div>
+						<div class="container"></div>
+						<div class="container">
+
+							<label for="targetDate">期日:</label> <input type="date"
+								id="targetDate" onchange="calculateRemainingDays()">
+							<p>
+								<span id="event_name"></span><span id="days"></span>
+							</p>
+						</div>
+						<!-- 期日カウントダウン -->
+					</form>
+				</div>
+
+				<input type="submit" name="save" value="保存">
+			</div>
+		</div>
+
+
+		<!-- モーダルウインドウ 終了 -->
+		<!-- モーダルウインドウ 衣装 開始 -->
 
 
 		<div id="modal2" class="modal">
@@ -73,36 +133,40 @@
 						<p>衣装</p>
 					</div>
 					<!-- 項目 -->
-					<input type="checkbox" id="check" value="clothing"  checked><label
+					<input type="checkbox" id="check" value="clothing" checked><label
 						for="check"></label>
+
+					<div class="box4">
+						<img src="" alt="シミュレーションの画像を取得">
+					</div>
+
 					<form>
 
 
 
-						<div class="box4">
-							<img src="" alt="シミュレーションの画像を取得">
-						</div>
+
 						<div class="container">
-							<div class="box box5">
-								<label> 商品名 <input type="text" name="name">
-								</label>
-							</div>
+
+							<label> 商品名 <input type="text" name="name">
+							</label>
+
 						</div>
+						<div class="container"></div>
 						<div class="container">
-							<div class="box box5">
-								<label> 値段 <input type="text" name="price">
-								</label>
-							</div>
-							<div class="box box5">
-								<label> 個数 <input type="text" name="number">
-								</label>
-							</div>
+
+							<label> 値段 <input type="text" name="price">
+							</label> <label> 個数 <input type="text" name="number">
+							</label>
+
 						</div>
+						<div class="container"></div>
 						<div class="container">
-							<div class="left box5">
-								<label> 期限（手入力） <input type="date" name="ded">
-								</label>
-							</div>
+
+							<label for="targetDate">期日:</label> <input type="date"
+								id="targetDate" onchange="calculateRemainingDays()">
+							<p>
+								<span id="event_name"></span><span id="days"></span>
+							</p>
 						</div>
 						<!-- 期日カウントダウン -->
 					</form>
@@ -113,6 +177,178 @@
 
 
 		<!-- モーダルウインドウ 終了 -->
+		<!-- モーダルウインドウ ケーキ 開始 -->
+
+
+		<div id="modal3" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<!-- 大枠 -->
+				<div class="box2">
+					<!-- タイトル -->
+					<div class="box3">
+						<p>ケーキ</p>
+					</div>
+					<!-- 項目 -->
+					<input type="checkbox" id="check" value="clothing" checked><label
+						for="check"></label>
+
+					<div class="box4">
+						<img src="" alt="シミュレーションの画像を取得">
+					</div>
+
+					<form>
+
+
+
+
+						<div class="container">
+
+							<label> 商品名 <input type="text" name="name">
+							</label>
+
+						</div>
+						<div class="container"></div>
+						<div class="container">
+
+							<label> 値段 <input type="text" name="price">
+							</label> <label> 個数 <input type="text" name="number">
+							</label>
+
+						</div>
+						<div class="container"></div>
+						<div class="container">
+
+							<label for="targetDate">期日:</label> <input type="date"
+								id="targetDate" onchange="calculateRemainingDays()">
+							<p>
+								<span id="event_name"></span><span id="days"></span>
+							</p>
+						</div>
+						<!-- 期日カウントダウン -->
+					</form>
+				</div>
+				<input type="submit" name="save" value="保存">
+			</div>
+		</div>
+
+
+		<!-- モーダルウインドウ 終了 -->
+		<!-- モーダルウインドウ カード 開始 -->
+
+
+		<div id="modal4" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<!-- 大枠 -->
+				<div class="box2">
+					<!-- タイトル -->
+					<div class="box3">
+						<p>カード</p>
+					</div>
+					<!-- 項目 -->
+					<input type="checkbox" id="check" value="clothing" checked><label
+						for="check"></label>
+
+					<div class="box4">
+						<img src="" alt="シミュレーションの画像を取得">
+					</div>
+
+					<form>
+
+
+
+
+						<div class="container">
+
+							<label> 商品名 <input type="text" name="name">
+							</label>
+
+						</div>
+						<div class="container"></div>
+						<div class="container">
+
+							<label> 値段 <input type="text" name="price">
+							</label> <label> 個数 <input type="text" name="number">
+							</label>
+
+						</div>
+						<div class="container"></div>
+						<div class="container">
+
+							<label for="targetDate">期日:</label> <input type="date"
+								id="targetDate" onchange="calculateRemainingDays()">
+							<p>
+								<span id="event_name"></span><span id="days"></span>
+							</p>
+						</div>
+						<!-- 期日カウントダウン -->
+					</form>
+				</div>
+				<input type="submit" name="save" value="保存">
+			</div>
+		</div>
+
+
+		<!-- モーダルウインドウ 終了 -->
+		<!-- モーダルウインドウ その他 開始 -->
+
+
+		<div id="modal5" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<!-- 大枠 -->
+				<div class="box2">
+					<!-- タイトル -->
+					<div class="box3">
+						<p>その他</p>
+					</div>
+					<!-- 項目 -->
+					<input type="checkbox" id="check" value="clothing" checked><label
+						for="check"></label>
+
+					<div class="box4">
+						<img src="" alt="シミュレーションの画像を取得">
+					</div>
+
+					<form>
+
+
+
+
+						<div class="container">
+
+							<label> 商品名 <input type="text" name="name">
+							</label>
+
+						</div>
+						<div class="container"></div>
+						<div class="container">
+
+							<label> 値段 <input type="text" name="price">
+							</label> <label> 個数 <input type="text" name="number">
+							</label>
+
+						</div>
+						<div class="container"></div>
+						<div class="container">
+
+							<label for="targetDate">期日:</label> <input type="date"
+								id="targetDate" onchange="calculateRemainingDays()">
+							<p>
+								<span id="event_name"></span><span id="days"></span>
+							</p>
+						</div>
+						<!-- 期日カウントダウン -->
+					</form>
+				</div>
+				<input type="submit" name="save" value="保存">
+			</div>
+		</div>
+
+
+		<!-- モーダルウインドウ 終了 -->
+
 
 	</main>
 	<footer>
@@ -148,5 +384,6 @@
 
 
 	</script>
+
 </body>
 </html>
