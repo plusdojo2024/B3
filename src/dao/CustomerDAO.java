@@ -94,7 +94,7 @@ public class CustomerDAO {
 			} else {
 				pStmt.setInt(13, 0);
 			}
-			if (info.getPin() != false) {	//追加した　あってる？
+			if (info.getPin() != false) {
 				pStmt.setBoolean(14, true);
 			}
 			//SQL文を実行する
@@ -133,9 +133,7 @@ public class CustomerDAO {
 		try {
 			Class.forName("org.h2.Driver");
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
-			String sql = "SELECT * FROM Customers WHERE lname_1 LIKE ? AND fname_1 LIKE ? AND lfurigana_1 LIKE ? AND "
-					+ "ffurigana_1 LIKE ? AND lname_2 LIKE ? AND fname_2 LIKE ? AND lfurigana_2 LIKE ? AND "
-					+ "ffurigana_2 LIKE ? AND thedate LIKE ? AND memo_id LIKE ? AND pin LiKE ? ORDER BY id";
+			String sql = "SELECT * FROM Customers WHERE lname_1 LIKE ? AND fname_1 LIKE ? AND lfurigana_1 LIKE ? AND ffurigana_1 LIKE ? AND lname_2 LIKE ? AND fname_2 LIKE ? AND lfurigana_2 LIKE ? AND ffurigana_2 LIKE ? AND thedate LIKE ? AND memo_id = ? AND pin LiKE ? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (info.getLname_1() != null) {
@@ -184,9 +182,9 @@ public class CustomerDAO {
 				pStmt.setString(9, "%");
 			}
 			if (info.getMemo_id() != null) {
-				pStmt.setString(10, "%" + info.getMemo_id() + "%");
+				pStmt.setInt(10, Integer.parseInt(info.getMemo_id()) );
 			} else {
-				pStmt.setString(10, "%");
+				pStmt.setInt(10, 0);
 			}
 			if (info.getPin()) {
 				pStmt.setString(11, "%" + info.getPin() + "%");
@@ -197,8 +195,6 @@ public class CustomerDAO {
 			while (rs.next()) {
 				Customer record = new Customer(
 				rs.getInt("id"),
-				rs.getString("created_at"),
-				rs.getString("updated_at"),
 				rs.getString("lname_1"),
 				rs.getString("fname_1"),
 				rs.getString("lfurigana_1"),
