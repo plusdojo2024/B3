@@ -219,8 +219,8 @@
 						<div class="container"></div>
 						<div class="container">
 
-							<label for="targetDate">期日:</label> <input type="date"
-								id="targetDate" onchange="calculateRemainingDays()">
+							<label for="ded">期日:</label> <input type="date"
+								id="ded" onchange="calculateRemainingDays()">
 							<p>
 								<span id="event_name"></span><span id="days"></span>
 							</p>

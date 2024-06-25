@@ -1,6 +1,6 @@
 function calculateRemainingDays() {
 	//Htmlの期日を取得する
-	const targetDateInput = document.getElementById("targetDate");
+	const targetDateInput = document.getElementById("ded");
 	const targetDateValue = targetDateInput.value;
 
 	if (targetDateValue) {
