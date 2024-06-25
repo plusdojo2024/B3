@@ -10,14 +10,8 @@ import java.util.List;
 
 import model.Customer;
 
-<<<<<<< HEAD
-public class CustomerDao {
-	//登録
-=======
 public class CustomerDAO {
-
 	//お客様情報登録
->>>>>>> ee9954adf3810bdde7c6d4e3267e98903a08ec02
 	public boolean insert(Customer info) {
 		Connection conn = null;
 		boolean result = false;
