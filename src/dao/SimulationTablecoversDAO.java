@@ -66,7 +66,7 @@ public class SimulationTablecoversDAO {
 	}
 
 	// 全件検索をして、検索結果を返す
-	public List<SimulationCommon> allselect(SimulationCommon tablecover) {
+	public List<SimulationCommon> allselect() {
 		Connection conn = null;
 		List<SimulationCommon> tablecoverList = new ArrayList<SimulationCommon>();
 
