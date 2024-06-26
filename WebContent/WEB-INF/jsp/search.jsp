@@ -32,22 +32,22 @@
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin1" class="pin">
 					<a href=/B3/MypageServlet>
-						<input type="text" name="fname_1" value="${e.fname_1 }" class="card_name">様<br>
-						<input type="text" name="fname_2" value="${e.fname_2 }" class="card_name">様
+						<input type="text" name="fname_1" value="剛史${e.fname_1 }" class="card_name">様<br>
+						<input type="text" name="fname_2" value="沙織${e.fname_2 }" class="card_name">様
 					</a>
 				</td>
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin2" class="pin">
 					<a href=/B3/MypageServlet>
-						<input type="text" name="fname_1" value="${e.fname_1 }" class="card_name">様<br>
-						<input type="text" name="fname_2" value="${e.fname_2 }" class="card_name">様
+						<input type="text" name="fname_1" value="太郎${e.fname_1 }" class="card_name">様<br>
+						<input type="text" name="fname_2" value="花子${e.fname_2 }" class="card_name">様
 					</a>
 				</td>
 				<td class="card">
 					<img src="img/pin.png" alt="pin" id="pin3" class="pin">
 					<a href=/B3/MypageServlet>
-						<input type="text" name="fname_1" value="${e.fname_1 }" class="card_name">様<br>
-						<input type="text" name="fname_2" value="${e.fname_2 }" class="card_name">様
+						<input type="text" name="fname_1" value="湊${e.fname_1 }" class="card_name">様<br>
+						<input type="text" name="fname_2" value="葵${e.fname_2 }" class="card_name">様
 					</a>
 				</td>
 			</tr>

@@ -36,35 +36,35 @@
 		<table class="customer_regist">
 			<tr>
 				<td colspan="2">
-					<label>　氏名　　<input type="text" name="lname_1" class="text_name"></label>
-									<input type="text" name="fname_1" class="text_name">
+					<label>　氏名　　<input type="text" name="lname_1" value="松本" class="text_name"></label>
+									<input type="text" name="fname_1" value="剛史" class="text_name">
 				</td>
 				<td colspan="2">
-					<label>　氏名　　<input type="text" name="lname_2" class="text_name"></label>
-									<input type="text" name="fname_2" class="text_name">
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<label>フリガナ　<input type="text" name="lfurigana_1" class="text_name"></label>
-									<input type="text" name="ffurigana_1" class="text_name">
-				</td>
-				<td colspan="2">
-					<label>フリガナ　<input type="text" name="lfurigana_2" class="text_name"></label>
-									<input type="text" name="ffurigana_2" class="text_name">
+					<label>　氏名　　<input type="text" name="lname_2" value="土屋" class="text_name"></label>
+									<input type="text" name="fname_2" value="沙織" class="text_name">
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<label>電話番号　<input type="text" name="tel_1" class="text_tell"></label>
+					<label>フリガナ　<input type="text" name="lfurigana_1" value="マツモト" class="text_name"></label>
+									<input type="text" name="ffurigana_1" value="タケシ" class="text_name">
 				</td>
 				<td colspan="2">
-					<label>電話番号　<input type="text" name="tel_2" class="text_tell"></label>
+					<label>フリガナ　<input type="text" name="lfurigana_2" value="ツチヤ" class="text_name"></label>
+									<input type="text" name="ffurigana_2" value="サオリ" class="text_name">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<label>電話番号　<input type="text" name="tel_1" value="0011112222" class="text_tell"></label>
+				</td>
+				<td colspan="2">
+					<label>電話番号　<input type="text" name="tel_2" value="0011113333" class="text_tell"></label>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="4" class="td_center">
-					<label>住　所　　<input type="text" name="address" class="text_add"></label>
+					<label>住　所　　<input type="text" name="address" value="東京都○○区" class="text_add"></label>
 				</td>
 			</tr>
 			<tr>

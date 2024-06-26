@@ -32,6 +32,8 @@ h1 {
 	position: relative;
 }
 .card_name {
+	text-align: center;
+	color: #00438d;
 	border: none;
 	outline: none;
 	width: 100px;
