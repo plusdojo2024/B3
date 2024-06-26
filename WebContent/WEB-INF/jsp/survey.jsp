@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>アンケート</title>
   <link rel="stylesheet" href="/B3/css/survey.css">
+  <link rel="stylesheet" href="/B3/css/common.css">
 </head>
 <body>
 

@@ -27,4 +27,20 @@ public class TodaylistServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todaylist.jsp");
 		dispatcher.forward(request, response);
 	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		/*
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/B3/LoginServlet");
+			return;
+		}
+		*/
+
+		// 当日リスト画面にフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todaylist.jsp");
+		dispatcher.forward(request, response);
+
+	}
 }

@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>報告書</title>
   <link rel="stylesheet" href="/B3/css/report.css">
+  <link rel="stylesheet" href="/B3/css/common.css">
 </head>
 <body>
 
