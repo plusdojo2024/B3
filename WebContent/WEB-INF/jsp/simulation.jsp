@@ -12,7 +12,7 @@
 
 <body>
     <header id ="header">
-          <a href="HomeServlet"><img src="img/logo.png" alt="logo"height="100" width="150"></a>
+          <a href="MypageServlet"><img src="img/logo.png" alt="logo"height="100" width="150"></a>
          <div id="hmb">
              <span></span>
              <span></span>
@@ -22,7 +22,7 @@
              <ul>
                  <li><a href="/B3/MypageServlet">マイページ</a></li>
                  <li><a href="/B3/UpdateServlet">お客様様情報編集</a></li>
-                 <li><a href="/B3/OrdelistServlet">発注リスト</a></li>
+                 <li><a href="/B3/OrderlistServlet">発注リスト</a></li>
                  <li><a href="/B3/TodaylistServlet">当日リスト</a></li>
                  <li><a href="/B3/SimulationServlet">シミュレーション</a></li>
                  <li><a href="/B3/ReportServlet">報告書作成</a></li>
