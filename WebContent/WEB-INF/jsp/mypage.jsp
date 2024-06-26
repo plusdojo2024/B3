@@ -23,10 +23,10 @@
       <li><a href="UpdateServlet">お客様情報編集</a></li>
       <li><a href="OrderlistServlet">発注リスト</a></li>
       <li><a href="TodaylistServlet">当日リスト</a></li>
-      <li><a href="SimuletServlet">シミュレーション</a></li>
+      <li><a href="SimulationServlet">シミュレーション</a></li>
       <li><a href="ReportServlet">報告書作成</a></li>
       <li><a href="SurveyServlet">式後アンケート</a></li>
-      <li><a href="SerchServlet">お客様変更</a></li>
+      <li><a href="SearchServlet">お客様変更</a></li>
       <li><a href="LogoutServlet">ログアウト</a></li>
     </ul>
   </nav>

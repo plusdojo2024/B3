@@ -39,20 +39,20 @@ public class SimulationServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		// もしもお客様が確定していなかったらお客様検索サーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/B3/LoginServlet");
-			return;
-		} else if (session.getAttribute("customer_id") == null) {
-			response.sendRedirect("/B3/SearchServlet");
-			return;
-		}
+//		HttpSession session = request.getSession();
+//		if (session.getAttribute("id") == null) {
+//			response.sendRedirect("/B3/LoginServlet");
+//			return;
+//		} else if (session.getAttribute("customer_id") == null) {
+//			response.sendRedirect("/B3/SearchServlet");
+//			return;
+//		}
+//
+//		// セッションパラメータを取得する
+//		int customer_id = (int) session.getAttribute("customer_id");
 
-		// セッションパラメータを取得する
-		int customer_id = (int) session.getAttribute("customer_id");
-
-		//		// セッションパラメータを取得する
-		//		int customer_id = 1;
+				// セッションパラメータを取得する
+				int customer_id = 1;
 
 		// 検索処理を行う
 		SimulationResultDAO srDao = new SimulationResultDAO();

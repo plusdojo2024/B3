@@ -15,6 +15,7 @@ public class CustomerDAO {
 	public boolean insert(Customer info) {
 		Connection conn = null;
 		boolean result = false;
+		int id = 0;
 
 		try {
 			//ドライバを読み込む
@@ -23,10 +24,30 @@ public class CustomerDAO {
 			//データベースに接続
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
-			//SQL文を準備する
-			String sql = "INSERT INTO CUSTOMERS VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,"
-					+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
+			String sql = "INSERT INTO MEMOS VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (info.getMemo_id() != null && !info.getMemo_id().equals("")) {
+				pStmt.setString(1, info.getMemo_id());
+			}
+			else {
+				pStmt.setString(1, "（未設定）");
+			}
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+				// メモIDを取得
+				ResultSet rs = pStmt.getGeneratedKeys();
+				id = rs.getInt("id");
+			}
+
+			//SQL文を準備する
+			sql = "INSERT INTO CUSTOMERS VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,"
+					+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			pStmt = conn.prepareStatement(sql);
 
 			//SQL文を完成させる
 			if (info.getLname_1() != null && !info.getLname_1().equals("")) {
@@ -89,10 +110,11 @@ public class CustomerDAO {
 			} else {
 				pStmt.setString(12, "");
 			}
-			if (info.getMemo_id() != null && !info.getMemo_id().equals("")) {
-				pStmt.setInt(13, Integer.parseInt(info.getMemo_id()));
-			} else {
-				pStmt.setInt(13, 0);
+			if (id != 0) {
+				pStmt.setInt(1, id);
+			}
+			else {
+				pStmt.setInt(1, 0);
 			}
 			if (info.getPin() != false) {
 				pStmt.setBoolean(14, true);
@@ -133,7 +155,7 @@ public class CustomerDAO {
 		try {
 			Class.forName("org.h2.Driver");
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
-			String sql = "SELECT * FROM Customers WHERE lname_1 LIKE ? AND fname_1 LIKE ? AND lfurigana_1 LIKE ? AND ffurigana_1 LIKE ? AND lname_2 LIKE ? AND fname_2 LIKE ? AND lfurigana_2 LIKE ? AND ffurigana_2 LIKE ? AND thedate LIKE ? AND memo_id = ? AND pin LiKE ? ORDER BY id";
+			String sql = "SELECT * FROM Customers WHERE lname_1 LIKE ? AND fname_1 LIKE ? AND lfurigana_1 LIKE ? AND ffurigana_1 LIKE ? AND lname_2 LIKE ? AND fname_2 LIKE ? AND lfurigana_2 LIKE ? AND ffurigana_2 LIKE ? AND thedate LIKE ? AND memo_id = ? AND pin = ? ORDER BY id";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (info.getLname_1() != null) {
@@ -187,9 +209,9 @@ public class CustomerDAO {
 				pStmt.setInt(10, 0);
 			}
 			if (info.getPin()) {
-				pStmt.setString(11, "%" + info.getPin() + "%");
+				pStmt.setBoolean(11,info.getPin());
 			} else {
-				pStmt.setString(11, "%");
+				pStmt.setBoolean(11,info.getPin());
 			}
 			ResultSet rs = pStmt.executeQuery();
 			while (rs.next()) {
@@ -246,9 +268,7 @@ public class CustomerDAO {
 
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/B3", "sa", "");
 
-			String sql = "UPDATE Customer SET lname_1=?, fname_1=?, lfurigana_1=?, ffurigana_1=? tel_1=?, "
-					+ "lname_2=?, fname_2=?, lfurigana_2=?, ffurigana_2=?,tel_2=?,"
-					+ "address=?, thedate=?, memo_id=? WHERE id=?";
+			String sql = "UPDATE Customer SET lname_1=?, fname_1=?, lfurigana_1=?, ffurigana_1=? tel_1=?,lname_2=?, fname_2=?, lfurigana_2=?, ffurigana_2=?,tel_2=?, address=?, thedate=?, memo_id=?, pin=? WHERE id=?";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			if (info.getLname_1() != null && !info.getLname_1().equals("")) {
@@ -316,7 +336,12 @@ public class CustomerDAO {
 			} else {
 				pStmt.setString(13, "未記入");
 			}
-			pStmt.setInt(14, info.getId());
+			if (info.getPin()) {
+				pStmt.setBoolean(14, info.getPin());
+			} else {
+				pStmt.setBoolean(14, info.getPin());
+			}
+			pStmt.setInt(15, info.getId());
 
 			if (pStmt.executeUpdate() == 1) {
 				result = true;

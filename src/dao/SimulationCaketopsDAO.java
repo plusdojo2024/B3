@@ -92,7 +92,7 @@ public class SimulationCaketopsDAO {
 				if (pStmt.executeUpdate() == 1) {
 					result = true;
 					ResultSet rs = pStmt.getGeneratedKeys();
-					id = rs.getInt(1);
+					id = rs.getInt(0);
 				}
 
 				// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
@@ -104,7 +104,7 @@ public class SimulationCaketopsDAO {
 					pStmt.setInt(1, id);
 				}
 				else {
-					pStmt.setString(1, "（未設定）");
+					pStmt.setInt(1,0);
 				}
 
 				// SQL文を実行する
