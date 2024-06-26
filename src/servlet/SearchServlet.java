@@ -62,14 +62,14 @@ public class SearchServlet extends HttpServlet {
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
 		String thedate = year+"-"+month+"-"+day;
-		String memo_id = request.getParameter("memo_id");
+		String memo = request.getParameter("memo_id");
 		boolean pin = true;
 
 		// 検索処理を行う
 		CustomerDAO cDao = new CustomerDAO();
-		List<Customer> customerList = cDao.select(new Customer(0, "", "", lname_1, fname_1,	//0のとこidにするとエラー
+		List<Customer> customerList = cDao.select(new Customer(0, lname_1, fname_1,	//0のとこidにするとエラー
 				lfurigana_1, ffurigana_1, "", lname_2, fname_2, lfurigana_2, ffurigana_2, "",
-				"", thedate, memo_id, pin));
+				"", thedate, pin, memo));
 
 		// 検索結果をリクエストスコープに格納する idも
 		request.setAttribute("customerList", customerList);

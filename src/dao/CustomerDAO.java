@@ -26,11 +26,11 @@ public class CustomerDAO {
 
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
 			String sql = "INSERT INTO MEMOS VALUES (NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?)";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
+			PreparedStatement pStmt = conn.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 			// SQL文を完成させる
-			if (info.getMemo_id() != null && !info.getMemo_id().equals("")) {
-				pStmt.setString(1, info.getMemo_id());
+			if (info.getRemark() != null && !info.getRemark().equals("")) {
+				pStmt.setString(1, info.getRemark());
 			}
 			else {
 				pStmt.setString(1, "（未設定）");
@@ -41,7 +41,7 @@ public class CustomerDAO {
 				result = true;
 				// メモIDを取得
 				ResultSet rs = pStmt.getGeneratedKeys();
-				id = rs.getInt("id");
+				id = rs.getInt(1);
 			}
 
 			//SQL文を準備する
@@ -203,8 +203,8 @@ public class CustomerDAO {
 			} else {
 				pStmt.setString(9, "%");
 			}
-			if (info.getMemo_id() != null) {
-				pStmt.setInt(10, Integer.parseInt(info.getMemo_id()) );
+			if (info.getMemo_id() != 0) {
+				pStmt.setInt(10, info.getMemo_id() );
 			} else {
 				pStmt.setInt(10, 0);
 			}
@@ -229,7 +229,7 @@ public class CustomerDAO {
 				rs.getString("tel_2"),
 				rs.getString("address"),
 				rs.getString("thedate"),
-				rs.getString("memo_id"),
+				rs.getInt("memo_id"),
 				rs.getBoolean("pin")
 				);
 				customerList.add(record);
@@ -331,10 +331,10 @@ public class CustomerDAO {
 			} else {
 				pStmt.setString(12, "未記入");
 			}
-			if (info.getMemo_id() != null && !info.getMemo_id().equals("")) {
-				pStmt.setString(13, info.getMemo_id());
+			if (info.getMemo_id() != 0) {
+				pStmt.setInt(13, info.getMemo_id());
 			} else {
-				pStmt.setString(13, "未記入");
+				pStmt.setInt(13,0);
 			}
 			if (info.getPin()) {
 				pStmt.setBoolean(14, info.getPin());

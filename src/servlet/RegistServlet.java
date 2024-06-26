@@ -65,8 +65,8 @@ public class RegistServlet extends HttpServlet {
 
 		//登録処理を行う
 		CustomerDAO cDAO = new CustomerDAO();
-		if (cDAO.insert(new Customer(0, "", "", lname_1, fname_1, lfurigana_1, ffurigana_1, tel_1,
-				lname_2, fname_2, lfurigana_2, ffurigana_2, tel_2, address, thedate, memo, pin)));
+		if (cDAO.insert(new Customer(0, lname_1, fname_1, lfurigana_1, ffurigana_1, tel_1,
+				lname_2, fname_2, lfurigana_2, ffurigana_2, tel_2, address, thedate,  pin, memo)));
 
 		//マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
