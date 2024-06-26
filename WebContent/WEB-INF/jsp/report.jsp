@@ -40,7 +40,7 @@
 	<p class="time">記入日時：<span id="time"></span></p>
   </div>
 
-    <div class="couple"><img src="/B3/img/mypagename.png" width="400" height="200"></div>
+    <div class="couple"><img src="/B3/img/matutiName.png" width="400" height="200"></div>
 	<p class="displaycouple"></p>
 
   <div class="menu">
