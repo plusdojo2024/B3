@@ -23,13 +23,13 @@ body {
 }
 
  .column {
-    flex: 1 1  20%; /* 幅は可変ですが、各列の最大幅は20%に制限 */
+    flex: 1 1 1 1 1; /* 幅は可変ですが、各列の最大幅は20%に制限 */
     margin: 10px; /* グリッドギャップ */
-    position: relative;
+    position: center;
 }
 
 .photo {
-    width: 100%;
+    width: 206px;
     height: 300px;
     border-radius: 8px;
     cursor: pointer;

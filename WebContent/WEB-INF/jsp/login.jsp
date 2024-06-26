@@ -28,7 +28,7 @@
         <div class="signin">
           <h2 class="title">LOGIN</h2>
          <form class="more-padding" autocomplete="off" method="post" action="/B3/LoginServlet">
-           <input type="text" name="id" placeholder="ユーザー名"><br>
+           <input type="text" name="user" placeholder="ユーザー名"><br>
             <input type="password" name="pw" placeholder="パスワード"><br>
             <div class="checkbox">
               <input type="checkbox" id="showPassword" /><label for="showPassword">パスワード表示する </label><br>
@@ -88,7 +88,7 @@
       // ログインフォームが送信された時の処理
       $('#loginForm').submit(function(event) {
           // ユーザー名とパスワードの値を取得
-          var username = $('#loginForm input[name="id"]').val();
+          var username = $('#loginForm input[name="user"]').val();
           var password = $('#loginForm input[name="pw"]').val();
           // ユーザー名またはパスワードが空の場合はエラーメッセージを表示
           if (!username || !password) {
