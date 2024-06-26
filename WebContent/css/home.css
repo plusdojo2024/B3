@@ -134,7 +134,7 @@ footer{
 .mymenu1{
 	justify-content:center;
 	display:flex;
-	gap:100px;
+	gap:80px;
 }
 .survay img{
 	width:300px;
@@ -149,5 +149,8 @@ footer{
 .mymenu2 img{
 	width:380px;
 	height:220px;
+}
+.couple{
+	margin-right:-120px;
 }
 
