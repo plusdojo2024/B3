@@ -7,11 +7,11 @@
 <title>KyoronP</title>
 <link rel="stylesheet" href="/B3/css/common.css">
 <link rel="stylesheet" href="/B3/css/orderlist.css">
-<!--  <style>
- {
+<style>
+* {
 	outline: 1px solid #FF0000;
 }
-</style> -->
+</style>
 <script src="/B3/js/oredlist.js"></script>
 </head>
 <body>
@@ -43,7 +43,12 @@
 			<div class="arrange">
 				<div class="items">
 
+					<div class="polo">
+						<p style="font-size: xx-large; color: white; text-align: center;">
+							剛史様<br> ＆<br> 沙織様
+						</p>
 
+					</div>
 					<!-- お客様の名前欄 -->
 					<img src="img/Owaku.png">
 
@@ -83,17 +88,15 @@
 					<!-- 項目 -->
 
 					<div class="box4">
-						<img src="img/napkin_blue.png" alt="シミュレーションの画像を取得">
+						<img src="img/napkin_pink.png" alt="シミュレーションの画像を取得" width="220px"
+							height="150px">
 					</div>
 
-					<form>
-
-
-
+					<form class="fo1">
 
 						<div class="container">
 
-							<label> <input type="text" name="name" value="ナプキン青">
+							<label> <input type="text" name="name" value="ナプキンピンク">
 							</label>
 
 						</div>
@@ -108,62 +111,62 @@
 
 						<div class="container">
 
-							<label for="ded"></label> <input type="date" id="ded"
-								name="ded" onchange="calculateRemainingDays()"> <br>
-							<label> <input type="checkbox" id="check"
-								name="myCheckbox" onchange="toggleRemainingDays()">
+							<label for="ded"></label> <input type="date" id="ded" name="ded"
+								onchange="calculateRemainingDays()"> <br> <label>
+								<input type="checkbox" id="check" name="myCheckbox"
+								onchange="toggleRemainingDays()">
 							</label> <br> <span id="event_name"></span> <span id="days"></span>
 						</div>
 						<!-- 期日カウントダウン -->
 					</form>
-				</div>
 
-				<input type="submit" name="save" value="保存">
+
+
+
+					<!-- 項目ここまで -->
+					<!-- 項目 -->
+
+					<input type="checkbox" id="checka" value="clothing">
+					<div class="box7">
+						<img src="img/flower_blue.png" alt="シミュレーションの画像を取得">
+					</div>
+
+					<form class="fo2">
+
+
+
+
+						<div class="container">
+
+							<label> <input type="text" name="name" value="花　ブルー">
+							</label>
+
+						</div>
+
+						<div class="container">
+
+							<label> <input type="text" name="price" value="1000円">
+							</label> <label> <input type="text" name="number" value="10個">
+							</label>
+
+						</div>
+
+						<div class="container">
+
+							<label for="ded2"> <input type="date" id="ded2"
+								onchange="calculateRemainingDays()"></label>
+							<p>
+								<span id="event_name"></span><span id="days"></span>
+							</p>
+						</div>
+						<!-- 期日カウントダウン -->
+					</form>
+
+				</div>
 			</div>
-			<!-- 項目ここまで -->
-			<!-- 項目 -->
-			<!--
-			<input type="checkbox" id="check" value="clothing"> <label
-				for="check"
-				style="position: absolute; top: 10%; left: 5%; border: 4px solid #b8860b; vertical-align: -5px; width: 36px; height: 36px; cursor: pointer;"></label>
-
-			<div class="box4">
-				<img src="img/napkin_blue.png" alt="シミュレーションの画像を取得">
-			</div>
-
-			<form>
-
-
-
-
-				<div class="container">
-
-					<label> <input type="text" name="name" value="ナプキン青">
-					</label>
-
-				</div>
-
-				<div class="container">
-
-					<label> <input type="text" name="price" value="200円">
-					</label> <label> <input type="text" name="number" value="100個">
-					</label>
-
-				</div>
-
-				<div class="container">
-
-					<label for="ded"> <input type="date" id="ded"
-						onchange="calculateRemainingDays()"></label>
-					<p>
-						<span id="event_name"></span><span id="days"></span>
-					</p>
-				</div>
-				<!-- 期日カウントダウン -->
-			<!--  </form>-->
-
-
 			<input type="submit" name="save" value="保存">
+
+
 
 			<!-- 項目ここまで -->
 
