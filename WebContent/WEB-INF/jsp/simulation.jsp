@@ -12,7 +12,7 @@
 
 <body>
     <header id ="header">
-         <img src="img/logo.png" alt="logo">
+          <a href="HomeServlet"><img src="img/logo.png" alt="logo"height="100" width="150"></a>
          <div id="hmb">
              <span></span>
              <span></span>
@@ -35,7 +35,7 @@
      <div class="container">
          <div class="row">
              <div class="column">
-                 <img id="mainImage" img src="img/Sinterior.png" alt="内装"class="photo" data-modal-target="modal1"style="width: 500px; height: 300px;">
+                 <img src="img/Sinterior.png" alt="内装"class="photo"id="mainImage" data-modal-target="modal1"style="width: 500px; height: 300px;">
              </div>
              <div class="column">
                  <img src="img/Scostume.png" alt="衣装" class="photo" id="costumePhoto1" data-modal-target="modal2"style="width: 300px; height: 300px;">
@@ -46,13 +46,16 @@
            </div>
          <div class="row">
              <div class="column">
-                 <img src="img/Scake.png" alt="ケーキ" class="photo"  data-modal-target="modal3">
+                 <img src="img/Scake.png" alt="ケーキ" class="photo" id="cakesPhoto1" data-modal-target="modal3">
              </div>
              <div class="column">
                 <img src="img/Scaketop .png" alt="ケーキトップ" class="photo" data-modal-target="modal4">
              </div>
              <div class="column">
-                <img src="img/Scard.png" alt="カード" class="photo" data-modal-target="modal5">
+                <img src="img/Scard.png" alt="カード" class="photo" id="cardsPhoto1"data-modal-target="modal5">
+             </div>
+             <div class="column">
+                <img src="img/Scard.png" alt="カード" class="photo" id="cardsPhoto2"data-modal-target="modal5">
              </div>
              <div class="column">
                 <img src="img/Stable.png" alt="席配置" class="photo" data-modal-target="modal6">
@@ -180,7 +183,7 @@
                <p>¥1,000,000</p>
             </div>
             <div class="dress">
-                <input type="checkbox" name="cloth[]" value="img/dress_jp_white">
+                <input type="checkbox" name="cloth[]" value="img/dress_jp_white.png">
                 <img src="img/dress_jp_white.png" alt="白無垢">
                 <p>¥1,000,000</p>
             </div>
@@ -195,7 +198,7 @@
                <p>¥300,000</p>
             </div>
             <div class="dress">
-                <input type="checkbox" name="cloth[]" value="img/dress_jp_pink">
+                <input type="checkbox" name="cloth[]" value="img/dress_jp_pink.png">
                 <img src="img/dress_jp_pink.png" alt="ピンク">
                 <p>¥310,000</p>
             </div>
@@ -276,7 +279,7 @@
 
         </div>
 
-
+</div>
     </div>
 
     <input type="submit" name="save" value="保存" onclick="updateCostumePhoto()">
@@ -291,29 +294,34 @@
                <p>ケーキなし</p>
             </div>
             <div class="cake">
+            <input type="checkbox" name="cake[]" value="img/cake_white.png">
                 <img src="img/cake_white.png" alt="ショートケーキ">
                <p>¥80,000</p>
             </div>
             <div class="cake">
+            <input type="checkbox" name="cake[]" value="img/cake_choko.png">
                 <img src="img/cake_choco.png" alt="チョコレートケーキ">
                <p>¥90,000</p>
             </div>
             <div class="cake">
+            <input type="checkbox" name="cake[]" value="img/cake_orange.png">
                 <img src="img/cake_orange.png" alt="オレンジケーキ">
                <p>¥50,000</p>
             </div>
             <div class="cake">
+            <input type="checkbox" name="cake[]" value="img/cake_purple.png">
                 <img src="img/cake_purple.png" alt="ブルーベリーレアチーズケーキ">
                <p>¥50,000</p>
             </div>
             <div class="cake">
+            <input type="checkbox" name="cake[]" value="img/cake_green.png">
                 <img src="img/cake_green.png" alt="抹茶チーズケーキ">
                <p>¥70,000</p>
             </div>
 
         </div>
 
-         <input type="submit" name="save" value="保存" onclick="saveLargeImage()">
+         <input type="submit" name="save" value="保存" onclick="updateCakesPhoto()">
     </div>
 </div>
 
@@ -333,39 +341,47 @@
         <p>カードシミュレーション</p>
         <div class="cards">
         <div class="card">
+          <input type="checkbox" name="card[]" value="img/inv_clover.png">
                 <img src="img/inv_clover.jpg" alt="クローバー">
                <p>招待状：¥3,000</p>
         </div>
         <div class="card">
+         <input type="checkbox" name="card[]" value="img/inv_flower.png">
                 <img src="img/inv_flower.jpg" alt="花">
                <p>招待状：¥3,000</p>
         </div>
         <div class="card">
+         <input type="checkbox" name="card[]" value="img/inv_heart.png">
                 <img src="img/inv_heart.jpg" alt="ハート">
                <p>招待状：¥2,000</p>
         </div>
         <div class="card">
+         <input type="checkbox" name="card[]" value="img/inv_checkbox.png">
                 <img src="img/inv_simple.jpg" alt="標準">
                <p>招待状：¥1,000</p>
         </div>
         <div class="card">
+         <input type="checkbox" name="card[]" value="img/inv_clover_back.png">
                 <img src="img/inv_clover_back.jpg" alt="クローバー">
                <p>ネームプレート：¥300</p>
         </div>
         <div class="card">
+        <input type="checkbox" name="card[]" value="img/inv_flower_back.png">
                 <img src="img/inv_flower_back.jpg" alt="花">
                <p>ネームプレート：¥300</p>
         </div>
         <div class="card">
+        <input type="checkbox" name="card[]" value="img/inv_heart_back.png">
                 <img src="img/inv_heart_back.jpg" alt="ハート">
                <p>ネームプレート：¥200</p>
         </div>
         <div class="card">
+        <input type="checkbox" name="card[]" value="img/inv_simple_back.png">
                 <img src="img/inv_simple_back.jpg" alt="標準">
                <p>ネームプレート：¥100</p>
         </div>
         </div>
-         <input type="submit" name="save" value="保存">
+         <input type="submit" name="save" value="保存"onclick="updateCardsPhoto()">
     </div>
 </div>
 <div id="modal6" class="modal">
@@ -507,9 +523,27 @@ function showImages(buttonId) {
         });
     }
 </script>
+<!-- model3のJavascript -->
+<script>
+function updateCakesPhoto() {
+    var checkboxes = document.querySelectorAll('input[name="cake[]"]:checked');
+    var selectedCakes = [];
+    checkboxes.forEach(function(checkbox) {
+        var imageURL = checkbox.value;
+        selectedCakes.push(imageURL);
+    });
 
+    var selectedCakesElement = document.getElementById('selectedCakes');
+    selectedCakesElement.innerHTML = '';
 
-
+    selectedCakes.forEach(function(imageURL) {
+        var imgElement = document.createElement('img');
+        imgElement.src = imageURL;
+        imgElement.alt = 'Selected Cake';
+        selectedCakesElement.appendChild(imgElement);
+    });
+}
+</script>
 
 <!-- model6の Javascript-->
 <script>
