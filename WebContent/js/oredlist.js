@@ -12,9 +12,34 @@ function calculateRemainingDays() {
 		//乗算を行い、数値を合わせる。
 		const remainingDays = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));
 		//それぞれのspanに表示する
-		document.getElementById("event_name").innerText = "指定日まで";
+		document.getElementById("event_name").innerText = "残り";
 		document.getElementById("days").innerText = remainingDays + "日";
 	} else {
 		alert("日付を選択してください。");
 	}
+}
+
+function calculateRemainingDays() {
+    // Htmlの期日を取得する
+    const targetDateInput = document.getElementById("ddd");
+    const targetDateValue = targetDateInput.value;
+
+    // チェックボックスの状態を取得
+    const checkbox = document.getElementById("check");
+    const isChecked = checkbox.checked;
+
+    if (isChecked && targetDateValue) {
+        const targetDate = new Date(targetDateValue);
+        // 現在の日時を取得
+        const now = new Date();
+        // 日数を引く
+        const timeDifference = targetDate.getTime() - now.getTime();
+        // 乗算を行い、数値を合わせる。
+        const remainingDays = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));
+        // それぞれのspanに表示する
+        document.getElementById("event_name").innerText = "指定日まで";
+        document.getElementById("days").innerText = remainingDays + "日";
+    } else {
+        alert("日付を選択しているか、チェックボックスをオンにしてください。");
+    }
 }

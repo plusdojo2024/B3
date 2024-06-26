@@ -7,11 +7,11 @@
 <title>KyoronP</title>
 <link rel="stylesheet" href="/B3/css/common.css">
 <link rel="stylesheet" href="/B3/css/orderlist.css">
-<style>
-* {
+<!--  <style>
+ {
 	outline: 1px solid #FF0000;
 }
-</style>
+</style> -->
 <script src="/B3/js/oredlist.js"></script>
 </head>
 <body>
@@ -23,10 +23,15 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href=home.html>ホーム</a></li>
-				<li><a href=regist.html>お客様情報登録</a></li>
-				<li><a href=search.html>お客様検索</a></li>
-				<li><a href=login.html>ログアウト</a></li>
+				 <li><a href="MypageServlet">マイページ</a></li>
+      <li><a href="UpdateServlet">お客様情報編集</a></li>
+      <li><a href="OrderlistServlet">発注リスト</a></li>
+      <li><a href="TodaylistServlet">当日リスト</a></li>
+      <li><a href="SimuletServlet">シミュレーション</a></li>
+      <li><a href="ReportServlet">報告書作成</a></li>
+      <li><a href="SurveyServlet">式後アンケート</a></li>
+      <li><a href="SerchServlet">お客様変更</a></li>
+      <li><a href="LogoutServlet">ログアウト</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -75,11 +80,12 @@
 						<p>内装</p>
 					</div>
 					<!-- 項目 -->
-					<input type="checkbox" id="check" value="clothing" checked><label
-						for="check"></label>
+					<input type="checkbox" id="check" value="clothing"> <label
+						for="check"
+						style="position: absolute; top: 10%; left: 5%; border: 4px solid #b8860b; vertical-align: -5px; width: 36px; height: 36px; cursor: pointer;"></label>
 
-					<div class="box1-4">
-						<img src="" alt="シミュレーションの画像を取得">
+					<div class="box4">
+						<img src="img/napkin_blue.png" alt="シミュレーションの画像を取得">
 					</div>
 
 					<form>
@@ -89,23 +95,23 @@
 
 						<div class="container">
 
-							<label> 商品名 <input type="text" name="name">
+							<label> <input type="text" name="name" value="ナプキン青">
 							</label>
 
 						</div>
-						<div class="container"></div>
+
 						<div class="container">
 
-							<label> 値段 <input type="text" name="price">
-							</label> <label> 個数 <input type="text" name="number">
+							<label> <input type="text" name="price" value="200円">
+							</label> <label> <input type="text" name="number" value="100個">
 							</label>
 
 						</div>
-						<div class="container"></div>
+
 						<div class="container">
 
-							<label for="targetDate">期日:</label> <input type="date"
-								id="targetDate" onchange="calculateRemainingDays()">
+							<label for="ded"> <input type="date" id="ded"
+								onchange="calculateRemainingDays()"></label>
 							<p>
 								<span id="event_name"></span><span id="days"></span>
 							</p>
@@ -116,7 +122,52 @@
 
 				<input type="submit" name="save" value="保存">
 			</div>
+			<!-- 項目ここまで -->
+			<!-- 項目 -->
+			<input type="checkbox" id="check" value="clothing"> <label
+				for="check"
+				style="position: absolute; top: 10%; left: 5%; border: 4px solid #b8860b; vertical-align: -5px; width: 36px; height: 36px; cursor: pointer;"></label>
+
+			<div class="box4">
+				<img src="img/napkin_blue.png" alt="シミュレーションの画像を取得">
+			</div>
+
+			<form>
+
+
+
+
+				<div class="container">
+
+					<label> <input type="text" name="name" value="ナプキン青">
+					</label>
+
+				</div>
+
+				<div class="container">
+
+					<label> <input type="text" name="price" value="200円">
+					</label> <label> <input type="text" name="number" value="100個">
+					</label>
+
+				</div>
+
+				<div class="container">
+
+					<label for="ded"> <input type="date" id="ded"
+						onchange="calculateRemainingDays()"></label>
+					<p>
+						<span id="event_name"></span><span id="days"></span>
+					</p>
+				</div>
+				<!-- 期日カウントダウン -->
+			</form>
 		</div>
+
+		<input type="submit" name="save" value="保存">
+
+		<!-- 項目ここまで -->
+
 
 
 		<!-- モーダルウインドウ 終了 -->
@@ -219,8 +270,8 @@
 						<div class="container"></div>
 						<div class="container">
 
-							<label for="ded">期日:</label> <input type="date"
-								id="ded" onchange="calculateRemainingDays()">
+							<label for="ded">期日:</label> <input type="date" id="ded"
+								onchange="calculateRemainingDays()">
 							<p>
 								<span id="event_name"></span><span id="days"></span>
 							</p>

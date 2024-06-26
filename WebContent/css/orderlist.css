@@ -60,13 +60,13 @@ body {
 
 .modal-content {
 	position: relative;
-    margin: auto;
-    width: 100%;
-    max-width: 750px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
+	margin: auto;
+	width: 100%;
+	max-width: 750px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	text-align: center;
 }
 
 .modal-content img {
@@ -115,13 +115,13 @@ input[type="submit"] {
 }
 
 .box3 {
-    margin: 0 auto;
-    background-color: #00438d;
-    width: 300px;
-    height: 50px;
-    position: absolute;
-    top: 30px;
-    left: 32%;
+	margin: 0 auto;
+	background-color: #00438d;
+	width: 300px;
+	height: 50px;
+	position: absolute;
+	top: 30px;
+	left: 32%;
 }
 
 .box3 p {
@@ -135,16 +135,10 @@ input[type="submit"] {
 /* チェックボックス */
 input[type="checkbox"] {
 	position: absolute;
-	width: 40px;
-	height: 40px;
-	border: 1px solid #000;
-	vertical-align: -5px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	left: 10%;
-	top: 90px;
+	top: 10%;
 	left: 5%;
+	border: 3px solid #b8860b ;
+	vertical-align: -5px;
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
@@ -163,25 +157,39 @@ input[type="checkbox"]:checked:before {
 
 form {
 	position: absolute;
-    top: 16%;
-    left: 28%;
-
+	top: 17%;
+	left: 40%;
 }
 
-.container {
-	position: absolute;
-	left: 45%;
+input[type="text"]{
+	border: 3px solid #b8860b;
+    padding: 4px;
+    margin: 5px;
 }
+
+
+input[type="date"]{
+	border: 3px solid #b8860b;
+    padding: 4px;
+    margin: 5px;
+}
+
+
 
 .box4 {
-
+	border: 3px solid #b8860b ;
 	height: 150px;
-    position: absolute;
-    top: 30px;
-    left: 4%;
-    top: 16%;
+	width: 220px;
+	position: absolute;
+	left: 9%;
+	top: 16%;
 }
 
+#event_name{
+	color:red;
+}
 
-
+#days{
+	color:red;
+}
 /* モーダルウィンドウ終了 */
