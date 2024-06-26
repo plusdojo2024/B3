@@ -53,7 +53,7 @@
 							<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
 							<textarea name="suhedule" class="text_s" placeholder="式目"></textarea>
 							<textarea name="schedule_time" class="text_st" placeholder="予定時刻"></textarea>
-							<textarea name="actual_time" class="text_at" placeholder="完了時刻"></textarea>
+							<textarea name="actual_time" id="a_time" class="text_at" placeholder="完了時刻"></textarea>
 						</td>
 						<td>
 							<img src="img/ticket-sub.png" alt="ticket_sub" id="t_sub" class="t_sub" onclick="t_sub()">
@@ -64,7 +64,6 @@
 					<a id="add_ticket" class="t_button">追加</a>
 					<a id="del_ticket" class="t_button">削除</a>
 				</div>
-
 			</div>
 			<div id="area_memo">
 				<div class="m_today">
@@ -73,12 +72,9 @@
 				<div class="button">
 					<input type="submit" name="submit" value="保存">
 				</div>
-
 			</div>
 		</div>
 	</form>
-
-
 </main>
 <footer>
   <p class="copyright">Copyright KyoronP. All rights reserved.</p>

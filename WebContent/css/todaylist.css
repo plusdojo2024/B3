@@ -51,8 +51,6 @@ input[type="submit"] {
 	overflow: hidden;
 }
 #area_ticket {
-	    background-color:#80ffff;
-
 	width: 50%;
 	float: left;
 }
@@ -78,17 +76,14 @@ input[type="submit"] {
 .t_full {
 	width: 500px;
 	height:150px;
-
 	text-align: center;
 	position: relative;
-
 }
 
 .t_main {
 	width: 500px;
 	height: 140px;
 	text-align: center;
-
 }
 
 .t_sub {
