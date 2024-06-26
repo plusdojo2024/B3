@@ -60,13 +60,13 @@ public class RegistServlet extends HttpServlet {
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
 		String thedate = year+"-"+month+"-"+day;
-		String memo_id = request.getParameter("memo_id");
+		String memo = request.getParameter("memo_id");
 		boolean pin = true;
 
 		//登録処理を行う
 		CustomerDAO cDAO = new CustomerDAO();
 		if (cDAO.insert(new Customer(0, "", "", lname_1, fname_1, lfurigana_1, ffurigana_1, tel_1,
-				lname_2, fname_2, lfurigana_2, ffurigana_2, tel_2, address, thedate, memo_id, pin)));
+				lname_2, fname_2, lfurigana_2, ffurigana_2, tel_2, address, thedate, memo, pin)));
 
 		//マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
