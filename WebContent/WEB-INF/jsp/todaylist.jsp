@@ -32,7 +32,7 @@
 </header>
 <main class="main">
 	<h1>当日リスト</h1>
-	<form action="post">
+	<form id="todaylist_form" method="post" action="/B3/TodaylistServlet">
 		<div id="wrapper">
 			<div id="area_ticket">
 				<div class="now_time">現在時刻<span id="now_time"></span></div>
