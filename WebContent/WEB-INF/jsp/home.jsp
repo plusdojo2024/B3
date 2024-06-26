@@ -7,6 +7,7 @@
 <title>ホーム</title>
 
   <link rel="stylesheet" href="/B3/css/home.css">
+  <link rel="stylesheet" href="/B3/css/common.css">
 
 
 </head>
