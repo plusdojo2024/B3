@@ -58,7 +58,7 @@
     <textarea name="trouble" placeholder="" ></textarea>
   </div>
   <p>
-    <input type="submit" value="保存" class = "button">
+    <a href="MypageServlet"><input type="submit" value="保存" class = "button"></a>
   </p>
   </div>
 </main>

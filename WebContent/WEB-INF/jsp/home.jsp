@@ -33,7 +33,7 @@
 
 <main>
   <div class="title">
-    <a href="/B3/HomeServlet"><img src="/B3/img/home.png" alt="KyoronpTitle" width="1000" height="500"></a>
+    <a href="/B3/HomeServlet"><img src="/B3/img/home.png" alt="KyoronpTitle" width=auto height="250"></a>
   </div>
 
  <div class="menu">

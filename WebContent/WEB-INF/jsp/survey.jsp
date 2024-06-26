@@ -63,7 +63,7 @@
     <label for="fix">改善点</label>
     <textarea name="fix" placeholder="" ></textarea>
   </div>
-    <input type="submit" value="保存" class = "button">
+    <a href="MypageServlet"><input type="submit" value="保存" class = "button"></a>
   </div>
 </main>
 

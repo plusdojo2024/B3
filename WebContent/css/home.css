@@ -118,7 +118,10 @@ footer{
 .menu img{
 /*	width:600px;
 	height:300px;*/
-	width: 80%;
+	width: 50%;
+}
+.header{
+	margin:-100px;
 }
 
 /*マイページ画面*/
