@@ -35,31 +35,31 @@
 	<form action="post">
 		<div id="wrapper">
 			<div id="area_ticket">
-				<div id="now_time" class="now_time">現在時刻 0:00</div>
-			<table id="t_list" class="t_list">
-				<tr id="t_full" class="t_full">
-					<td >
-						<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
-						<textarea name="suhedule" class="text_s" placeholder="式目"></textarea>
-						<textarea name="schedule_time" class="text_st" placeholder="予定時刻"></textarea>
-						<textarea name="actual_time" class="text_at" placeholder="完了時刻"></textarea>
-					</td>
-					<td>
-						<img src="img/ticket-sub.png" alt="ticket_sub" id="t_sub" class="t_sub" onclick="t_sub()">
-					</td>
-				</tr>
-				<tr class="t_full">
-					<td >
-						<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
-						<textarea name="suhedule" class="text_s" placeholder="式目"></textarea>
-						<textarea name="schedule_time" class="text_st" placeholder="予定時刻"></textarea>
-						<textarea name="actual_time" class="text_at" placeholder="完了時刻"></textarea>
-					</td>
-					<td>
-						<img src="img/ticket-sub.png" alt="ticket_sub" id="t_sub" class="t_sub" onclick="t_sub()">
-					</td>
-				</tr>
-			</table>
+				<div class="now_time">現在時刻<span id="now_time"></span></div>
+				<table id="t_list" class="t_list">
+					<tr id="t_full" class="t_full">
+						<td >
+							<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
+							<textarea name="suhedule" class="text_s" placeholder="式目"></textarea>
+							<textarea name="schedule_time" class="text_st" placeholder="予定時刻"></textarea>
+							<textarea name="actual_time" id="a_time" class="text_at" placeholder="完了時刻"></textarea>
+						</td>
+						<td>
+							<img src="img/ticket-sub.png" alt="ticket_sub" id="t_sub" class="t_sub" onclick="t_sub()">
+						</td>
+					</tr>
+					<tr id="t_full" class="t_full">
+						<td >
+							<img src="img/ticket-main.png" alt="ticket_main" class="t_main">
+							<textarea name="suhedule" class="text_s" placeholder="式目"></textarea>
+							<textarea name="schedule_time" class="text_st" placeholder="予定時刻"></textarea>
+							<textarea name="actual_time" class="text_at" placeholder="完了時刻"></textarea>
+						</td>
+						<td>
+							<img src="img/ticket-sub.png" alt="ticket_sub" id="t_sub" class="t_sub" onclick="t_sub()">
+						</td>
+					</tr>
+				</table>
 				<div class="button">
 					<a id="add_ticket" class="t_button">追加</a>
 					<a id="del_ticket" class="t_button">削除</a>
@@ -89,10 +89,35 @@
   hmbBtn.addEventListener("click",function(){header.classList.toggle("active");
   });
 
-  const ticketlick=document.getElementById('t_sub')
-  ticketlick.addEventListener("click", function() {
-  	alert("チケット！");
-  });
+//現在時刻
+	//2桁表示
+	function set2fig(num) {
+		//桁数が1桁なら0を加えて2桁に
+		var ret;
+		if (num < 10) {ret = "0" + num;}
+		else {ret = num;}
+		return ret;
+	}
+	//現在時刻を取得
+	function nTime() {
+		var nowTime = new Date();
+		var nowHour = set2fig(nowTime.getHours());
+		var nowMin = set2fig(nowTime.getMinutes());
+		var nowSec = set2fig(nowTime.getSeconds());
+		var msg = nowHour + ":" + nowMin + ":" + nowSec;
+		document.getElementById("now_time").innerHTML = msg;
+	}
+	//現在時刻を常に取得
+	setInterval('nTime()',1000);
+
+//半券
+ 	const ticketlick=document.getElementById('t_sub')
+ 	ticketlick.addEventListener("click", function() {
+		//id="t_list"のテーブルを取得
+		var table = document.getElementById("t_list");
+		//1列目の2行目(半券)を削除
+		table.rows[0].deleteCell(1);
+	});
 
 //追加ボタン
 	//追加を押した回数をカウント
@@ -123,15 +148,13 @@
 		i++;
 	})
 
-/*入れると追加もできなくなる
 //削除ボタン
- 	const add=document.getElementById('del_ticket')
- 	add.addEventListener("click", function() {
+ 	const del=document.getElementById('del_ticket')
+ 	del.addEventListener("click", function() {
 		var table = document.getElementById("t_list")
 		var rows = table.deleteRow(-1);
+		i--;
 	})
-*/
-
 
 </script>
 </body>

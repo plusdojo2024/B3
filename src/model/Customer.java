@@ -26,6 +26,7 @@ public class Customer implements Serializable {
 
 	}
 
+	//created_atとupdated_atのない引数
 	public Customer(int id, String lname_1, String fname_1, String lfurigana_1, String ffurigana_1, String tel_1,
 			String lname_2, String fname_2, String lfurigana_2, String ffurigana_2, String tel_2, String address,
 			String thedate, String memo_id, boolean pin) {
