@@ -66,7 +66,7 @@ public class SimulationNapkinsDAO {
 	}
 
 	// 全件検索をして、検索結果を返す
-	public List<SimulationCommon> allselect(SimulationCommon napkin) {
+	public List<SimulationCommon> allselect() {
 		Connection conn = null;
 		List<SimulationCommon> napkinList = new ArrayList<SimulationCommon>();
 

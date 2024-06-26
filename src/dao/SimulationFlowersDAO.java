@@ -66,7 +66,7 @@ public class SimulationFlowersDAO {
 	}
 
 	// 全件検索をして、検索結果を返す
-	public List<SimulationCommon> allselect(SimulationCommon flower) {
+	public List<SimulationCommon> allselect() {
 		Connection conn = null;
 		List<SimulationCommon> flowerList = new ArrayList<SimulationCommon>();
 

@@ -66,7 +66,7 @@ public class SimulationChairsDAO {
 	}
 
 	// 全件検索をして、検索結果を返す
-	public List<SimulationCommon> allselect(SimulationCommon chair) {
+	public List<SimulationCommon> allselect() {
 		Connection conn = null;
 		List<SimulationCommon> chairList = new ArrayList<SimulationCommon>();
 

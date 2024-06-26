@@ -66,7 +66,7 @@ public class SimulationCakesDAO {
 	}
 
 	// 全件検索をして、検索結果を返す
-	public List<SimulationCommon> allselect(SimulationCommon cake) {
+	public List<SimulationCommon> allselect() {
 		Connection conn = null;
 		List<SimulationCommon> cakeList = new ArrayList<SimulationCommon>();
 
