@@ -183,7 +183,7 @@
                <p>¥1,000,000</p>
             </div>
             <div class="dress">
-                <input type="checkbox" name="cloth[]" value="img/dress_jp_white">
+                <input type="checkbox" name="cloth[]" value="img/dress_jp_white.png">
                 <img src="img/dress_jp_white.png" alt="白無垢">
                 <p>¥1,000,000</p>
             </div>
@@ -198,7 +198,7 @@
                <p>¥300,000</p>
             </div>
             <div class="dress">
-                <input type="checkbox" name="cloth[]" value="img/dress_jp_pink">
+                <input type="checkbox" name="cloth[]" value="img/dress_jp_pink.png">
                 <img src="img/dress_jp_pink.png" alt="ピンク">
                 <p>¥310,000</p>
             </div>
@@ -524,7 +524,26 @@ function showImages(buttonId) {
     }
 </script>
 <!-- model3のJavascript -->
+<script>
+function updateCakesPhoto() {
+    var checkboxes = document.querySelectorAll('input[name="cake[]"]:checked');
+    var selectedCakes = [];
+    checkboxes.forEach(function(checkbox) {
+        var imageURL = checkbox.value;
+        selectedCakes.push(imageURL);
+    });
 
+    var selectedCakesElement = document.getElementById('selectedCakes');
+    selectedCakesElement.innerHTML = '';
+
+    selectedCakes.forEach(function(imageURL) {
+        var imgElement = document.createElement('img');
+        imgElement.src = imageURL;
+        imgElement.alt = 'Selected Cake';
+        selectedCakesElement.appendChild(imgElement);
+    });
+}
+</script>
 
 <!-- model6の Javascript-->
 <script>
