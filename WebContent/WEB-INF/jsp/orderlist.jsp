@@ -17,21 +17,22 @@
 <body>
 
 	<header id="header">
-		<img src="img/logo.png" alt="logo">
+		<a href="HomeServlet"><img src="img/logo.png" alt="logo"
+			height="100" width="150"></a>
 		<div id="hmb">
 			<span></span> <span></span> <span></span>
 		</div>
 		<nav>
 			<ul>
-				 <li><a href="MypageServlet">マイページ</a></li>
-      <li><a href="UpdateServlet">お客様情報編集</a></li>
-      <li><a href="OrderlistServlet">発注リスト</a></li>
-      <li><a href="TodaylistServlet">当日リスト</a></li>
-      <li><a href="SimuletServlet">シミュレーション</a></li>
-      <li><a href="ReportServlet">報告書作成</a></li>
-      <li><a href="SurveyServlet">式後アンケート</a></li>
-      <li><a href="SerchServlet">お客様変更</a></li>
-      <li><a href="LogoutServlet">ログアウト</a></li>
+				<li><a href="MypageServlet">マイページ</a></li>
+				<li><a href="UpdateServlet">お客様情報編集</a></li>
+				<li><a href="OrderlistServlet">発注リスト</a></li>
+				<li><a href="TodaylistServlet">当日リスト</a></li>
+				<li><a href="SimuletServlet">シミュレーション</a></li>
+				<li><a href="ReportServlet">報告書作成</a></li>
+				<li><a href="SurveyServlet">式後アンケート</a></li>
+				<li><a href="SerchServlet">お客様変更</a></li>
+				<li><a href="LogoutServlet">ログアウト</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -80,9 +81,6 @@
 						<p>内装</p>
 					</div>
 					<!-- 項目 -->
-					<input type="checkbox" id="check" value="clothing"> <label
-						for="check"
-						style="position: absolute; top: 10%; left: 5%; border: 4px solid #b8860b; vertical-align: -5px; width: 36px; height: 36px; cursor: pointer;"></label>
 
 					<div class="box4">
 						<img src="img/napkin_blue.png" alt="シミュレーションの画像を取得">
@@ -110,11 +108,11 @@
 
 						<div class="container">
 
-							<label for="ded"> <input type="date" id="ded"
-								onchange="calculateRemainingDays()"></label>
-							<p>
-								<span id="event_name"></span><span id="days"></span>
-							</p>
+							<label for="ded"></label> <input type="date" id="ded"
+								name="ded" onchange="calculateRemainingDays()"> <br>
+							<label> <input type="checkbox" id="check"
+								name="myCheckbox" onchange="toggleRemainingDays()">
+							</label> <br> <span id="event_name"></span> <span id="days"></span>
 						</div>
 						<!-- 期日カウントダウン -->
 					</form>
@@ -124,6 +122,7 @@
 			</div>
 			<!-- 項目ここまで -->
 			<!-- 項目 -->
+			<!--
 			<input type="checkbox" id="check" value="clothing"> <label
 				for="check"
 				style="position: absolute; top: 10%; left: 5%; border: 4px solid #b8860b; vertical-align: -5px; width: 36px; height: 36px; cursor: pointer;"></label>
@@ -161,15 +160,14 @@
 					</p>
 				</div>
 				<!-- 期日カウントダウン -->
-			</form>
+			<!--  </form>-->
+
+
+			<input type="submit" name="save" value="保存">
+
+			<!-- 項目ここまで -->
+
 		</div>
-
-		<input type="submit" name="save" value="保存">
-
-		<!-- 項目ここまで -->
-
-
-
 		<!-- モーダルウインドウ 終了 -->
 		<!-- モーダルウインドウ 衣装 開始 -->
 
