@@ -37,6 +37,45 @@ function toggleRemainingDays() {
 	}
 }
 
+function calculateRemainingDays2() {
+	//dedのdateを持ってくる
+	const targetDateInput = document.getElementById("ded2");
+	const targetDateValue = targetDateInput.value;
+	//チェックボックスの状態を持ってくる。
+	const checkbox = document.getElementById("check");
+	const isChecked = checkbox.checked;
+
+	if (targetDateValue) {
+		const targetDate = new Date(targetDateValue);
+		//現在の日時を取得
+		const now = new Date();
+		//日数を引く
+		const timeDifference = targetDate.getTime() - now.getTime();
+		//乗算を行い、ミリ秒から数値を合わせる。
+		//Math.ceilは必要ないかも、うるう秒を考慮
+		const remainingDays = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));
+		//それぞれのspanに表示する
+		document.getElementById("event_name2").innerText = "残り";
+		document.getElementById("days2").innerText = remainingDays + "日";
+	} else {
+		alert("日付を選択してください。");
+	}
+}
+
+function toggleRemainingDays() {
+	const checkbox = document.getElementById("check");
+	const isChecked = checkbox.checked;
+
+	if (isChecked) {
+		// チェックボックスがオフの場合は非表示
+		document.getElementById("event_name").innerText = "";
+		document.getElementById("days").innerText = "";
+	} else {
+		// チェックボックスがオンの場合は表示
+		calculateRemainingDays();
+	}
+}
+
 
 /*      function goOrederlist() {
   alert("functionはいったよ！");
