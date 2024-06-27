@@ -7,20 +7,19 @@
 <title>KyoronP</title>
 <link rel="stylesheet" href="/B3/css/common.css">
 <link rel="stylesheet" href="/B3/css/orderlist.css">
-<<<<<<< HEAD
+
 <!--  <style>
 * {
 	outline: 1px solid #FF0000;
 }
 </style>-->
-=======
+
 <style>
 /* {
 	outline: 1px solid #FF0000;
 }
 */
 </style>
->>>>>>> a9f46e596f88458588d1251ea0cdbc90667708ac
 <script src="/B3/js/oredlist.js"></script>
 </head>
 <body>
