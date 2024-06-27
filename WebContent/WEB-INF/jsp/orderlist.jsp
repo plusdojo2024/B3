@@ -8,9 +8,10 @@
 <link rel="stylesheet" href="/B3/css/common.css">
 <link rel="stylesheet" href="/B3/css/orderlist.css">
 <style>
-* {
+/* {
 	outline: 1px solid #FF0000;
 }
+*/
 </style>
 <script src="/B3/js/oredlist.js"></script>
 </head>
@@ -88,7 +89,7 @@
 					<!-- 項目 -->
 
 					<div class="box4">
-						<img src="img/napkin_pink.png" alt="シミュレーションの画像を取得" width="220px"
+						<img src="img/napkin_pink.png" alt="ナプキン_ピンク" width="220px"
 							height="150px">
 					</div>
 
@@ -128,7 +129,7 @@
 
 					<input type="checkbox" id="checka" value="clothing">
 					<div class="box7">
-						<img src="img/flower_blue.png" alt="シミュレーションの画像を取得">
+						<img src="img/flower_blue.png" alt="花_青">
 					</div>
 
 					<form class="fo2">
@@ -154,9 +155,9 @@
 						<div class="container">
 
 							<label for="ded2"> <input type="date" id="ded2"
-								onchange="calculateRemainingDays()"></label>
+								onchange="calculateRemainingDays2()"></label>
 							<p>
-								<span id="event_name"></span><span id="days"></span>
+								<span id="event_name2"></span><span id="days2"></span>
 							</p>
 						</div>
 						<!-- 期日カウントダウン -->

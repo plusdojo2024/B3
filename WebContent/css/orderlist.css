@@ -209,7 +209,15 @@ input[type="date"] {
 	color: red;
 }
 
+#event_name2 {
+	color: red;
+}
+
 #days {
+	color: red;
+}
+
+#days2 {
 	color: red;
 }
 /* モーダルウィンドウ終了 */
