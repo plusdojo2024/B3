@@ -7,11 +7,11 @@
 <title>KyoronP</title>
 <link rel="stylesheet" href="/B3/css/common.css">
 <link rel="stylesheet" href="/B3/css/orderlist.css">
-<style>
+<!--  <style>
 * {
 	outline: 1px solid #FF0000;
 }
-</style>
+</style>-->
 <script src="/B3/js/oredlist.js"></script>
 </head>
 <body>
